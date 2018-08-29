@@ -1,0 +1,792 @@
+{
+	"info": {
+		"_postman_id": "71c96f2f-055b-474a-815f-bf336e523e32",
+		"name": "DNB API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "API: Get API token",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "f6e9c84c-4bf6-4a6e-b7e9-116e9c3069e6",
+						"type": "text/javascript",
+						"exec": [
+							"var jsonData = JSON.parse(responseBody);",
+							"postman.setGlobalVariable(\"JwtToken\", jsonData.tokenInfo[0].jwtToken);"
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "x-api-key",
+						"value": "{{ApiKey}}"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {},
+				"url": {
+					"raw": "https://developer-api-sandbox.dnb.no/api/token?customerId={\"type\":\"SSN\", \"value\":\"29105573083\"}",
+					"protocol": "https",
+					"host": [
+						"developer-api-sandbox",
+						"dnb",
+						"no"
+					],
+					"path": [
+						"api",
+						"token"
+					],
+					"query": [
+						{
+							"key": "customerId",
+							"value": "{\"type\":\"SSN\", \"value\":\"29105573083\"}"
+						}
+					]
+				},
+				"description": "This request will fetch a Token from the Open Banking API and set it as a global variable.\nPlease run this request once before trying the others: a token is needed for all the other types of requests."
+			},
+			"response": []
+		},
+		{
+			"name": "Customers: Get customer details",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "x-dnbapi-jwt",
+						"value": "{{JwtToken}}"
+					},
+					{
+						"key": "x-api-key",
+						"value": "{{ApiKey}}"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {},
+				"url": {
+					"raw": "https://developer-api-sandbox.dnb.no/customers/current",
+					"protocol": "https",
+					"host": [
+						"developer-api-sandbox",
+						"dnb",
+						"no"
+					],
+					"path": [
+						"customers",
+						"current"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Accounts: Get accounts",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "x-dnbapi-jwt",
+						"value": "{{JwtToken}}"
+					},
+					{
+						"key": "x-api-key",
+						"value": "{{ApiKey}}"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {},
+				"url": {
+					"raw": "https://developer-api-sandbox.dnb.no/accounts",
+					"protocol": "https",
+					"host": [
+						"developer-api-sandbox",
+						"dnb",
+						"no"
+					],
+					"path": [
+						"accounts"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Accounts: Get account details",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "x-dnbapi-jwt",
+						"value": "{{JwtToken}}"
+					},
+					{
+						"key": "x-api-key",
+						"value": "{{ApiKey}}"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {},
+				"url": {
+					"raw": "https://developer-api-sandbox.dnb.no/accounts/12003189487",
+					"protocol": "https",
+					"host": [
+						"developer-api-sandbox",
+						"dnb",
+						"no"
+					],
+					"path": [
+						"accounts",
+						"12003189487"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Accounts: Get account balance",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "x-dnbapi-jwt",
+						"value": "{{JwtToken}}"
+					},
+					{
+						"key": "x-api-key",
+						"value": "{{ApiKey}}"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {},
+				"url": {
+					"raw": "https://developer-api-sandbox.dnb.no/accounts/12003189487/balance",
+					"protocol": "https",
+					"host": [
+						"developer-api-sandbox",
+						"dnb",
+						"no"
+					],
+					"path": [
+						"accounts",
+						"12003189487",
+						"balance"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Transactions: Get transactions for account",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "x-dnbapi-jwt",
+						"value": "{{JwtToken}}"
+					},
+					{
+						"key": "x-api-key",
+						"value": "{{ApiKey}}"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {},
+				"url": {
+					"raw": "https://developer-api-sandbox.dnb.no/transactions/12003189487?fromDate=2018-01-01&toDate=2018-07-31",
+					"protocol": "https",
+					"host": [
+						"developer-api-sandbox",
+						"dnb",
+						"no"
+					],
+					"path": [
+						"transactions",
+						"12003189487"
+					],
+					"query": [
+						{
+							"key": "fromDate",
+							"value": "2018-01-01"
+						},
+						{
+							"key": "toDate",
+							"value": "2018-07-31"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Payments: Initiate Payment",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "x-api-key",
+						"value": "{{ApiKey}}"
+					},
+					{
+						"key": "x-dnbapi-jwt",
+						"value": "{{JwtToken}}"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"debitAccountNumber\": 12003189487,\n    \"creditAccountNumber\": 12065812627,\n    \"amount\": 100,\n    \"requestedExecutionDate\": \"2019-01-01\"\n}"
+				},
+				"url": {
+					"raw": "https://developer-api-sandbox.dnb.no/payments",
+					"protocol": "https",
+					"host": [
+						"developer-api-sandbox",
+						"dnb",
+						"no"
+					],
+					"path": [
+						"payments"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Payments: Delete payment by id",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "x-api-key",
+						"value": "{{ApiKey}}"
+					},
+					{
+						"key": "x-dnbapi-jwt",
+						"value": "{{JwtToken}}"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {},
+				"url": {
+					"raw": "https://developer-api-sandbox.dnb.no/payments/12345678",
+					"protocol": "https",
+					"host": [
+						"developer-api-sandbox",
+						"dnb",
+						"no"
+					],
+					"path": [
+						"payments",
+						"12345678"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Payments: Update existing payment",
+			"request": {
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "x-api-key",
+						"value": "{{ApiKey}}"
+					},
+					{
+						"key": "x-dnbapi-jwt",
+						"value": "{{JwtToken}}"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {},
+				"url": {
+					"raw": "https://developer-api-sandbox.dnb.no/payments/123456789",
+					"protocol": "https",
+					"host": [
+						"developer-api-sandbox",
+						"dnb",
+						"no"
+					],
+					"path": [
+						"payments",
+						"123456789"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Payments: Get due payments for an account",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "x-api-key",
+						"value": "{{ApiKey}}"
+					},
+					{
+						"key": "x-dnbapi-jwt",
+						"value": "{{JwtToken}}"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {},
+				"url": {
+					"raw": "https://developer-api-sandbox.dnb.no/payments/12003189487/due",
+					"protocol": "https",
+					"host": [
+						"developer-api-sandbox",
+						"dnb",
+						"no"
+					],
+					"path": [
+						"payments",
+						"12003189487",
+						"due"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Payments: Get due payment by payment id",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "x-api-key",
+						"value": "{{ApiKey}}"
+					},
+					{
+						"key": "x-dnbapi-jwt",
+						"value": "{{JwtToken}}"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {},
+				"url": {
+					"raw": "https://developer-api-sandbox.dnb.no/payments/12003189487/due/123456789",
+					"protocol": "https",
+					"host": [
+						"developer-api-sandbox",
+						"dnb",
+						"no"
+					],
+					"path": [
+						"payments",
+						"12003189487",
+						"due",
+						"123456789"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Currencies: Get currency rate list",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "x-api-key",
+						"value": "{{ApiKey}}"
+					},
+					{
+						"key": "x-dnbapi-jwt",
+						"value": "{{JwtToken}}"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {},
+				"url": {
+					"raw": "https://developer-api-sandbox.dnb.no/currencies/NOK",
+					"protocol": "https",
+					"host": [
+						"developer-api-sandbox",
+						"dnb",
+						"no"
+					],
+					"path": [
+						"currencies",
+						"NOK"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Currencies: Currency conversion",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "x-api-key",
+						"value": "{{ApiKey}}"
+					},
+					{
+						"key": "x-dnbapi-jwt",
+						"value": "{{JwtToken}}"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {},
+				"url": {
+					"raw": "https://developer-api-sandbox.dnb.no/currencies/NOK/convert/EUR/amount/100",
+					"protocol": "https",
+					"host": [
+						"developer-api-sandbox",
+						"dnb",
+						"no"
+					],
+					"path": [
+						"currencies",
+						"NOK",
+						"convert",
+						"EUR",
+						"amount",
+						"100"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Location: Get list of all DNB branches",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "x-dnbapi-jwt",
+						"value": "{{JwtToken}}"
+					},
+					{
+						"key": "x-api-key",
+						"value": "{{ApiKey}}"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {},
+				"url": {
+					"raw": "https://developer-api-sandbox.dnb.no/locations/branches",
+					"protocol": "https",
+					"host": [
+						"developer-api-sandbox",
+						"dnb",
+						"no"
+					],
+					"path": [
+						"locations",
+						"branches"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Location: Get list of all DNB ATMs",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "x-dnbapi-jwt",
+						"value": "{{JwtToken}}"
+					},
+					{
+						"key": "x-api-key",
+						"value": "{{ApiKey}}"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {},
+				"url": {
+					"raw": "https://developer-api-sandbox.dnb.no/locations/atms",
+					"protocol": "https",
+					"host": [
+						"developer-api-sandbox",
+						"dnb",
+						"no"
+					],
+					"path": [
+						"locations",
+						"atms"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Location: Find nearest branch by coordinates",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "x-dnbapi-jwt",
+						"value": "{{JwtToken}}"
+					},
+					{
+						"key": "x-api-key",
+						"value": "{{ApiKey}}"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {},
+				"url": {
+					"raw": "https://developer-api-sandbox.dnb.no/locations/branches/coordinates?latitude=0&longitude=0",
+					"protocol": "https",
+					"host": [
+						"developer-api-sandbox",
+						"dnb",
+						"no"
+					],
+					"path": [
+						"",
+						"locations",
+						"branches",
+						"coordinates"
+					],
+					"query": [
+						{
+							"key": "latitude",
+							"value": "0"
+						},
+						{
+							"key": "longitude",
+							"value": "0"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Location: Find nearest ATM by coordinates",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "x-dnbapi-jwt",
+						"value": "{{JwtToken}}"
+					},
+					{
+						"key": "x-api-key",
+						"value": "{{ApiKey}}"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {},
+				"url": {
+					"raw": "https://developer-api-sandbox.dnb.no/locations/atms/coordinates?latitude=0&longitude=0",
+					"protocol": "https",
+					"host": [
+						"developer-api-sandbox",
+						"dnb",
+						"no"
+					],
+					"path": [
+						"",
+						"locations",
+						"atms",
+						"coordinates"
+					],
+					"query": [
+						{
+							"key": "latitude",
+							"value": "0"
+						},
+						{
+							"key": "longitude",
+							"value": "0"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Location: Get branch details",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "x-dnbapi-jwt",
+						"value": "{{JwtToken}}"
+					},
+					{
+						"key": "x-api-key",
+						"value": "{{ApiKey}}"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {},
+				"url": {
+					"raw": "https://developer-api-sandbox.dnb.no/locations/branches/DNB1",
+					"protocol": "https",
+					"host": [
+						"developer-api-sandbox",
+						"dnb",
+						"no"
+					],
+					"path": [
+						"locations",
+						"branches",
+						"DNB1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Location: Find nearest branch by address",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "x-dnbapi-jwt",
+						"value": "{{JwtToken}}"
+					},
+					{
+						"key": "x-api-key",
+						"value": "{{ApiKey}}"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {},
+				"url": {
+					"raw": "https://developer-api-sandbox.dnb.no/locations/branches/findbyaddress?address=Oslo",
+					"protocol": "https",
+					"host": [
+						"developer-api-sandbox",
+						"dnb",
+						"no"
+					],
+					"path": [
+						"locations",
+						"branches",
+						"findbyaddress"
+					],
+					"query": [
+						{
+							"key": "address",
+							"value": "Oslo"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"auth": {
+		"type": "awsv4",
+		"awsv4": [
+			{
+				"key": "service",
+				"value": "execute-api",
+				"type": "string"
+			},
+			{
+				"key": "region",
+				"value": "eu-west-1",
+				"type": "string"
+			},
+			{
+				"key": "secretKey",
+				"value": "{{SecretKey}}",
+				"type": "string"
+			},
+			{
+				"key": "accessKey",
+				"value": "{{AccessKey}}",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "ecf2eb27-3db6-4b1e-bc4e-1ee8786f3f2b",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "ecf60af7-f3ac-4234-ad33-39c6e2598635",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}
