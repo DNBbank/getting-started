@@ -27,13 +27,7 @@ public class GettingStarted {
 
   private static final String OPENBANKING_ENDPOINT = "https://developer-api-sandbox.dnb.no";
 
-  public static void main(final String[] args) {
-    final AWSCredentials awsCredentials = new BasicAWSCredentials(CLIENT_ID, CLIENT_SECRET);
-    final AWS4Signer signer = new AWS4Signer();
-    signer.setRegionName(AWS_REGION);
-    signer.setServiceName(AWS_SERVICE);
-
-    // Get API token
+  private static String getApiToken(final AWS4Signer signer, final AWSCredentials awsCredentials) {
     final Request apiTokenRequest = new DefaultRequest(AWS_SERVICE);
     apiTokenRequest.setHttpMethod(HttpMethodName.GET);
     apiTokenRequest.setEndpoint(URI.create(OPENBANKING_ENDPOINT));
@@ -41,7 +35,8 @@ public class GettingStarted {
     apiTokenRequest.addHeader("Accept", "application/json");
     apiTokenRequest.addHeader("Content-type", "application/json");
     apiTokenRequest.addHeader("x-api-key", API_KEY);
-    apiTokenRequest.withParameter("customerId", "{\"type\":\"SSN\", \"value\":\"29105573083\"}");
+    apiTokenRequest.withParameter(
+        "customerId", "{\"type\":\"SSN\", \"value\":\"29105573083\"}");
 
     signer.sign(apiTokenRequest, awsCredentials);
 
@@ -57,9 +52,12 @@ public class GettingStarted {
     final JSONObject tokenInfo = (JSONObject) tokenInfoArray.get(0);
     final String jwtToken = (String) tokenInfo.get("jwtToken");
     System.out.println("JWT token: " + jwtToken);
+    return jwtToken;
+  }
 
-    // Get customer info
-    final Request customerRequest = new DefaultRequest(AWS_SERVICE);
+  private static void getCustomerInfo(
+      final String jwtToken, final AWS4Signer signer, final AWSCredentials awsCredentials) {
+     final Request customerRequest = new DefaultRequest(AWS_SERVICE);
     customerRequest.setHttpMethod(HttpMethodName.GET);
     customerRequest.setEndpoint(URI.create(OPENBANKING_ENDPOINT));
     customerRequest.setResourcePath("/customers/current");
@@ -77,6 +75,17 @@ public class GettingStarted {
         .request(customerRequest)
         .errorResponseHandler(new ErrorResponseHandler(false))
         .execute(new ResponseHandler(false));
-    System.out.println("Customer info: " + customerResponse.getAwsResponse().toString(4));
+    System.out.println(
+        "Customer info: " + customerResponse.getAwsResponse().toString(4));
+  }
+
+  public static void main(final String[] args) {
+    final AWSCredentials awsCredentials = new BasicAWSCredentials(CLIENT_ID, CLIENT_SECRET);
+    final AWS4Signer signer = new AWS4Signer();
+    signer.setRegionName(AWS_REGION);
+    signer.setServiceName(AWS_SERVICE);
+
+    final String jwtToken = getApiToken(signer, awsCredentials);
+    getCustomerInfo(jwtToken, signer, awsCredentials);
   }
 }
