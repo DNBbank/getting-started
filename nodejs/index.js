@@ -1,6 +1,6 @@
 const https = require('https');
 const querystring = require('querystring');
-const aws4 = require('./asv4');
+const asv4 = require('./asv4');
 
 // Developer's credentials
 const clientId = '';
@@ -63,7 +63,7 @@ function createRequest(path, queryString = '', jwtToken = '') {
   if (jwtToken !== '') {
     opts.headers['x-dnbapi-jwt'] = jwtToken;
   }
-  opts.headers.Authorization = aws4.sign(opts, clientId, clientSecret);
+  opts.headers.Authorization = asv4.sign(opts, clientId, clientSecret);
   return opts;
 }
 
