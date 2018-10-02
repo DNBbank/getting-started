@@ -1,14 +1,35 @@
-The Python implementation was made on Python 2.7
+# Python example for DNB Open Banking APIs
 
-It contains 2 classes:
-- AwsSigningV4: taking care of the AWS signing V4 step
-- Request handler: taking care of setting up the request (headers, params encoding, ...)
+## Usage
 
-And the main, making 2 calls:
-- Get API token
-- Get customer details
+See [the main readme][] of the repo for a description on how to
+retrieve client id, client secret and api key.
 
-Don't forget to replace the variables `client_id`, `client_secret` and `api_key` with your credentials.
+To configure the credentials use environment variables. You can
+put them in a file called `.env` in this directory or the main directory 
+following variables set.
 
-Notes: 
-The implementation of the AWS signing V4 part is based on: https://docs.aws.amazon.com/general/latest/gr/sigv4-signed-request-examples.html
+```
+CLIENT_ID=
+CLIENT_SECRET=
+API_KEY=
+```
+
+After adding the credentials you can run the example with
+
+```shell
+pipenv install # install dependencies
+pipenv run python getting_started.py
+```
+
+This requires pipenv, which can be installed with pip install pipenv.
+
+## Code structure
+
+The code has two main parts, the getting_started.py and aws_signing.py. The
+AWS signing is an implementation of the signing process which is described
+in [the main readme][]. The main part is in getting_started.py, which handles the
+process of getting an api token and and calling our APIs as described in the
+[the main readme][].
+
+[the main readme]: (../README.md)
