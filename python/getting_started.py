@@ -1,86 +1,52 @@
+import os
 import requests
 import urllib
 import json
-import datetime
-import hashlib
-import hmac
+from dotenv import load_dotenv
+
+from aws_signing import AwsSigningV4
+
+load_dotenv()
+load_dotenv(os.path.join(os.path.dirname(__name__), "..", ".env"))
 
 
-class AwsSigningV4(object):
-    __ALGORITHM = "AWS4-HMAC-SHA256"
+client_id = os.environ.get("CLIENT_ID")
+client_secret = os.environ.get("CLIENT_SECRET")
+api_key = os.environ.get("API_KEY")
 
-    def __init__(
-        self,
-        aws_access_key_id,
-        aws_secret_access_key,
-        aws_host,
-        aws_region,
-        aws_service,
-    ):
-        self.__aws_access_key_id = aws_access_key_id
-        self.__aws_secret_access_key = aws_secret_access_key
-        self.__aws_host = aws_host
-        self.__aws_region = aws_region
-        self.__aws_service = aws_service
 
-    def __sign(self, key, msg):
-        return hmac.new(key, msg.encode("utf-8"), hashlib.sha256).digest()
+def main():
+    openbanking_endpoint = "https://developer-api-sandbox.dnb.no"
 
-    def __get_signature_key(self, key, date_stamp, region_name, service_name):
-        k_date = self.__sign(("AWS4" + key).encode("utf-8"), date_stamp)
-        k_region = self.__sign(k_date, region_name)
-        k_service = self.__sign(k_region, service_name)
-        k_signing = self.__sign(k_service, "aws4_request")
-        return k_signing
+    aws_signing_v4 = AwsSigningV4(
+        aws_access_key_id=client_id,
+        aws_secret_access_key=client_secret,
+        aws_host="developer-api-sandbox.dnb.no",
+        aws_region="eu-west-1",
+        aws_service="execute-api",
+    )
+    request_handler = RequestHandler(
+        endpoint=openbanking_endpoint,
+        aws_signing_v4=aws_signing_v4
+    )
 
-    def headers_for_get_method(self, path, request_parameters):
-        # Create a date for headers and the credential string
-        now = datetime.datetime.utcnow()
-        amz_date = now.strftime("%Y%m%dT%H%M%SZ")
-        # Date w/o time, used in credential scope
-        date_stamp = now.strftime("%Y%m%d")
-        canonical_uri = path
-        canonical_querystring = request_parameters
-        canonical_headers = "host:" + self.__aws_host + "\n"
-        canonical_headers += "x-amz-date:" + amz_date + "\n"
-        signed_headers = "host;x-amz-date"
-        payload_hash = hashlib.sha256("".encode("utf-8")).hexdigest()
-        canonical_request = "GET" + "\n"
-        canonical_request += canonical_uri + "\n"
-        canonical_request += canonical_querystring + "\n"
-        canonical_request += canonical_headers + "\n"
-        canonical_request += signed_headers + "\n"
-        canonical_request += payload_hash
+    # Get API Token
+    api_token_params = {"customerId": '{"type":"SSN", "value":"29105573083"}'}
+    api_token_path = "/api/token"
+    api_token_response = request_handler.get_request(
+        path=api_token_path, params=api_token_params
+    )
+    api_token = api_token_response.json()["tokenInfo"][0]["jwtToken"]
+    print("api_token: " + api_token)
 
-        credential_scope = date_stamp + "/"
-        credential_scope += self.__aws_region + "/"
-        credential_scope += self.__aws_service + "/" + "aws4_request"
-        string_to_sign = self.__ALGORITHM + "\n"
-        string_to_sign += amz_date + "\n"
-        string_to_sign += credential_scope + "\n"
-        string_to_sign += hashlib.sha256(canonical_request.encode("utf-8")).hexdigest()
-
-        signing_key = self.__get_signature_key(
-            key=self.__aws_secret_access_key,
-            date_stamp=date_stamp,
-            region_name=self.__aws_region,
-            service_name=self.__aws_service,
-        )
-
-        signature = hmac.new(
-            signing_key, string_to_sign.encode("utf-8"), hashlib.sha256
-        ).hexdigest()
-
-        authorization_header = self.__ALGORITHM + " "
-        credential_header = "Credential=" + self.__aws_access_key_id + "/"
-        credential_header += credential_scope
-        authorization_header += credential_header + ", "
-        authorization_header += "SignedHeaders=" + signed_headers + ", "
-        authorization_header += "Signature=" + signature
-
-        headers = {"x-amz-date": amz_date, "Authorization": authorization_header}
-
-        return headers
+    # Get customer details
+    customer_params = {}
+    customer_path = "/customers/current"
+    customer_response = request_handler.get_request(
+        path=customer_path, params=customer_params, api_token=api_token
+    )
+    customer_response_json = customer_response.json()
+    print(json.dumps(customer_response_json, indent=4, sort_keys=True))
 
 
 class RequestHandler(object):
@@ -117,43 +83,4 @@ class RequestHandler(object):
 
 
 if __name__ == "__main__":
-    # Developer's credentials
-    client_id = ""
-    client_secret = ""
-    api_key = ""
-
-    # AWS signing v4 constants
-    aws_host = "developer-api-sandbox.dnb.no"
-    aws_region = "eu-west-1"
-    aws_service = "execute-api"
-
-    openbanking_endpoint = "https://developer-api-sandbox.dnb.no"
-
-    aws_signing_v4 = AwsSigningV4(
-        aws_access_key_id=client_id,
-        aws_secret_access_key=client_secret,
-        aws_host=aws_host,
-        aws_region=aws_region,
-        aws_service=aws_service,
-    )
-    request_handler = RequestHandler(
-        endpoint=openbanking_endpoint, aws_signing_v4=aws_signing_v4
-    )
-
-    # Get API Token
-    api_token_params = {"customerId": '{"type":"SSN", "value":"29105573083"}'}
-    api_token_path = "/api/token"
-    api_token_response = request_handler.get_request(
-        path=api_token_path, params=api_token_params
-    )
-    api_token = api_token_response.json()["tokenInfo"][0]["jwtToken"]
-    print("api_token: " + api_token)
-
-    # Get customer details
-    customer_params = {}
-    customer_path = "/customers/current"
-    customer_response = request_handler.get_request(
-        path=customer_path, params=customer_params, api_token=api_token
-    )
-    customer_response_json = json.loads(customer_response.text)
-    print(json.dumps(customer_response_json, indent=4, sort_keys=True))
+    main()
