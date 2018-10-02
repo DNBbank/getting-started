@@ -1,11 +1,13 @@
+// Load config from .env file in this directory
+require('dotenv').config();
+
 const https = require('https');
 const querystring = require('querystring');
-const asv4 = require('./asv4');
 
-// Developer's credentials
-const clientId = '';
-const clientSecret = '';
-const apiKey = '';
+const asv4 = require('./asv4');
+const loadCredentials = require('./credentials');
+
+const { clientId, clientSecret, apiKey } = loadCredentials();
 
 // AWS signing v4 constants
 const awsRegion = 'eu-west-1';
@@ -93,4 +95,6 @@ httpsRequest(apiTokenOpts)
     const customersOpts = createCustomerInfoRequest(jwtToken);
     return httpsRequest(customersOpts);
   })
-  .then(body => console.log(body));
+  .then((body) => {
+    console.log(body);
+  });
