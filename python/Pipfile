@@ -5,12 +5,13 @@ name = "pypi"
 
 [packages]
 requests = "==2.19.1"
+python-dotenv = "==0.9.1"
 
 [dev-packages]
-black = "*"
+black = "==18.9b0"
 
 [requires]
-python_version = "3.7"
+python_version = "2.7"
 
 [pipenv]
 allow_prereleases = true
