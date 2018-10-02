@@ -1,11 +1,15 @@
 // Load config from .env file in this directory
-require('dotenv').config();
+const dotenv = require('dotenv');
+const { join } = require('path');
 
 const https = require('https');
 const querystring = require('querystring');
 
 const asv4 = require('./asv4');
 const loadCredentials = require('./credentials');
+
+dotenv.config();
+dotenv.config({ path: join(__dirname, '..', '.env') });
 
 const { clientId, clientSecret, apiKey } = loadCredentials();
 
