@@ -12,6 +12,13 @@ can be obtained from [developer.dnb.no][]. Register and login to create an examp
 app and you will get the credentials needed. Each of the examples has documentation 
 on how to configure it with the credentials.
 
+### Configuring the credentials
+
+If you put the credentials in a `.env` file in the root directory it will work
+for all the examples except postman. It is also possible to put the `.env` file
+in the directory of the example you want to run. See [.env.example][] for a template
+for the `.env` file.
+
 ## Steps to your first API call
 ### 1. Generate the AWS signing V4 headers
 You need to use [AWS Signing V4][] to sign all requests towards our APIs. Every piece of 
