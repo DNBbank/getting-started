@@ -16,11 +16,6 @@ import org.json.JSONObject;
 
 public class GettingStarted {
 
-  // Developer's credentials
-  private static final String CLIENT_ID = "";
-  private static final String CLIENT_SECRET = "";
-  private static final String API_KEY = "";
-
   // AWS signing V4 constants
   private static final String AWS_REGION = "eu-west-1";
   private static final String AWS_SERVICE = "execute-api";
@@ -34,7 +29,7 @@ public class GettingStarted {
     apiTokenRequest.setResourcePath("/api/token");
     apiTokenRequest.addHeader("Accept", "application/json");
     apiTokenRequest.addHeader("Content-type", "application/json");
-    apiTokenRequest.addHeader("x-api-key", API_KEY);
+    apiTokenRequest.addHeader("x-api-key", Config.get("API_KEY"));
     apiTokenRequest.withParameter(
         "customerId", "{\"type\":\"SSN\", \"value\":\"29105573083\"}");
 
@@ -63,7 +58,7 @@ public class GettingStarted {
     customerRequest.setResourcePath("/customers/current");
     customerRequest.addHeader("Accept", "application/json");
     customerRequest.addHeader("Content-type", "application/json");
-    customerRequest.addHeader("x-api-key", API_KEY);
+    customerRequest.addHeader("x-api-key", Config.get("API_KEY"));
     customerRequest.addHeader("x-dnbapi-jwt", jwtToken);
 
     signer.sign(customerRequest, awsCredentials);
@@ -80,7 +75,7 @@ public class GettingStarted {
   }
 
   public static void main(final String[] args) {
-    final AWSCredentials awsCredentials = new BasicAWSCredentials(CLIENT_ID, CLIENT_SECRET);
+    final AWSCredentials awsCredentials = new BasicAWSCredentials(Config.get("CLIENT_ID"), Config.get("CLIENT_SECRET"));
     final AWS4Signer signer = new AWS4Signer();
     signer.setRegionName(AWS_REGION);
     signer.setServiceName(AWS_SERVICE);
