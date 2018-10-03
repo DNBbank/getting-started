@@ -9,9 +9,9 @@ each subfolder that will add complementary information about the language-specif
 
 1. Register an application at [developer.dnb.no][]
 2. Configure credentials in `.env` file
-3. Run one of the examples and check out the code to see what is happening
+3. Run one of the examples and check out the code to see what is happening.
 
-## Getting client-id, client-secret and api-key
+### Getting client-id, client-secret and api-key
 
 In order to call the api, you will need client-id, client-secret and api-key. It 
 can be obtained from [developer.dnb.no][]. Register and login to create an example 
@@ -24,6 +24,15 @@ If you put the credentials in a `.env` file in the root directory it will work
 for all the examples except postman. It is also possible to put the `.env` file
 in the directory of the example you want to run. See [.env.example][] for a template
 for the `.env` file.
+
+### Running the examples
+
+Each example contains a readme with documentation on how to run them. There is also
+script that is helpful for running the examples:
+
+```shell
+./run <example>  # e.g. ./run nodejs
+```
 
 ## Steps to your first API call
 ### 1. Generate the AWS signing V4 headers

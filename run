@@ -1,0 +1,17 @@
+#!/bin/bash
+
+example=$1
+
+if [[ "$example" == "" ]]; then
+    echo "Usage ./run <example>"
+    exit 1
+fi
+
+if [[ ! -d "$example" ]]; then
+    echo "Unknown example $example"
+    exit 1
+fi
+
+cd $example 
+  ./run
+cd -
