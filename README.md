@@ -5,6 +5,12 @@ Open Banking APIs. The aim of this repo is to provide code that can just be used
 the developer's credentials are setup in each file. You will find a readme file in 
 each subfolder that will add complementary information about the language-specific code.
 
+## tldr;
+
+1. Register an application at [developer.dnb.no][]
+2. Configure credentials in `.env` file
+3. Run one of the examples and check out the code to see what is happening
+
 ## Getting client-id, client-secret and api-key
 
 In order to call the api, you will need client-id, client-secret and api-key. It 
