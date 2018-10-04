@@ -22,4 +22,4 @@ node index.js
 ```
 
 
-[the main readme]: (../README.md)
+[the main readme]: /../../blob/master/README.md
