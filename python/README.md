@@ -1,5 +1,11 @@
 # Python example for DNB Open Banking APIs
 
+## Requirements
+
+* Python 2.7
+* pipenv - pip install pipenv
+* requests - pip install requests
+
 ## Usage
 
 See [the main readme][] of the repo for a description on how to
@@ -19,10 +25,9 @@ After adding the credentials you can run the example with
 
 ```shell
 pipenv install # install dependencies
+pipenv --python path/to/python/2.7/exe
 pipenv run python getting_started.py
 ```
-
-This requires pipenv, which can be installed with pip install pipenv.
 
 ## Code structure
 
