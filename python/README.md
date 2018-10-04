@@ -37,4 +37,4 @@ in [the main readme][]. The main part is in getting_started.py, which handles th
 process of getting an api token and and calling our APIs as described in the
 [the main readme][].
 
-[the main readme]: (/../../README.md)
+[the main readme]: /../../README.md
