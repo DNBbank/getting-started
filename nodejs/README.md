@@ -21,5 +21,8 @@ After adding the credentials you can run the example with
 node index.js
 ```
 
+## Running the tests
+In order to run the tests the env file above have to be configured as
+the tests integrate with the live sandbox.
 
-[the main readme]: (../README.md)
+[the main readme]: ../README.md

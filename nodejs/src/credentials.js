@@ -5,7 +5,9 @@ module.exports = function loadCredentials() {
     checkEnv(['CLIENT_ID', 'CLIENT_SECRET', 'API_KEY']);
   } catch (error) {
     console.error(error.message);
-    process.exit(1);
+    if (process.env.NODE_ENV !== 'test') {
+      process.exit(1);
+    }
   }
 
   return {
