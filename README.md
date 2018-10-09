@@ -59,3 +59,7 @@ TODO
 [developer.dnb.no]: https://developer.dnb.no
 [AWS Signing V4]: https://docs.aws.amazon.com/general/latest/gr/sigv4_signing.html
 [aws-signing-example]: https://docs.aws.amazon.com/general/latest/gr/sigv4-signed-request-examples.html
+
+-------------------
+
+All the examples are licensed under MIT license.
