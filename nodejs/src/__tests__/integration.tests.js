@@ -1,33 +1,53 @@
 const {
   getAccessToken, getCustomerInfo, getAccounts, getCards,
 } = require('../');
+const loadCredentials = require('../credentials');
 
 let accessToken;
+let hasCredentials = false;
+
+try {
+  const credentials = loadCredentials();
+  console.log(credentials);
+  hasCredentials = credentials.clientId && credentials.clientSecret && credentials.apiKey;
+} catch (error) {
+  console.log(error);
+}
+
+function testRequiringCredentials(name, fn, timeout) {
+  if (hasCredentials) {
+    test(name, fn, timeout);
+  } else {
+    test(name, () => Promise.reject(new Error('Missing API credentials')));
+  }
+}
 
 beforeAll(async () => {
-  // This is put here for performance reasons.
-  // We don't need a separate token for each test
-  accessToken = await getAccessToken('29105573083');
+  if (hasCredentials) {
+    // This is put here for performance reasons.
+    // We don't need a separate token for each test
+    accessToken = await getAccessToken('29105573083');
+  }
 });
 
-test('getAccessToken should retrieve token', async () => {
+testRequiringCredentials('getAccessToken should retrieve token', async () => {
   expect(typeof accessToken).toEqual('string');
   expect(accessToken.length).toBeGreaterThan(500);
 });
 
-test('getCustomerInfo should retrieve customer info', async () => {
+testRequiringCredentials('getCustomerInfo should retrieve customer info', async () => {
   const customerData = await getCustomerInfo(accessToken);
 
   expect(customerData.customerId).toEqual('29105573083');
 }, 12000);
 
-test('getAccounts should retrieve list of accounts', async () => {
+testRequiringCredentials('getAccounts should retrieve list of accounts', async () => {
   const accounts = await getAccounts(accessToken);
 
   expect(accounts).toMatchSnapshot();
 }, 12000);
 
-test('getCards should retrieve list of cards', async () => {
+testRequiringCredentials('getCards should retrieve list of cards', async () => {
   const cards = await getCards(accessToken);
 
   expect(cards).toMatchSnapshot();
