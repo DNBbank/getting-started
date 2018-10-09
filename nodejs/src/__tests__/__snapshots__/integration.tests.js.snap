@@ -1,0 +1,88 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`getAccounts should retrieve list of accounts 1`] = `
+Array [
+  Object {
+    "accountCurrency": "NOK",
+    "accountName": "brukskonto",
+    "accountNumber": "12003189487",
+    "accountOwnerName": "Liv Ødegård",
+    "productName": "BRUKSKONTO",
+    "type": "DEPOSIT",
+  },
+  Object {
+    "accountCurrency": "NOK",
+    "accountName": "",
+    "accountNumber": "12065812627",
+    "accountOwnerName": "Liv Ødegård",
+    "productName": "SPAREKONTO",
+    "type": "DEPOSIT",
+  },
+  Object {
+    "accountCurrency": "NOK",
+    "accountName": "Lån",
+    "accountNumber": "12084535103",
+    "accountOwnerName": "Liv Ødegård",
+    "productName": "RAMMELÅN",
+    "type": "LOAN",
+  },
+]
+`;
+
+exports[`getCards should retrieve list of cards 1`] = `
+Array [
+  Object {
+    "accountNumber": "12050576967",
+    "blockingInfo": Object {
+      "blockAllowed": false,
+      "unblockAllowed": true,
+    },
+    "cardHolderName": "Liv Ødegård",
+    "cardId": "TQJQ95214468J85O",
+    "cardStatus": "ACTIVE",
+    "cardType": "DEBIT",
+    "customerId": "29105573083",
+    "maskedCardNumber": "************7196",
+    "productName": "VISA",
+  },
+  Object {
+    "blockingInfo": Object {
+      "blockAllowed": false,
+      "unblockAllowed": false,
+    },
+    "cardHolderName": "Liv Ødegård",
+    "cardId": "IHMR56189598S24L",
+    "cardStatus": "ACTIVE",
+    "cardType": "CREDIT",
+    "customerId": "29105573083",
+    "maskedCardNumber": "************0855",
+    "productName": "MASTERCARD",
+  },
+  Object {
+    "blockingInfo": Object {
+      "blockAllowed": false,
+      "unblockAllowed": false,
+    },
+    "cardHolderName": "Liv Ødegård",
+    "cardId": "RHFJ53721342S98L",
+    "cardStatus": "ACTIVE",
+    "cardType": "CREDIT",
+    "customerId": "29105573083",
+    "maskedCardNumber": "************6466",
+    "productName": "DINERS",
+  },
+  Object {
+    "blockingInfo": Object {
+      "blockAllowed": false,
+      "unblockAllowed": false,
+    },
+    "cardHolderName": "Liv Ødegård",
+    "cardId": "QLDW22575585E90E",
+    "cardStatus": "ACTIVE",
+    "cardType": "CREDIT",
+    "customerId": "29105573083",
+    "maskedCardNumber": "************2926",
+    "productName": "MASTERCARD",
+  },
+]
+`;
