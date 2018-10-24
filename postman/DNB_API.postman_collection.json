@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "71c96f2f-055b-474a-815f-bf336e523e32",
+		"_postman_id": "a4d7e08c-52c2-4314-b4aa-bed4e60bd0b0",
 		"name": "DNB API",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
@@ -36,9 +36,12 @@
 						"value": "application/json"
 					}
 				],
-				"body": {},
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
 				"url": {
-					"raw": "https://developer-api-sandbox.dnb.no/api/token?customerId={\"type\":\"SSN\", \"value\":\"29105573083\"}",
+					"raw": "https://developer-api-sandbox.dnb.no/token?customerId={\"type\":\"SSN\", \"value\":\"29105573083\"}",
 					"protocol": "https",
 					"host": [
 						"developer-api-sandbox",
@@ -46,7 +49,6 @@
 						"no"
 					],
 					"path": [
-						"api",
 						"token"
 					],
 					"query": [
@@ -78,7 +80,10 @@
 						"value": "application/json"
 					}
 				],
-				"body": {},
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
 				"url": {
 					"raw": "https://developer-api-sandbox.dnb.no/customers/current",
 					"protocol": "https",
@@ -113,7 +118,10 @@
 						"value": "application/json"
 					}
 				],
-				"body": {},
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
 				"url": {
 					"raw": "https://developer-api-sandbox.dnb.no/accounts",
 					"protocol": "https",
@@ -147,7 +155,10 @@
 						"value": "application/json"
 					}
 				],
-				"body": {},
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
 				"url": {
 					"raw": "https://developer-api-sandbox.dnb.no/accounts/12003189487",
 					"protocol": "https",
@@ -182,7 +193,10 @@
 						"value": "application/json"
 					}
 				],
-				"body": {},
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
 				"url": {
 					"raw": "https://developer-api-sandbox.dnb.no/accounts/12003189487/balance",
 					"protocol": "https",
@@ -218,7 +232,10 @@
 						"value": "application/json"
 					}
 				],
-				"body": {},
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
 				"url": {
 					"raw": "https://developer-api-sandbox.dnb.no/transactions/12003189487?fromDate=2018-01-01&toDate=2018-07-31",
 					"protocol": "https",
@@ -300,7 +317,10 @@
 						"value": "application/json"
 					}
 				],
-				"body": {},
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
 				"url": {
 					"raw": "https://developer-api-sandbox.dnb.no/payments/12345678",
 					"protocol": "https",
@@ -335,7 +355,10 @@
 						"value": "application/json"
 					}
 				],
-				"body": {},
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
 				"url": {
 					"raw": "https://developer-api-sandbox.dnb.no/payments/123456789",
 					"protocol": "https",
@@ -370,7 +393,10 @@
 						"value": "application/json"
 					}
 				],
-				"body": {},
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
 				"url": {
 					"raw": "https://developer-api-sandbox.dnb.no/payments/12003189487/due",
 					"protocol": "https",
@@ -406,7 +432,10 @@
 						"value": "application/json"
 					}
 				],
-				"body": {},
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
 				"url": {
 					"raw": "https://developer-api-sandbox.dnb.no/payments/12003189487/due/123456789",
 					"protocol": "https",
@@ -443,7 +472,10 @@
 						"value": "application/json"
 					}
 				],
-				"body": {},
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
 				"url": {
 					"raw": "https://developer-api-sandbox.dnb.no/currencies/NOK",
 					"protocol": "https",
@@ -478,7 +510,10 @@
 						"value": "application/json"
 					}
 				],
-				"body": {},
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
 				"url": {
 					"raw": "https://developer-api-sandbox.dnb.no/currencies/NOK/convert/EUR/amount/100",
 					"protocol": "https",
@@ -517,7 +552,10 @@
 						"value": "application/json"
 					}
 				],
-				"body": {},
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
 				"url": {
 					"raw": "https://developer-api-sandbox.dnb.no/locations/branches",
 					"protocol": "https",
@@ -552,7 +590,10 @@
 						"value": "application/json"
 					}
 				],
-				"body": {},
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
 				"url": {
 					"raw": "https://developer-api-sandbox.dnb.no/locations/atms",
 					"protocol": "https",
@@ -587,7 +628,10 @@
 						"value": "application/json"
 					}
 				],
-				"body": {},
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
 				"url": {
 					"raw": "https://developer-api-sandbox.dnb.no/locations/branches/coordinates?latitude=0&longitude=0",
 					"protocol": "https",
@@ -597,7 +641,6 @@
 						"no"
 					],
 					"path": [
-						"",
 						"locations",
 						"branches",
 						"coordinates"
@@ -634,7 +677,10 @@
 						"value": "application/json"
 					}
 				],
-				"body": {},
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
 				"url": {
 					"raw": "https://developer-api-sandbox.dnb.no/locations/atms/coordinates?latitude=0&longitude=0",
 					"protocol": "https",
@@ -644,7 +690,6 @@
 						"no"
 					],
 					"path": [
-						"",
 						"locations",
 						"atms",
 						"coordinates"
@@ -681,7 +726,10 @@
 						"value": "application/json"
 					}
 				],
-				"body": {},
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
 				"url": {
 					"raw": "https://developer-api-sandbox.dnb.no/locations/branches/DNB1",
 					"protocol": "https",
@@ -717,7 +765,10 @@
 						"value": "application/json"
 					}
 				],
-				"body": {},
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
 				"url": {
 					"raw": "https://developer-api-sandbox.dnb.no/locations/branches/findbyaddress?address=Oslo",
 					"protocol": "https",
