@@ -52,7 +52,7 @@ async function getAccessToken(ssn) {
   const apiTokenParams = {
     customerId: JSON.stringify({ type: 'SSN', value: ssn }),
   };
-  const data = await request(createRequest('/api/token', querystring.stringify(apiTokenParams)));
+  const data = await request(createRequest('/token', querystring.stringify(apiTokenParams)));
   return data.tokenInfo[0].jwtToken;
 }
 

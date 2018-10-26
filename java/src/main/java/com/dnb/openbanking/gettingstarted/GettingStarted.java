@@ -26,7 +26,7 @@ public class GettingStarted {
     final Request apiTokenRequest = new DefaultRequest(AWS_SERVICE);
     apiTokenRequest.setHttpMethod(HttpMethodName.GET);
     apiTokenRequest.setEndpoint(URI.create(OPENBANKING_ENDPOINT));
-    apiTokenRequest.setResourcePath("/api/token");
+    apiTokenRequest.setResourcePath("/token");
     apiTokenRequest.addHeader("Accept", "application/json");
     apiTokenRequest.addHeader("Content-type", "application/json");
     apiTokenRequest.addHeader("x-api-key", Config.get("API_KEY"));
