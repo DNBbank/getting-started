@@ -32,7 +32,7 @@ def main():
 
     # Get API Token
     api_token_params = {"customerId": '{"type":"SSN", "value":"29105573083"}'}
-    api_token_path = "/api/token"
+    api_token_path = "/token"
     api_token_response = request_handler.get_request(
         path=api_token_path, params=api_token_params
     )
