@@ -22,4 +22,4 @@ mvn exec:java -Dexec.mainClass="com.dnb.openbanking.gettingstarted.GettingStarte
 ```
 
 
-[the main readme]: (../README.md)
+[the main readme]: ../README.md
