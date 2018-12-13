@@ -3,6 +3,8 @@ package com.dnb.openbanking.gettingstarted;
 import com.amazonaws.AmazonServiceException;
 import com.amazonaws.http.HttpResponse;
 import com.amazonaws.http.HttpResponseHandler;
+import com.amazonaws.util.IOUtils;
+import java.io.IOException;
 
 public class ErrorResponseHandler implements HttpResponseHandler<AmazonServiceException> {
 
@@ -16,6 +18,13 @@ public class ErrorResponseHandler implements HttpResponseHandler<AmazonServiceEx
   public AmazonServiceException handle(final HttpResponse response) {
     final AmazonServiceException ase = new AmazonServiceException(response.getStatusText());
     ase.setStatusCode(response.getStatusCode());
+    try {
+      final String message = IOUtils.toString(response.getContent());
+      System.err.println("Error response content: " + message);
+    } catch (IOException exception) {
+      System.err.println("Exception thrown while reading the response's content: " + exception);
+    }
+
     return ase;
   }
 
