@@ -45,10 +45,10 @@ public class GettingStarted {
     signer.sign(request, awsCredentials);
     try {
       return new AmazonHttpClient(new ClientConfiguration())
-          .requestExecutionBuilder()
-          .executionContext(new ExecutionContext(true))
-          .request(request)
-          .errorResponseHandler(new ErrorResponseHandler(false));
+        .requestExecutionBuilder()
+        .executionContext(new ExecutionContext(true))
+        .request(request)
+        .errorResponseHandler(new ErrorResponseHandler(false));
     } catch (AmazonServiceException exception) {
       System.out.println("Unexpected status code in response: " + exception.getStatusCode());
       System.out.println("Content: " + exception.getRawResponseContent());
@@ -56,25 +56,14 @@ public class GettingStarted {
     }
   }
 
-  private static Response<JSONObject> sendRequestWithJSONObjectResponse(
-          final AWS4Signer signer, final AWSCredentials awsCredentials, final Request request) {
-    return signAndBuildRequest(signer, awsCredentials, request)
-            .execute(new ResponseHandlerJSONObject(false));
-  }
-
-  private static Response<JSONArray> sendRequestWithJSONArrayResponse(
-          final AWS4Signer signer, final AWSCredentials awsCredentials, final Request request) {
-    return signAndBuildRequest(signer, awsCredentials, request)
-            .execute(new ResponseHandlerJSONArray(false));
-  }
-
   public static String getApiToken(final AWS4Signer signer, final AWSCredentials awsCredentials) {
     final Request apiTokenRequest = createRequest(HttpMethodName.GET, "/token");
     apiTokenRequest.withParameter(
             "customerId", "{\"type\":\"SSN\", \"value\":\"29105573083\"}");
 
-    final JSONObject apiTokenResponse = sendRequestWithJSONObjectResponse(signer, awsCredentials, apiTokenRequest)
-            .getAwsResponse();
+    final JSONObject apiTokenResponse = signAndBuildRequest(signer, awsCredentials, apiTokenRequest)
+      .execute(new ResponseHandlerJSONObject(false))
+      .getAwsResponse();
     final JSONArray tokenInfoArray = (JSONArray) (apiTokenResponse.get("tokenInfo"));
     final JSONObject tokenInfo = (JSONObject) tokenInfoArray.get(0);
 
@@ -86,7 +75,8 @@ public class GettingStarted {
     final Request customerRequest = createRequest(HttpMethodName.GET, "/customers/current");
     customerRequest.addHeader(JWT_TOKEN_HEADER, jwtToken);
 
-    return sendRequestWithJSONObjectResponse(signer, awsCredentials, customerRequest);
+    return signAndBuildRequest(signer, awsCredentials, customerRequest)
+      .execute(new ResponseHandlerJSONObject(false));
   }
 
   public static Response<JSONObject> getAccountInfo(
@@ -94,7 +84,8 @@ public class GettingStarted {
     final Request accountRequest = createRequest(HttpMethodName.GET, "/accounts");
     accountRequest.addHeader(JWT_TOKEN_HEADER, jwtToken);
 
-    return sendRequestWithJSONObjectResponse(signer, awsCredentials, accountRequest);
+    return signAndBuildRequest(signer, awsCredentials, accountRequest)
+      .execute(new ResponseHandlerJSONObject(false));
   }
 
   public static Response<JSONArray> getCardInfo(
@@ -102,7 +93,8 @@ public class GettingStarted {
     final Request cardRequest = createRequest(HttpMethodName.GET, "/cards");
     cardRequest.addHeader(JWT_TOKEN_HEADER, jwtToken);
 
-    return sendRequestWithJSONArrayResponse(signer, awsCredentials, cardRequest);
+    return signAndBuildRequest(signer, awsCredentials, cardRequest)
+      .execute(new ResponseHandlerJSONArray(false));
   }
 
   public static Response<JSONObject> postInitiatePayment(
@@ -114,7 +106,8 @@ public class GettingStarted {
             = classLoader.getResourceAsStream("InitiatePaymentRequestBody.json");
     initiatePaymentRequest.setContent(initiatePaymentRequestBody);
 
-    return sendRequestWithJSONObjectResponse(signer, awsCredentials, initiatePaymentRequest);
+    return signAndBuildRequest(signer, awsCredentials, initiatePaymentRequest)
+      .execute(new ResponseHandlerJSONObject(false));
   }
 
   public static void main(final String[] args) {

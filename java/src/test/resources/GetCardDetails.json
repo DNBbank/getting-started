@@ -1,0 +1,55 @@
+[
+  {
+    "cardId": "TQJQ95214468J85O",
+    "maskedCardNumber": "************7196",
+    "customerId": "29105573083",
+    "cardHolderName": "Liv Ødegård",
+    "cardType": "DEBIT",
+    "productName": "VISA",
+    "accountNumber": "12050576967",
+    "cardStatus": "ACTIVE",
+    "blockingInfo": {
+      "unblockAllowed": true,
+      "blockAllowed": false
+    }
+  },
+  {
+    "cardId": "IHMR56189598S24L",
+    "maskedCardNumber": "************0855",
+    "customerId": "29105573083",
+    "cardHolderName": "Liv Ødegård",
+    "cardType": "CREDIT",
+    "productName": "MASTERCARD",
+    "cardStatus": "ACTIVE",
+    "blockingInfo": {
+      "unblockAllowed": false,
+      "blockAllowed": false
+    }
+  },
+  {
+    "cardId": "RHFJ53721342S98L",
+    "maskedCardNumber": "************6466",
+    "customerId": "29105573083",
+    "cardHolderName": "Liv Ødegård",
+    "cardType": "CREDIT",
+    "productName": "DINERS",
+    "cardStatus": "ACTIVE",
+    "blockingInfo": {
+      "unblockAllowed": false,
+      "blockAllowed": false
+    }
+  },
+  {
+    "cardId": "QLDW22575585E90E",
+    "maskedCardNumber": "************2926",
+    "customerId": "29105573083",
+    "cardHolderName": "Liv Ødegård",
+    "cardType": "CREDIT",
+    "productName": "MASTERCARD",
+    "cardStatus": "ACTIVE",
+    "blockingInfo": {
+      "unblockAllowed": false,
+      "blockAllowed": false
+    }
+  }
+]
