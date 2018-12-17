@@ -5,11 +5,11 @@ import com.amazonaws.http.HttpResponseHandler;
 import com.amazonaws.util.IOUtils;
 import org.json.JSONObject;
 
-class ResponseHandler implements HttpResponseHandler<JSONObject> {
+class ResponseHandlerJSONObject implements HttpResponseHandler<JSONObject> {
 
   private boolean needsConnectionLeftOpen;
 
-  ResponseHandler(final boolean needsConnectionLeftOpen) {
+  ResponseHandlerJSONObject(final boolean needsConnectionLeftOpen) {
     this.needsConnectionLeftOpen = needsConnectionLeftOpen;
   }
 
