@@ -1,0 +1,29 @@
+{
+  "customerId": "29105573083",
+  "firstName": "Liv",
+  "lastName": "Ødegård",
+  "countryTax": [
+    {
+      "taxLiabilityCountry": "NO",
+      "taxIdentificationNumber": "XX"
+    }
+  ],
+  "address": {
+    "addressLine1": "Eliassenkroken 1",
+    "addressLine2": "",
+    "addressLine3": "",
+    "postalCodeName": "Andreashavn",
+    "postalCode": "6467",
+    "postalAddressCountry": "NO"
+  },
+  "email": "odegard1955@example.com",
+  "phone": "+4713857252",
+  "countryOfBirth": null,
+  "citizenship": [
+    {
+      "countryOfCitizenship": "NO"
+    }
+  ],
+  "customerType": "PERSON",
+  "companyName": null
+}
