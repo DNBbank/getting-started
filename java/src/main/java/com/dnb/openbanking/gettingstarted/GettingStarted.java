@@ -1,5 +1,6 @@
 package com.dnb.openbanking.gettingstarted;
 
+import com.amazonaws.AmazonServiceException;
 import com.amazonaws.ClientConfiguration;
 import com.amazonaws.DefaultRequest;
 import com.amazonaws.Request;
@@ -39,12 +40,18 @@ public class GettingStarted {
   private static JSONObject signAndSendRequest(
           final AWS4Signer signer, final AWSCredentials awsCredentials, final Request request) {
     signer.sign(request, awsCredentials);
-    return new AmazonHttpClient(new ClientConfiguration())
-            .requestExecutionBuilder()
-            .executionContext(new ExecutionContext(true))
-            .request(request)
-            .errorResponseHandler(new ErrorResponseHandler(false))
-            .execute(new ResponseHandler(false)).getAwsResponse();
+    try {
+      return new AmazonHttpClient(new ClientConfiguration())
+          .requestExecutionBuilder()
+          .executionContext(new ExecutionContext(true))
+          .request(request)
+          .errorResponseHandler(new ErrorResponseHandler(false))
+          .execute(new ResponseHandler(false)).getAwsResponse();
+    } catch (AmazonServiceException exception) {
+      System.out.println("Unexpected status code in response: " + exception.getStatusCode());
+      System.out.println("Content: " + exception.getRawResponseContent());
+      throw new RuntimeException("Failed request. Aborting.");
+    }
   }
 
   private static String getApiToken(final AWS4Signer signer, final AWSCredentials awsCredentials) {

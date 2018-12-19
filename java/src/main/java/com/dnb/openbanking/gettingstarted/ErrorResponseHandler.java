@@ -19,8 +19,8 @@ public class ErrorResponseHandler implements HttpResponseHandler<AmazonServiceEx
     final AmazonServiceException ase = new AmazonServiceException(response.getStatusText());
     ase.setStatusCode(response.getStatusCode());
     try {
-      final String message = IOUtils.toString(response.getContent());
-      System.err.println("Error response content: " + message);
+      final String content = IOUtils.toString(response.getContent()).trim();
+      ase.setRawResponseContent(content);
     } catch (IOException exception) {
       System.err.println("Exception thrown while reading the response's content: " + exception);
     }
