@@ -19,6 +19,8 @@ can be obtained from [developer.dnb.no][]. Register and login to create an examp
 app and you will get the credentials needed. Each of the examples has documentation
 on how to configure it with the credentials.
 
+*Never store your API key, Client ID and Client Secret available publicly!*
+
 ### Configuring the credentials
 
 If you put the credentials in a `.env` file in the root directory it will work
