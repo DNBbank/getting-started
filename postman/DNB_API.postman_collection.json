@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "a4d7e08c-52c2-4314-b4aa-bed4e60bd0b0",
+		"_postman_id": "c7531abc-0476-4887-b8a9-ac2c0cabd7b4",
 		"name": "DNB API",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
@@ -282,7 +282,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"debitAccountNumber\": 12003189487,\n    \"creditAccountNumber\": 12065812627,\n    \"amount\": 100,\n    \"requestedExecutionDate\": \"2019-01-01\"\n}"
+					"raw": "{\n    \"debitAccountNumber\": 12003189487,\n    \"creditAccountNumber\": 12065812627,\n    \"amount\": 100,\n    \"requestedExecutionDate\": \"2019-04-01\"\n}"
 				},
 				"url": {
 					"raw": "https://developer-api-sandbox.dnb.no/payments",
@@ -322,7 +322,7 @@
 					"raw": ""
 				},
 				"url": {
-					"raw": "https://developer-api-sandbox.dnb.no/payments/12345678",
+					"raw": "https://developer-api-sandbox.dnb.no/payments/12003189487/pending-payments/1402030",
 					"protocol": "https",
 					"host": [
 						"developer-api-sandbox",
@@ -331,7 +331,9 @@
 					],
 					"path": [
 						"payments",
-						"12345678"
+						"12003189487",
+						"pending-payments",
+						"1402030"
 					]
 				}
 			},
@@ -357,10 +359,10 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": ""
+					"raw": "{\n\"requestedExecutionDate\":\"2020-01-31\",\n\"debitAccountNumber\":\"12065812627\",\n\"amount\":1500.01,\n\"status\":\"reactivate\"\n}"
 				},
 				"url": {
-					"raw": "https://developer-api-sandbox.dnb.no/payments/123456789",
+					"raw": "https://developer-api-sandbox.dnb.no/payments/12003189487/pending-payments/1402030",
 					"protocol": "https",
 					"host": [
 						"developer-api-sandbox",
@@ -369,7 +371,9 @@
 					],
 					"path": [
 						"payments",
-						"123456789"
+						"12003189487",
+						"pending-payments",
+						"1402030"
 					]
 				}
 			},
@@ -437,7 +441,7 @@
 					"raw": ""
 				},
 				"url": {
-					"raw": "https://developer-api-sandbox.dnb.no/payments/12003189487/due/123456789",
+					"raw": "https://developer-api-sandbox.dnb.no/payments/12003189487/due/1402030",
 					"protocol": "https",
 					"host": [
 						"developer-api-sandbox",
@@ -448,7 +452,7 @@
 						"payments",
 						"12003189487",
 						"due",
-						"123456789"
+						"1402030"
 					]
 				}
 			},
@@ -515,7 +519,7 @@
 					"raw": ""
 				},
 				"url": {
-					"raw": "https://developer-api-sandbox.dnb.no/currencies/NOK/convert/EUR/amount/100",
+					"raw": "https://developer-api-sandbox.dnb.no/currencies/NOK/convert/EUR",
 					"protocol": "https",
 					"host": [
 						"developer-api-sandbox",
@@ -526,9 +530,7 @@
 						"currencies",
 						"NOK",
 						"convert",
-						"EUR",
-						"amount",
-						"100"
+						"EUR"
 					]
 				}
 			},
