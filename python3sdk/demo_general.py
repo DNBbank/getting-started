@@ -46,6 +46,7 @@ def demo_customers(client: GeneralClient):
         for i, account in enumerate(accounts):
             account_number = account["accountNumber"]
             print(" - Account {}: {}".format(i, account_number))
+            print(customer_client.get_transactions(account_number, "2018-06-06", "2018-07-07").content)
 
 
 if __name__ == "__main__":
