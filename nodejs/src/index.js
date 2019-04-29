@@ -17,13 +17,19 @@ const { clientId, clientSecret, apiKey } = loadCredentials();
 const awsRegion = 'eu-west-1';
 const awsService = 'execute-api';
 
-const openbankingEndpoint = 'developer-api-sandbox.dnb.no';
+const openbankingEndpoint = 'developer-api-testmode.dnb.no';
 
 function createAmzDate() {
   return new Date().toISOString().replace(/[:-]|\.\d{3}/g, '');
 }
 
-function createRequest(path, queryString = '', jwtToken = '') {
+function createRequest({
+  path,
+  method = 'GET',
+  data,
+  queryString = '',
+  jwtToken = '',
+}) {
   const opts = {
     host: openbankingEndpoint,
     headers: {
@@ -34,6 +40,7 @@ function createRequest(path, queryString = '', jwtToken = '') {
       'x-amz-date': createAmzDate(),
     },
     path,
+    method,
     params: queryString,
     service: awsService,
     region: awsRegion,
@@ -44,16 +51,23 @@ function createRequest(path, queryString = '', jwtToken = '') {
   if (jwtToken !== '') {
     opts.headers['x-dnbapi-jwt'] = jwtToken;
   }
-  opts.headers.Authorization = asv4.sign(opts, clientId, clientSecret);
+  if (data) {
+    opts.data = JSON.stringify(data);
+    opts.headers['x-amz-content-sha256'] = asv4.hash(opts.data, 'hex');
+  }
+  if (path.includes('token')) {
+    opts.headers.Authorization = asv4.sign(opts, clientId, clientSecret);
+  }
   return opts;
 }
 
 async function getAccessToken(ssn) {
-  const apiTokenParams = {
-    customerId: JSON.stringify({ type: 'SSN', value: ssn }),
-  };
-  const data = await request(createRequest('/token', querystring.stringify(apiTokenParams)));
-  return data.tokenInfo[0].jwtToken;
+  const data = await request(createRequest({
+    path: '/tokens',
+    method: 'POST',
+    data: { ssn },
+  }));
+  return data.jwtToken;
 }
 
 async function getCustomerInfo(jwtToken) {
@@ -66,7 +80,7 @@ async function getAccounts(jwtToken) {
 }
 
 async function getCards(jwtToken) {
-  const data = await request(createRequest('/cards', '', jwtToken));
+  const data = await request(createRequest({ path: '/cards', jwtToken }));
   return data;
 }
 

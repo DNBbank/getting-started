@@ -22,6 +22,9 @@ module.exports = function request(params) {
       return res;
     });
     req.on('error', (err) => { reject(err); });
+    if (params.data) {
+      req.write(params.data);
+    }
     req.end();
   });
 };
