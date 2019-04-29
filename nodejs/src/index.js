@@ -2,8 +2,6 @@
 const dotenv = require('dotenv');
 const { join } = require('path');
 
-const querystring = require('querystring');
-
 const asv4 = require('./asv4');
 const loadCredentials = require('./credentials');
 const request = require('./request');
@@ -71,12 +69,7 @@ async function getAccessToken(ssn) {
 }
 
 async function getCustomerInfo(jwtToken) {
-  return request(createRequest('/customers/current', '', jwtToken));
-}
-
-async function getAccounts(jwtToken) {
-  const { accounts } = await request(createRequest('/accounts', '', jwtToken));
-  return accounts;
+  return request(createRequest({ path: '/customers/current', jwtToken }));
 }
 
 async function getCards(jwtToken) {
@@ -93,11 +86,6 @@ async function main() {
   console.log(JSON.stringify(customerInfo, null, 2));
   console.log('\n');
 
-  const accounts = await getAccounts(accessToken);
-  console.log(`${dashes} Accounts ${dashes}`);
-  console.log(JSON.stringify(accounts, null, 2));
-  console.log('\n');
-
   const cards = await getCards(accessToken);
   console.log(`${dashes} Cards ${dashes}`);
   console.log(JSON.stringify(cards, null, 2));
@@ -107,7 +95,6 @@ async function main() {
 module.exports = {
   getAccessToken,
   getCustomerInfo,
-  getAccounts,
   getCards,
   main,
 };
