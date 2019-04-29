@@ -1,34 +1,5 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`getAccounts should retrieve list of accounts 1`] = `
-Array [
-  Object {
-    "accountCurrency": "NOK",
-    "accountName": "brukskonto",
-    "accountNumber": "12003189487",
-    "accountOwnerName": "Liv Ødegård",
-    "productName": "BRUKSKONTO",
-    "type": "DEPOSIT",
-  },
-  Object {
-    "accountCurrency": "NOK",
-    "accountName": "",
-    "accountNumber": "12065812627",
-    "accountOwnerName": "Liv Ødegård",
-    "productName": "SPAREKONTO",
-    "type": "DEPOSIT",
-  },
-  Object {
-    "accountCurrency": "NOK",
-    "accountName": "Lån",
-    "accountNumber": "12084535103",
-    "accountOwnerName": "Liv Ødegård",
-    "productName": "RAMMELÅN",
-    "type": "LOAN",
-  },
-]
-`;
-
 exports[`getCards should retrieve list of cards 1`] = `
 Array [
   Object {

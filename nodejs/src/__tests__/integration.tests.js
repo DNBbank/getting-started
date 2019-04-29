@@ -1,5 +1,7 @@
 const {
-  getAccessToken, getCustomerInfo, getAccounts, getCards,
+  getAccessToken,
+  getCustomerInfo,
+  getCards,
 } = require('../');
 const loadCredentials = require('../credentials');
 
@@ -39,12 +41,6 @@ testRequiringCredentials('getCustomerInfo should retrieve customer info', async 
   const customerData = await getCustomerInfo(accessToken);
 
   expect(customerData.customerId).toEqual('29105573083');
-}, 12000);
-
-testRequiringCredentials('getAccounts should retrieve list of accounts', async () => {
-  const accounts = await getAccounts(accessToken);
-
-  expect(accounts).toMatchSnapshot();
 }, 12000);
 
 testRequiringCredentials('getCards should retrieve list of cards', async () => {
