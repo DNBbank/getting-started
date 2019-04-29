@@ -1,8 +1,4 @@
-const {
-  getAccessToken,
-  getCustomerInfo,
-  getCards,
-} = require('../');
+const { getAccessToken, getCustomerInfo, getCards } = require('..');
 const loadCredentials = require('../credentials');
 
 let accessToken;
@@ -11,7 +7,8 @@ let hasCredentials = false;
 try {
   const credentials = loadCredentials();
   console.log(credentials);
-  hasCredentials = credentials.clientId && credentials.clientSecret && credentials.apiKey;
+  hasCredentials =
+    credentials.clientId && credentials.clientSecret && credentials.apiKey;
 } catch (error) {
   console.log(error);
 }
@@ -37,11 +34,15 @@ testRequiringCredentials('getAccessToken should retrieve token', async () => {
   expect(accessToken.length).toBeGreaterThan(500);
 });
 
-testRequiringCredentials('getCustomerInfo should retrieve customer info', async () => {
-  const customerData = await getCustomerInfo(accessToken);
+testRequiringCredentials(
+  'getCustomerInfo should retrieve customer info',
+  async () => {
+    const customerData = await getCustomerInfo(accessToken);
 
-  expect(customerData.customerId).toEqual('29105573083');
-}, 12000);
+    expect(customerData.customerId).toEqual('29105573083');
+  },
+  12000,
+);
 
 testRequiringCredentials('getCards should retrieve list of cards', async () => {
   const cards = await getCards(accessToken);

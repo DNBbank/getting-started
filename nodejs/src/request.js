@@ -2,29 +2,33 @@ const https = require('https');
 
 module.exports = function request(params) {
   return new Promise((resolve, reject) => {
-    const req = https.request(params, (res) => {
-      if (res.statusCode < 200 || res.statusCode >= 300) {
-        req.end();
-        return reject(new Error(`statusCode=${res.statusCode}`));
+    const request_ = https.request(params, (response) => {
+      if (response.statusCode < 200 || response.statusCode >= 300) {
+        request_.end();
+        return reject(new Error(`statusCode=${response.statusCode}`));
       }
       // cumulate data
       let body = [];
-      res.on('data', (chunk) => { body.push(chunk); });
+      response.on('data', (chunk) => {
+        body.push(chunk);
+      });
       // resolve on end
-      res.on('end', () => {
+      response.on('end', () => {
         try {
           body = JSON.parse(Buffer.concat(body).toString());
-        } catch (e) {
-          reject(e);
+        } catch (error) {
+          reject(error);
         }
         resolve(body);
       });
-      return res;
+      return response;
     });
-    req.on('error', (err) => { reject(err); });
+    request_.on('error', (error) => {
+      reject(error);
+    });
     if (params.data) {
-      req.write(params.data);
+      request_.write(params.data);
     }
-    req.end();
+    request_.end();
   });
 };

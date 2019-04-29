@@ -28,7 +28,7 @@ function createRequest({
   queryString = '',
   jwtToken = '',
 }) {
-  const opts = {
+  const options = {
     host: openbankingEndpoint,
     headers: {
       Host: openbankingEndpoint,
@@ -44,27 +44,29 @@ function createRequest({
     region: awsRegion,
   };
   if (queryString !== '') {
-    opts.path += `?${queryString}`;
+    options.path += `?${queryString}`;
   }
   if (jwtToken !== '') {
-    opts.headers['x-dnbapi-jwt'] = jwtToken;
+    options.headers['x-dnbapi-jwt'] = jwtToken;
   }
   if (data) {
-    opts.data = JSON.stringify(data);
-    opts.headers['x-amz-content-sha256'] = asv4.hash(opts.data, 'hex');
+    options.data = JSON.stringify(data);
+    options.headers['x-amz-content-sha256'] = asv4.hash(options.data, 'hex');
   }
   if (path.includes('token')) {
-    opts.headers.Authorization = asv4.sign(opts, clientId, clientSecret);
+    options.headers.Authorization = asv4.sign(options, clientId, clientSecret);
   }
-  return opts;
+  return options;
 }
 
 async function getAccessToken(ssn) {
-  const data = await request(createRequest({
-    path: '/tokens',
-    method: 'POST',
-    data: { ssn },
-  }));
+  const data = await request(
+    createRequest({
+      path: '/tokens',
+      method: 'POST',
+      data: { ssn },
+    }),
+  );
   return data.jwtToken;
 }
 
