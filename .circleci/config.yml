@@ -15,6 +15,21 @@ commands:
           paths:
             - "nodejs/node_modules"
 
+  pipenv_install:
+    description: "Install python dependencies"
+    steps:
+      - restore_cache:
+          key: v1-{{ checksum "python/Pipfile.lock" }}
+
+      - run:
+          command: pipenv install
+          working_directory: python
+
+      - save_cache:
+          key: v1-{{ checksum "python/Pipfile.lock" }}
+          paths:
+            - ~/.local/share/virtualenvs/venv
+
 
 jobs:
   npm:
@@ -30,6 +45,20 @@ jobs:
       - run:
           command: npm <<parameters.task>>
           working_directory: nodejs
+  python:
+    parameters:
+      task:
+        description: "python task to run"
+        type: string
+    docker:
+      - image: circleci/node
+    steps:
+      - checkout
+      - pipenv_install
+      - run:
+          command: pipenv run <<parameters.task>>
+          working_directory: python
+
 
 workflows:
   version: 2
@@ -44,3 +73,14 @@ workflows:
       - npm:
           name: nodejs-example test
           task: test
+  python:
+    jobs:
+      - python:
+          name: python-example format
+          task: black --check .
+      - python:
+          name: python-example flake8
+          task: flake8
+      - python:
+          name: python-example test
+          task: pytest
