@@ -18,7 +18,7 @@ function testRequiringCredentials(name, fn, timeout) {
   if (hasCredentials) {
     test(name, fn, timeout);
   } else {
-    test(name, () => Promise.reject(new Error('Missing API credentials')));
+    test.skip(name, () => Promise.reject(new Error('Missing API credentials')));
   }
 }
 
