@@ -8,10 +8,13 @@ requests = "==2.20.0"
 python-dotenv = "==0.9.1"
 
 [dev-packages]
-black = "==18.9b0"
+black = "*"
+pytest = "*"
+flake8 = "*"
+pytest-mock = "*"
 
 [requires]
-python_version = "2.7"
+python_version = "3.7"
 
 [pipenv]
 allow_prereleases = true

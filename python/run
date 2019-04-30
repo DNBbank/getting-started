@@ -1,4 +1,4 @@
 #!/bin/bash
 
 pipenv install
-pipenv run python ./getting_started.py
+pipenv run python -m getting_started.main
