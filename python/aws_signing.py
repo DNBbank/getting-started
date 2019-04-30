@@ -30,19 +30,19 @@ class AwsSigningV4(object):
         k_signing = self.__sign(k_service, "aws4_request")
         return k_signing
 
-    def headers_for_get_method(self, path, request_parameters):
+    def create_headers(self, path, method, querystring='', data=None):
         # Create a date for headers and the credential string
         now = datetime.datetime.utcnow()
         amz_date = now.strftime("%Y%m%dT%H%M%SZ")
         # Date w/o time, used in credential scope
         date_stamp = now.strftime("%Y%m%d")
         canonical_uri = path
-        canonical_querystring = request_parameters
+        canonical_querystring = querystring
         canonical_headers = "host:" + self.__aws_host + "\n"
         canonical_headers += "x-amz-date:" + amz_date + "\n"
         signed_headers = "host;x-amz-date"
-        payload_hash = hashlib.sha256("".encode("utf-8")).hexdigest()
-        canonical_request = "GET" + "\n"
+        payload_hash = hashlib.sha256((data or "").encode("utf-8")).hexdigest()
+        canonical_request = method + "\n"
         canonical_request += canonical_uri + "\n"
         canonical_request += canonical_querystring + "\n"
         canonical_request += canonical_headers + "\n"
@@ -76,5 +76,7 @@ class AwsSigningV4(object):
         authorization_header += "Signature=" + signature
 
         headers = {"x-amz-date": amz_date, "Authorization": authorization_header}
+        if data is not None:
+            headers['x-amz-content-sha256'] = payload_hash
 
         return headers
