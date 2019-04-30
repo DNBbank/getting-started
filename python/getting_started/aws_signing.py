@@ -3,6 +3,10 @@ import hashlib
 import hmac
 
 
+def now():
+    return datetime.datetime.utcnow()
+
+
 class AwsSigningV4(object):
     __ALGORITHM = "AWS4-HMAC-SHA256"
 
@@ -11,8 +15,8 @@ class AwsSigningV4(object):
         aws_access_key_id,
         aws_secret_access_key,
         aws_host,
-        aws_region,
-        aws_service,
+        aws_region="eu-west-1",
+        aws_service="execute-api",
     ):
         self.__aws_access_key_id = aws_access_key_id
         self.__aws_secret_access_key = aws_secret_access_key
@@ -30,12 +34,12 @@ class AwsSigningV4(object):
         k_signing = self.__sign(k_service, "aws4_request")
         return k_signing
 
-    def create_headers(self, path, method, querystring='', data=None):
+    def create_headers(self, path, method, querystring="", data=None):
         # Create a date for headers and the credential string
-        now = datetime.datetime.utcnow()
-        amz_date = now.strftime("%Y%m%dT%H%M%SZ")
+        timestamp = now()
+        amz_date = timestamp.strftime("%Y%m%dT%H%M%SZ")
         # Date w/o time, used in credential scope
-        date_stamp = now.strftime("%Y%m%d")
+        date_stamp = timestamp.strftime("%Y%m%d")
         canonical_uri = path
         canonical_querystring = querystring
         canonical_headers = "host:" + self.__aws_host + "\n"
@@ -77,6 +81,6 @@ class AwsSigningV4(object):
 
         headers = {"x-amz-date": amz_date, "Authorization": authorization_header}
         if data is not None:
-            headers['x-amz-content-sha256'] = payload_hash
+            headers["x-amz-content-sha256"] = payload_hash
 
         return headers
