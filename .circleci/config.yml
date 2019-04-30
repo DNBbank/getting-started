@@ -1,0 +1,43 @@
+version: 2.1
+commands:
+  npm_install:
+    description: "Install npm dependencies"
+    steps:
+      - restore_cache:
+          key: v1-{{ checksum "nodejs/package-lock.json" }}
+
+      - run:
+          command: npm ci
+          working_directory: nodejs
+
+      - save_cache:
+          key: v1-{{ checksum "nodejs/package-lock.json" }}
+          paths:
+            - "nodejs/node_modules"
+
+
+jobs:
+  npm:
+    parameters:
+      task:
+        description: "npm task to run"
+        type: string
+    docker:
+      - image: circleci/node
+    steps:
+      - checkout
+      - npm_install
+      - run:
+          command: npm run <<parameters.task>>
+          working_directory: nodejs
+
+workflows:
+  version: 2
+  nodejs:
+    jobs:
+      - npm:
+          name: nodejs-example lint
+          task: lint
+      - npm:
+          name: nodejs-example test
+          task: test
