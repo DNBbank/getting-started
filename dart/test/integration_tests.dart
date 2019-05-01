@@ -2,9 +2,6 @@ import 'package:dnb/dnb.dart';
 import 'package:test/test.dart';
 import 'package:getting_started/credentials.dart';
 
-// TODO Implement block/inblock testing once DNB has fixed their test custoemrs
-// TODO Implement payment tests
-
 void main() {
   final credentials = loadCredentials();
 
