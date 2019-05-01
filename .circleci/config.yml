@@ -92,5 +92,5 @@ workflows:
           task: lib/main.dart
       - dart:
           name: dart-example test
-          tool: pub
+          tool: pub run
           task: test test/integration_tests.dart
