@@ -43,10 +43,13 @@ jobs:
           command: npm run <<parameters.task>>
           working_directory: nodejs
 
-  pub:
+  dart:
     parameters:
+      tool:
+        description: "tool to run"
+        type: string
       task:
-        description: "pub task to run"
+        description: "task to run"
         type: string
     docker:
       - image: google/dart
@@ -54,7 +57,7 @@ jobs:
       - checkout
       - pub_get
       - run:
-          command: pub run <<parameters.task>>
+          command: <<parameters.tool>> <<parameters.task>>
           working_directory: dart
 
   dartanalyzer:
@@ -62,7 +65,6 @@ jobs:
       - image: google/dart
     steps:
       - checkout
-      - pub_get
       - run:
           command: dartanalyzer lib/main.dart
           working_directory: dart
@@ -84,8 +86,11 @@ workflows:
 
   dart:
     jobs:
-      - dartanalyzer:
+      - dart:
           name: dart-example analyze
-      - pub:
+          tool: dartanalyzer
+          task: lib/main.dart
+      - dart:
           name: dart-example test
+          tool: pub run
           task: test test/integration_tests.dart
