@@ -1,0 +1,4 @@
+#!/bin/bash
+
+pub get
+dart lib/main.dart
