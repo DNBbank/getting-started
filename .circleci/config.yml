@@ -15,6 +15,12 @@ commands:
           paths:
             - "nodejs/node_modules"
 
+  pub_get:
+    description: "Install pub dependencies"
+    steps:
+      - run:
+          command: pub get
+          working_directory: dart
 
 jobs:
   npm:
@@ -31,6 +37,34 @@ jobs:
           command: npm run <<parameters.task>>
           working_directory: nodejs
 
+  pub:
+    parameters:
+      task:
+        description: "pub task to run"
+        type: string
+    docker:
+      - image: google/dart
+    steps:
+      - checkout
+      - pub_get
+      - run:
+          command: pub run <<parameters.task>>
+          working_directory: dart
+
+  dartanalyzer:
+    docker:
+      - image: google/dart
+    steps:
+      - checkout
+      - pub_get
+      - run:
+          command: dartanalyzer lib/main.dart
+          working_directory: dart
+      - run:
+          command: dartanalyzer test/integration_tests.dart
+          working_directory: dart
+
+
 workflows:
   version: 2
   nodejs:
@@ -41,3 +75,11 @@ workflows:
       - npm:
           name: nodejs-example test
           task: test
+
+  dart:
+    jobs:
+      - dartanalyzer:
+          name: dart-example analyze
+      - pub:
+          name: dart-example test
+          task: test test/integration_tests.dart
