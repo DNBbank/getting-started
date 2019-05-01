@@ -2,6 +2,3 @@
 .dart_tool/
 .packages
 build/
-
-# Lockfilee
-pubspec.lock

@@ -18,9 +18,15 @@ commands:
   pub_get:
     description: "Install pub dependencies"
     steps:
+      - restore_cache:
+          key: v1-{{ checksum "dart/pubspec.lock" }}
       - run:
           command: pub get
           working_directory: dart
+      - save_cache:
+          key: v1-{{ checksum "dart/pubspec.lock" }}
+          paths:
+            - "$HOME/.pub_cache"
 
 jobs:
   npm:
