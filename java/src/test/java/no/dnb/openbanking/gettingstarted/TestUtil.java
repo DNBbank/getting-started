@@ -1,4 +1,4 @@
-package com.dnb.openbanking.gettingstarted;
+package no.dnb.openbanking.gettingstarted;
 
 import org.json.JSONArray;
 import org.json.JSONObject;

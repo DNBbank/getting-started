@@ -1,4 +1,4 @@
-package com.dnb.openbanking.gettingstarted;
+package no.dnb.openbanking.gettingstarted;
 
 import com.amazonaws.http.HttpResponse;
 import com.amazonaws.http.HttpResponseHandler;
