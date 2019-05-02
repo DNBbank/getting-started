@@ -28,7 +28,7 @@ jobs:
       - checkout
       - npm_install
       - run:
-          command: npm run <<parameters.task>>
+          command: npm <<parameters.task>>
           working_directory: nodejs
 
 workflows:
@@ -40,7 +40,7 @@ workflows:
           task: audit
       - npm:
           name: nodejs-example lint
-          task: lint
+          task: run lint
       - npm:
           name: nodejs-example test
           task: test
