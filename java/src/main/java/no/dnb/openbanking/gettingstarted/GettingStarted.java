@@ -15,8 +15,10 @@ import com.amazonaws.http.HttpMethodName;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
+import java.io.ByteArrayInputStream;
 import java.io.InputStream;
 import java.net.URI;
+import java.nio.charset.Charset;
 
 public class GettingStarted {
 
@@ -25,7 +27,7 @@ public class GettingStarted {
   private static final String AWS_SERVICE = "execute-api";
 
   // Open Banking constants
-  private static final String OPENBANKING_ENDPOINT = "https://developer-api-sandbox.dnb.no";
+  private static final String OPENBANKING_ENDPOINT = "https://developer-api-testmode.dnb.no";
   private static final String API_KEY_HEADER = "x-api-key";
   private static final String JWT_TOKEN_HEADER = "x-dnbapi-jwt";
 
@@ -57,17 +59,14 @@ public class GettingStarted {
   }
 
   public static String getApiToken(final AWS4Signer signer, final AWSCredentials awsCredentials) {
-    final Request apiTokenRequest = createRequest(HttpMethodName.GET, "/token");
-    apiTokenRequest.withParameter(
-            "customerId", "{\"type\":\"SSN\", \"value\":\"29105573083\"}");
+    final Request apiTokenRequest = createRequest(HttpMethodName.POST, "/tokens");
+    String content = "{\"ssn\": \"29105573083\"}";
+    apiTokenRequest.setContent(new ByteArrayInputStream(content.getBytes(Charset.forName("UTF-8"))));
 
     final JSONObject apiTokenResponse = signAndBuildRequest(signer, awsCredentials, apiTokenRequest)
       .execute(new ResponseHandlerJSONObject(false))
       .getAwsResponse();
-    final JSONArray tokenInfoArray = (JSONArray) (apiTokenResponse.get("tokenInfo"));
-    final JSONObject tokenInfo = (JSONObject) tokenInfoArray.get(0);
-
-    return (String) tokenInfo.get("jwtToken");
+    return (String) (apiTokenResponse.get("jwtToken"));
   }
 
   public static Response<JSONObject> getCustomerInfo(
