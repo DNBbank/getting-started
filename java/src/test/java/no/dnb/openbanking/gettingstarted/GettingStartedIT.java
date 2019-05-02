@@ -1,4 +1,4 @@
-package com.dnb.openbanking.gettingstarted;
+package no.dnb.openbanking.gettingstarted;
 
 import com.amazonaws.Response;
 import com.amazonaws.auth.AWS4Signer;
