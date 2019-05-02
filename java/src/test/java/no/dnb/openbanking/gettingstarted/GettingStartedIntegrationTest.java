@@ -12,7 +12,7 @@ import org.skyscreamer.jsonassert.JSONAssert;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-public class GettingStartedIT {
+public class GettingStartedIntegrationTest {
 
   private static final String AWS_REGION = "eu-west-1";
   private static final String AWS_SERVICE = "execute-api";
