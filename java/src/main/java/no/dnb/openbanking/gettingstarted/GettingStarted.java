@@ -78,15 +78,6 @@ public class GettingStarted {
       .execute(new ResponseHandlerJSONObject(false));
   }
 
-  public static Response<JSONObject> getAccountInfo(
-          final String jwtToken, final AWS4Signer signer, final AWSCredentials awsCredentials) {
-    final Request accountRequest = createRequest(HttpMethodName.GET, "/accounts");
-    accountRequest.addHeader(JWT_TOKEN_HEADER, jwtToken);
-
-    return signAndBuildRequest(signer, awsCredentials, accountRequest)
-      .execute(new ResponseHandlerJSONObject(false));
-  }
-
   public static Response<JSONArray> getCardInfo(
           final String jwtToken, final AWS4Signer signer, final AWSCredentials awsCredentials) {
     final Request cardRequest = createRequest(HttpMethodName.GET, "/cards");
@@ -94,19 +85,6 @@ public class GettingStarted {
 
     return signAndBuildRequest(signer, awsCredentials, cardRequest)
       .execute(new ResponseHandlerJSONArray(false));
-  }
-
-  public static Response<JSONObject> postInitiatePayment(
-          final String jwtToken, final AWS4Signer signer, final AWSCredentials awsCredentials) {
-    final Request initiatePaymentRequest = createRequest(HttpMethodName.POST, "/payments");
-    initiatePaymentRequest.addHeader(JWT_TOKEN_HEADER, jwtToken);
-    final ClassLoader classLoader = GettingStarted.class.getClassLoader();
-    final InputStream initiatePaymentRequestBody
-            = classLoader.getResourceAsStream("InitiatePaymentRequestBody.json");
-    initiatePaymentRequest.setContent(initiatePaymentRequestBody);
-
-    return signAndBuildRequest(signer, awsCredentials, initiatePaymentRequest)
-      .execute(new ResponseHandlerJSONObject(false));
   }
 
   public static void main(final String[] args) {
@@ -122,13 +100,7 @@ public class GettingStarted {
     final Response<JSONObject> customerResponse = getCustomerInfo(jwtToken, signer, awsCredentials);
     System.out.println("Customer info: " + customerResponse.getAwsResponse().toString(4));
 
-    final Response<JSONObject> accountResponse = getAccountInfo(jwtToken, signer, awsCredentials);
-    System.out.println("Account info: " + accountResponse.getAwsResponse().toString(4));
-
     final Response<JSONArray> cardResponse = getCardInfo(jwtToken, signer, awsCredentials);
     System.out.println("Card info: " + cardResponse.getAwsResponse().toString(4));
-
-    final Response<JSONObject> initiatePaymentResponse = postInitiatePayment(jwtToken, signer, awsCredentials);
-    System.out.println("Initiate Payment response: " + initiatePaymentResponse.getAwsResponse());
   }
 }
