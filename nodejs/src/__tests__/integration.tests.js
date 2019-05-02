@@ -1,4 +1,10 @@
-const { getAccessToken, getCustomerInfo, getCards } = require('..');
+const {
+  getAccessToken,
+  getCustomerInfo,
+  getCards,
+  getCurrencyConversion,
+  getCurrencyConversions,
+} = require('..');
 const loadCredentials = require('../credentials');
 
 let accessToken;
@@ -49,3 +55,21 @@ testRequiringCredentials('getCards should retrieve list of cards', async () => {
 
   expect(cards).toMatchSnapshot();
 });
+
+testRequiringCredentials(
+  'getCurrencyConversions should currency info',
+  async () => {
+    const cards = await getCurrencyConversions('NOK');
+
+    expect(cards).toMatchSnapshot();
+  },
+);
+
+testRequiringCredentials(
+  'getCurrencyConversion should currency info',
+  async () => {
+    const cards = await getCurrencyConversion('NOK', 'EUR');
+
+    expect(cards).toMatchSnapshot();
+  },
+);
