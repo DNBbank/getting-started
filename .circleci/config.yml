@@ -31,6 +31,20 @@ commands:
           paths:
             - ~/.local/share/virtualenvs/venv
 
+  maven_install:
+    description: "Install maven dependencies"
+    steps:
+      - restore_cache:
+          key: v1-{{ checksum "java/pom.xml" }}
+
+      - run:
+          command: mvn dependency:go-offline
+          working_directory: java
+
+      - save_cache:
+          paths:
+            - ~/.m2
+          key: v1-{{ checksum "java/pom.xml" }}
 
 jobs:
   npm:
@@ -61,6 +75,20 @@ jobs:
           command: pipenv run <<parameters.task>>
           working_directory: python
 
+  maven:
+    parameters:
+      task:
+        description: "maven task to run"
+        type: string
+    docker:
+      - image: circleci/openjdk:8-jdk-browsers
+    steps:
+      - checkout
+      - maven_install
+      - run:
+          command: mvn <<parameters.task>>
+          working_directory: java
+
 
 workflows:
   version: 2
@@ -86,3 +114,8 @@ workflows:
       - python:
           name: python-example test
           task: pytest
+  java:
+    jobs:
+      - maven:
+          name: java-example compile
+          task: compile
