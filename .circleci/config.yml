@@ -36,6 +36,9 @@ workflows:
   nodejs:
     jobs:
       - npm:
+          name: nodejs-example security audit
+          task: audit
+      - npm:
           name: nodejs-example lint
           task: lint
       - npm:
