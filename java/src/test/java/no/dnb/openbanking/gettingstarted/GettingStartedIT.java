@@ -50,23 +50,6 @@ public class GettingStartedIT {
     JSONAssert.assertEquals(expectedCustomerDetailsResponse, actualCustomerDetailsJSONResponse, false);
   }
 
-  @Test
-  void testGetAccountInfoAPI() {
-    JSONObject expectedAccountDetailsResponse = TestUtil.parseJSONFileFromResourceToJSONObject(
-            "GetAccountDetails.json");
-    Response<JSONObject> actualAccountDetailsResponse = GettingStarted.getAccountInfo(
-            jwtToken, signer, awsCredentials);
-
-    assertThat(actualAccountDetailsResponse.getHttpResponse().getStatusCode())
-            .as("Test if status code is 200/OK").isEqualTo(200);
-
-    JSONObject actualAccountDetailsJSONResponse = actualAccountDetailsResponse.getAwsResponse();
-
-    assertThat(actualAccountDetailsJSONResponse.length())
-            .as("Check if objects have same amount of fields")
-            .isEqualTo(expectedAccountDetailsResponse.length());
-    JSONAssert.assertEquals(expectedAccountDetailsResponse, actualAccountDetailsJSONResponse, false);
-  }
 
   @Test
   void testGetCardInfoAPI() {
@@ -86,21 +69,4 @@ public class GettingStartedIT {
     JSONAssert.assertEquals(expectedCardDetailsResponse, actualCardDetailsJSONResponse, false);
   }
 
-  @Test
-  void testPostInitiatePaymentAPI() {
-    JSONObject expectedInitPaymentDetailsResponse = TestUtil.parseJSONFileFromResourceToJSONObject(
-            "GetInitiatePaymentDetails.json");
-    Response<JSONObject> actualInitPaymentDetailsResponse = GettingStarted.postInitiatePayment(
-            jwtToken, signer, awsCredentials);
-
-    assertThat(actualInitPaymentDetailsResponse.getHttpResponse().getStatusCode())
-            .as("Test if status code is 200/OK").isEqualTo(200);
-
-    JSONObject actualInitPaymentDetailsJSONResponse = actualInitPaymentDetailsResponse.getAwsResponse();
-
-    assertThat(actualInitPaymentDetailsJSONResponse.length())
-            .as("Check if objects have same amount of fields")
-            .isEqualTo(expectedInitPaymentDetailsResponse.length());
-    JSONAssert.assertEquals(expectedInitPaymentDetailsResponse, actualInitPaymentDetailsJSONResponse, false);
-  }
 }
