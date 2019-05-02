@@ -70,6 +70,18 @@ async function getAccessToken(ssn) {
   return data.jwtToken;
 }
 
+async function getCurrencyConversions(quoteCurrency) {
+  return request(createRequest({ path: `/currencies/${quoteCurrency}` }));
+}
+
+async function getCurrencyConversion(quoteCurrency, baseCurrency) {
+  return request(
+    createRequest({
+      path: `/currencies/${quoteCurrency}/convert/${baseCurrency}`,
+    }),
+  );
+}
+
 async function getCustomerInfo(jwtToken) {
   return request(createRequest({ path: '/customers/current', jwtToken }));
 }
@@ -92,10 +104,22 @@ async function main() {
   console.log(`${dashes} Cards ${dashes}`);
   console.log(JSON.stringify(cards, null, 2));
   console.log('\n');
+
+  const currencies = await getCurrencyConversions('NOK');
+  console.log(`${dashes} NOK conversions ${dashes}`);
+  console.log(JSON.stringify(currencies, null, 2));
+  console.log('\n');
+
+  const currency = await getCurrencyConversion('NOK', 'EUR');
+  console.log(`${dashes} NOK -> EUR ${dashes}`);
+  console.log(JSON.stringify(currency, null, 2));
+  console.log('\n');
 }
 
 module.exports = {
   getAccessToken,
+  getCurrencyConversions,
+  getCurrencyConversion,
   getCustomerInfo,
   getCards,
   main,
