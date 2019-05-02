@@ -19,14 +19,15 @@ commands:
     description: "Install python dependencies"
     steps:
       - restore_cache:
-          key: v1-{{ checksum "python/Pipfile.lock" }}
+          key: v2-{{ checksum "python/Pipfile.lock" }}
 
+      - run: pip install pipenv
       - run:
-          command: pipenv install
+          command: pipenv install --dev
           working_directory: python
 
       - save_cache:
-          key: v1-{{ checksum "python/Pipfile.lock" }}
+          key: v2-{{ checksum "python/Pipfile.lock" }}
           paths:
             - ~/.local/share/virtualenvs/venv
 
@@ -45,13 +46,14 @@ jobs:
       - run:
           command: npm <<parameters.task>>
           working_directory: nodejs
+
   python:
     parameters:
       task:
         description: "python task to run"
         type: string
     docker:
-      - image: circleci/node
+      - image: circleci/python
     steps:
       - checkout
       - pipenv_install
