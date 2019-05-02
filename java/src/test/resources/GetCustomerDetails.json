@@ -2,12 +2,6 @@
   "customerId": "29105573083",
   "firstName": "Liv",
   "lastName": "Ødegård",
-  "countryTax": [
-    {
-      "taxLiabilityCountry": "NO",
-      "taxIdentificationNumber": "XX"
-    }
-  ],
   "address": {
     "addressLine1": "Eliassenkroken 1",
     "addressLine2": "",
@@ -19,11 +13,16 @@
   "email": "odegard1955@example.com",
   "phone": "+4713857252",
   "countryOfBirth": null,
+  "customerType": "PERSON",
+  "countryTax": [
+    {
+      "taxLiabilityCountry": "NO",
+      "taxIdentificationNumber": "XX"
+    }
+  ],
   "citizenship": [
     {
       "countryOfCitizenship": "NO"
     }
-  ],
-  "customerType": "PERSON",
-  "companyName": null
+  ]
 }
