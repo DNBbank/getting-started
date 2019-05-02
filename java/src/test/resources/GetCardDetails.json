@@ -5,13 +5,19 @@
     "customerId": "29105573083",
     "cardHolderName": "Liv Ødegård",
     "cardType": "DEBIT",
-    "productName": "VISA",
+    "productName": "VISA CARD",
     "accountNumber": "12050576967",
     "cardStatus": "ACTIVE",
     "blockingInfo": {
-      "unblockAllowed": true,
-      "blockAllowed": false
-    }
+      "performedBy": null,
+      "timestamp": null,
+      "blockAllowed": true,
+      "unblockAllowed": true
+    },
+    "debitBalance": null,
+    "creditBalance": null,
+    "created": null,
+    "lastChanged": null
   },
   {
     "cardId": "IHMR56189598S24L",
@@ -19,12 +25,19 @@
     "customerId": "29105573083",
     "cardHolderName": "Liv Ødegård",
     "cardType": "CREDIT",
-    "productName": "MASTERCARD",
+    "productName": "VISA CARD",
+    "accountNumber": null,
     "cardStatus": "ACTIVE",
     "blockingInfo": {
-      "unblockAllowed": false,
-      "blockAllowed": false
-    }
+      "performedBy": null,
+      "timestamp": null,
+      "blockAllowed": false,
+      "unblockAllowed": false
+    },
+    "debitBalance": null,
+    "creditBalance": null,
+    "created": null,
+    "lastChanged": null
   },
   {
     "cardId": "RHFJ53721342S98L",
@@ -32,12 +45,19 @@
     "customerId": "29105573083",
     "cardHolderName": "Liv Ødegård",
     "cardType": "CREDIT",
-    "productName": "DINERS",
+    "productName": "VISA CARD",
+    "accountNumber": null,
     "cardStatus": "ACTIVE",
     "blockingInfo": {
-      "unblockAllowed": false,
-      "blockAllowed": false
-    }
+      "performedBy": null,
+      "timestamp": null,
+      "blockAllowed": false,
+      "unblockAllowed": false
+    },
+    "debitBalance": null,
+    "creditBalance": null,
+    "created": null,
+    "lastChanged": null
   },
   {
     "cardId": "QLDW22575585E90E",
@@ -45,11 +65,18 @@
     "customerId": "29105573083",
     "cardHolderName": "Liv Ødegård",
     "cardType": "CREDIT",
-    "productName": "MASTERCARD",
+    "productName": "VISA CARD",
+    "accountNumber": null,
     "cardStatus": "ACTIVE",
     "blockingInfo": {
-      "unblockAllowed": false,
-      "blockAllowed": false
-    }
+      "performedBy": null,
+      "timestamp": null,
+      "blockAllowed": false,
+      "unblockAllowed": false
+    },
+    "debitBalance": null,
+    "creditBalance": null,
+    "created": null,
+    "lastChanged": null
   }
 ]
