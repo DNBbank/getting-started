@@ -1,0 +1,16 @@
+{
+  "folders": [
+    {
+      "name": "Java",
+      "path": "java"
+    },
+    {
+      "name": "Python",
+      "path": "python"
+    },
+    {
+      "name": "Node.js",
+      "path": "nodejs"
+    }
+  ]
+}
