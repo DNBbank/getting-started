@@ -25,4 +25,12 @@ void main() async {
   // Get cards
   final cards = await client.getCards();
   print('$dashes Cards $dashes \n $cards');
+
+  // Get all currency rates from NOK
+  final currencies = await client.getCurrencyRateList(fromCurrency: 'NOK');
+  print('$dashes NOK conversions $dashes \n $currencies');
+
+  // Get currency rate from NOK to EUR
+  final currency = await client.getCurrencyRate(fromCurrency: 'NOK', toCurrency: 'EUR');
+  print('$dashes NOK -> EUR $dashes \n $currency');
 }

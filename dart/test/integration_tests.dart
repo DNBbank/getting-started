@@ -34,4 +34,18 @@ void main() {
     assert(cards != null);
     expect(cards[0]['cardId'], 'TQJQ95214468J85O');
   });
+
+  test('getCurrencyRateList() retrieves a list of currency rates from NOK', () async {
+    // Defaults to NOK
+    final currencies = await dnb.getCurrencyRateList();
+    assert(currencies != null);
+    expect(currencies[0]['baseCurrency'], 'NOK');
+  });
+
+  test('getCurrencyRate() retrieves a conversion', () async {
+    // Defaults from NOK
+    final currency = await dnb.getCurrencyRate(toCurrency: 'EUR');
+    assert(currency != null);
+    expect(currency['baseCurrency'], 'NOK');
+  });
 }
