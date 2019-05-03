@@ -69,4 +69,38 @@ public class GettingStartedIntegrationTest {
     JSONAssert.assertEquals(expectedCardDetailsResponse, actualCardDetailsJSONResponse, false);
   }
 
+  @Test
+  void testGetCurrencyConversions() {
+    JSONArray expectedCardDetailsResponse = TestUtil.parseJSONFileFromResourceToJSONArray(
+        "GetCurrencyConversions.json");
+    Response<JSONArray> actualCardDetailsResponse = GettingStarted.getCurrencyConversions("NOK");
+
+    assertThat(actualCardDetailsResponse.getHttpResponse().getStatusCode())
+        .as("Test if status code is 200/OK").isEqualTo(200);
+
+    JSONArray actualCardDetailsJSONResponse = actualCardDetailsResponse.getAwsResponse();
+
+    assertThat(actualCardDetailsJSONResponse.length())
+        .as("Check if objects have same amount of fields")
+        .isEqualTo(expectedCardDetailsResponse.length());
+    JSONAssert.assertEquals(expectedCardDetailsResponse, actualCardDetailsJSONResponse, false);
+  }
+
+  @Test
+  void testGetCurrencyConversion() {
+    JSONObject expectedCustomerDetailsResponse = TestUtil.parseJSONFileFromResourceToJSONObject(
+        "GetCurrencyConversion.json");
+    Response<JSONObject> response = GettingStarted.getCurrencyConversion("NOK", "EUR");
+
+    assertThat(response.getHttpResponse().getStatusCode())
+        .as("Test if status code is 200/OK").isEqualTo(200);
+
+    JSONObject json = response.getAwsResponse();
+
+    assertThat(json.length())
+        .as("Check if objects have same amount of fields")
+        .isEqualTo(expectedCustomerDetailsResponse.length());
+    JSONAssert.assertEquals(expectedCustomerDetailsResponse, json, false);
+  }
+
 }

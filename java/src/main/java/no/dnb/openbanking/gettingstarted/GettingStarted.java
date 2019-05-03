@@ -42,20 +42,22 @@ public class GettingStarted {
     return request;
   }
 
-  private static RequestExecutionBuilder signAndBuildRequest(
-          final AWS4Signer signer, final AWSCredentials awsCredentials, final Request request) {
-    signer.sign(request, awsCredentials);
+  private static RequestExecutionBuilder buildRequest(final Request request) {
     try {
-      return new AmazonHttpClient(new ClientConfiguration())
-        .requestExecutionBuilder()
-        .executionContext(new ExecutionContext(true))
-        .request(request)
-        .errorResponseHandler(new ErrorResponseHandler(false));
+      return new AmazonHttpClient(new ClientConfiguration()).requestExecutionBuilder()
+          .executionContext(new ExecutionContext(true)).request(request)
+          .errorResponseHandler(new ErrorResponseHandler(false));
     } catch (AmazonServiceException exception) {
       System.out.println("Unexpected status code in response: " + exception.getStatusCode());
       System.out.println("Content: " + exception.getRawResponseContent());
       throw new RuntimeException("Failed request. Aborting.");
     }
+  }
+
+  private static RequestExecutionBuilder signAndBuildRequest(final AWS4Signer signer,
+      final AWSCredentials awsCredentials, final Request request) {
+    signer.sign(request, awsCredentials);
+    return buildRequest(request);
   }
 
   public static String getApiToken(final AWS4Signer signer, final AWSCredentials awsCredentials) {
@@ -64,38 +66,53 @@ public class GettingStarted {
     apiTokenRequest.setContent(new ByteArrayInputStream(content.getBytes(Charset.forName("UTF-8"))));
 
     final JSONObject apiTokenResponse = signAndBuildRequest(signer, awsCredentials, apiTokenRequest)
-      .execute(new ResponseHandlerJSONObject(false))
-      .getAwsResponse();
+        .execute(new ResponseHandlerJSONObject(false)).getAwsResponse();
     return (String) (apiTokenResponse.get("jwtToken"));
   }
 
-  public static Response<JSONObject> getCustomerInfo(
-          final String jwtToken, final AWS4Signer signer, final AWSCredentials awsCredentials) {
+  public static Response<JSONObject> getCustomerInfo(final String jwtToken, final AWS4Signer signer,
+      final AWSCredentials awsCredentials) {
     final Request customerRequest = createRequest(HttpMethodName.GET, "/customers/current");
     customerRequest.addHeader(JWT_TOKEN_HEADER, jwtToken);
 
-    return signAndBuildRequest(signer, awsCredentials, customerRequest)
-      .execute(new ResponseHandlerJSONObject(false));
+    return signAndBuildRequest(signer, awsCredentials, customerRequest).execute(new ResponseHandlerJSONObject(false));
   }
 
-  public static Response<JSONArray> getCardInfo(
-          final String jwtToken, final AWS4Signer signer, final AWSCredentials awsCredentials) {
+  public static Response<JSONArray> getCurrencyConversions(String quoteCurrency) {
+    final Request customerRequest = createRequest(HttpMethodName.GET, "/currencies/" + quoteCurrency);
+
+    return buildRequest(customerRequest).execute(new ResponseHandlerJSONArray(false));
+  }
+
+  public static Response<JSONObject> getCurrencyConversion(String quoteCurrency, String baseCurrency) {
+    final Request customerRequest = createRequest(HttpMethodName.GET,
+        "/currencies/" + quoteCurrency + "/convert/" + baseCurrency);
+
+    return buildRequest(customerRequest).execute(new ResponseHandlerJSONObject(false));
+  }
+
+  public static Response<JSONArray> getCardInfo(final String jwtToken, final AWS4Signer signer,
+      final AWSCredentials awsCredentials) {
     final Request cardRequest = createRequest(HttpMethodName.GET, "/cards");
     cardRequest.addHeader(JWT_TOKEN_HEADER, jwtToken);
 
-    return signAndBuildRequest(signer, awsCredentials, cardRequest)
-      .execute(new ResponseHandlerJSONArray(false));
+    return signAndBuildRequest(signer, awsCredentials, cardRequest).execute(new ResponseHandlerJSONArray(false));
   }
 
   public static void main(final String[] args) {
-    final AWSCredentials awsCredentials
-            = new BasicAWSCredentials(Config.get("CLIENT_ID"), Config.get("CLIENT_SECRET"));
+    final AWSCredentials awsCredentials = new BasicAWSCredentials(Config.get("CLIENT_ID"), Config.get("CLIENT_SECRET"));
     final AWS4Signer signer = new AWS4Signer();
     signer.setRegionName(AWS_REGION);
     signer.setServiceName(AWS_SERVICE);
 
     final String jwtToken = getApiToken(signer, awsCredentials);
     System.out.println("JWT token: " + jwtToken);
+
+    final Response<JSONArray> currenciesResponse = getCurrencyConversions("NOK");
+    System.out.println("Currencies: " + currenciesResponse.getAwsResponse().toString(4));
+
+    final Response<JSONObject> currencyResponse = getCurrencyConversion("NOK", "EUR");
+    System.out.println("Currency: " + currencyResponse.getAwsResponse().toString(4));
 
     final Response<JSONObject> customerResponse = getCustomerInfo(jwtToken, signer, awsCredentials);
     System.out.println("Customer info: " + customerResponse.getAwsResponse().toString(4));
