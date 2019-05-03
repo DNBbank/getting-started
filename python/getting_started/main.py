@@ -1,5 +1,6 @@
 import os
 import json
+
 from dotenv import load_dotenv
 
 from .aws_signing import AwsSigningV4
@@ -24,22 +25,38 @@ request_handler = RequestHandler(
 )
 
 
-def getAccessToken(ssn):
+def get_currency_conversions(quoteCurrency):
+    response = request_handler.request(path=f"/currencies/{quoteCurrency}")
+    return response.json()
+
+
+def get_currency_conversion(quoteCurrency, baseCurrency):
+    response = request_handler.request(path=f"/currencies/{quoteCurrency}/convert/{baseCurrency}")
+    return response.json()
+
+
+def get_access_token(ssn):
     response = request_handler.request(path="/tokens", method="POST", data={"ssn": ssn})
     return response.json()["jwtToken"]
 
 
-def getCustomerInfo(api_token):
+def get_customer_info(api_token):
     response = request_handler.request(path="/customers/current", api_token=api_token)
     return response.json()
 
 
 def main():
-    api_token = getAccessToken(ssn="29105573083")
+    api_token = get_access_token(ssn="29105573083")
     print("\nAPI token: " + api_token)
 
-    customer = getCustomerInfo(api_token)
+    customer = get_customer_info(api_token)
     print("\nCustomer info: " + json.dumps(customer, indent=4, sort_keys=True))
+
+    currencies = get_currency_conversions("NOK")
+    print("\nCurrencies: " + json.dumps(currencies, indent=4, sort_keys=True))
+
+    currency = get_currency_conversion("NOK", "EUR")
+    print("\nNOK -> EUR: " + json.dumps(currency, indent=4, sort_keys=True))
 
 
 if __name__ == "__main__":
