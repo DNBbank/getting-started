@@ -19,16 +19,16 @@ After adding the credentials you can run the example with
 
 ```shell
 pipenv install # install dependencies
-pipenv run python getting_started.py
+pipenv run python -m getting_started.main
 ```
 
 This requires pipenv, which can be installed with pip install pipenv.
 
 ## Code structure
 
-The code has two main parts, the getting_started.py and aws_signing.py. The
+The code has three main parts, the main.py, request_handler.py and aws_signing.py. The
 AWS signing is an implementation of the signing process which is described
-in [the main readme][]. The main part is in getting_started.py, which handles the
+in [the main readme][]. The main part is in main.py, which handles the
 process of getting an api token and and calling our APIs as described in the
 [the main readme][].
 

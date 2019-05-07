@@ -1,4 +1,4 @@
-package com.dnb.openbanking.gettingstarted;
+package no.dnb.openbanking.gettingstarted;
 
 import java.io.FileInputStream;
 import java.io.IOException;

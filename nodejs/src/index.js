@@ -2,8 +2,6 @@
 const dotenv = require('dotenv');
 const { join } = require('path');
 
-const querystring = require('querystring');
-
 const asv4 = require('./asv4');
 const loadCredentials = require('./credentials');
 const request = require('./request');
@@ -17,14 +15,20 @@ const { clientId, clientSecret, apiKey } = loadCredentials();
 const awsRegion = 'eu-west-1';
 const awsService = 'execute-api';
 
-const openbankingEndpoint = 'developer-api-sandbox.dnb.no';
+const openbankingEndpoint = 'developer-api-testmode.dnb.no';
 
 function createAmzDate() {
   return new Date().toISOString().replace(/[:-]|\.\d{3}/g, '');
 }
 
-function createRequest(path, queryString = '', jwtToken = '') {
-  const opts = {
+function createRequest({
+  path,
+  method = 'GET',
+  data,
+  queryString = '',
+  jwtToken = '',
+}) {
+  const options = {
     host: openbankingEndpoint,
     headers: {
       Host: openbankingEndpoint,
@@ -34,39 +38,56 @@ function createRequest(path, queryString = '', jwtToken = '') {
       'x-amz-date': createAmzDate(),
     },
     path,
+    method,
     params: queryString,
     service: awsService,
     region: awsRegion,
   };
   if (queryString !== '') {
-    opts.path += `?${queryString}`;
+    options.path += `?${queryString}`;
   }
   if (jwtToken !== '') {
-    opts.headers['x-dnbapi-jwt'] = jwtToken;
+    options.headers['x-dnbapi-jwt'] = jwtToken;
   }
-  opts.headers.Authorization = asv4.sign(opts, clientId, clientSecret);
-  return opts;
+  if (data) {
+    options.data = JSON.stringify(data);
+    options.headers['x-amz-content-sha256'] = asv4.hash(options.data, 'hex');
+  }
+  if (path.includes('token')) {
+    options.headers.Authorization = asv4.sign(options, clientId, clientSecret);
+  }
+  return options;
 }
 
 async function getAccessToken(ssn) {
-  const apiTokenParams = {
-    customerId: JSON.stringify({ type: 'SSN', value: ssn }),
-  };
-  const data = await request(createRequest('/token', querystring.stringify(apiTokenParams)));
-  return data.tokenInfo[0].jwtToken;
+  const data = await request(
+    createRequest({
+      path: '/tokens',
+      method: 'POST',
+      data: { ssn },
+    }),
+  );
+  return data.jwtToken;
+}
+
+async function getCurrencyConversions(quoteCurrency) {
+  return request(createRequest({ path: `/currencies/${quoteCurrency}` }));
+}
+
+async function getCurrencyConversion(quoteCurrency, baseCurrency) {
+  return request(
+    createRequest({
+      path: `/currencies/${quoteCurrency}/convert/${baseCurrency}`,
+    }),
+  );
 }
 
 async function getCustomerInfo(jwtToken) {
-  return request(createRequest('/customers/current', '', jwtToken));
-}
-
-async function getAccounts(jwtToken) {
-  const { accounts } = await request(createRequest('/accounts', '', jwtToken));
-  return accounts;
+  return request(createRequest({ path: '/customers/current', jwtToken }));
 }
 
 async function getCards(jwtToken) {
-  const data = await request(createRequest('/cards', '', jwtToken));
+  const data = await request(createRequest({ path: '/cards', jwtToken }));
   return data;
 }
 
@@ -79,21 +100,27 @@ async function main() {
   console.log(JSON.stringify(customerInfo, null, 2));
   console.log('\n');
 
-  const accounts = await getAccounts(accessToken);
-  console.log(`${dashes} Accounts ${dashes}`);
-  console.log(JSON.stringify(accounts, null, 2));
-  console.log('\n');
-
   const cards = await getCards(accessToken);
   console.log(`${dashes} Cards ${dashes}`);
   console.log(JSON.stringify(cards, null, 2));
+  console.log('\n');
+
+  const currencies = await getCurrencyConversions('NOK');
+  console.log(`${dashes} NOK conversions ${dashes}`);
+  console.log(JSON.stringify(currencies, null, 2));
+  console.log('\n');
+
+  const currency = await getCurrencyConversion('NOK', 'EUR');
+  console.log(`${dashes} NOK -> EUR ${dashes}`);
+  console.log(JSON.stringify(currency, null, 2));
   console.log('\n');
 }
 
 module.exports = {
   getAccessToken,
+  getCurrencyConversions,
+  getCurrencyConversion,
   getCustomerInfo,
-  getAccounts,
   getCards,
   main,
 };

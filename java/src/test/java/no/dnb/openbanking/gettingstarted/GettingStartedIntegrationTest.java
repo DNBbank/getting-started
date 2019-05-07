@@ -1,4 +1,4 @@
-package com.dnb.openbanking.gettingstarted;
+package no.dnb.openbanking.gettingstarted;
 
 import com.amazonaws.Response;
 import com.amazonaws.auth.AWS4Signer;
@@ -12,7 +12,7 @@ import org.skyscreamer.jsonassert.JSONAssert;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-public class GettingStartedIT {
+public class GettingStartedIntegrationTest {
 
   private static final String AWS_REGION = "eu-west-1";
   private static final String AWS_SERVICE = "execute-api";
@@ -50,23 +50,6 @@ public class GettingStartedIT {
     JSONAssert.assertEquals(expectedCustomerDetailsResponse, actualCustomerDetailsJSONResponse, false);
   }
 
-  @Test
-  void testGetAccountInfoAPI() {
-    JSONObject expectedAccountDetailsResponse = TestUtil.parseJSONFileFromResourceToJSONObject(
-            "GetAccountDetails.json");
-    Response<JSONObject> actualAccountDetailsResponse = GettingStarted.getAccountInfo(
-            jwtToken, signer, awsCredentials);
-
-    assertThat(actualAccountDetailsResponse.getHttpResponse().getStatusCode())
-            .as("Test if status code is 200/OK").isEqualTo(200);
-
-    JSONObject actualAccountDetailsJSONResponse = actualAccountDetailsResponse.getAwsResponse();
-
-    assertThat(actualAccountDetailsJSONResponse.length())
-            .as("Check if objects have same amount of fields")
-            .isEqualTo(expectedAccountDetailsResponse.length());
-    JSONAssert.assertEquals(expectedAccountDetailsResponse, actualAccountDetailsJSONResponse, false);
-  }
 
   @Test
   void testGetCardInfoAPI() {
@@ -87,20 +70,37 @@ public class GettingStartedIT {
   }
 
   @Test
-  void testPostInitiatePaymentAPI() {
-    JSONObject expectedInitPaymentDetailsResponse = TestUtil.parseJSONFileFromResourceToJSONObject(
-            "GetInitiatePaymentDetails.json");
-    Response<JSONObject> actualInitPaymentDetailsResponse = GettingStarted.postInitiatePayment(
-            jwtToken, signer, awsCredentials);
+  void testGetCurrencyConversions() {
+    JSONArray expectedCardDetailsResponse = TestUtil.parseJSONFileFromResourceToJSONArray(
+        "GetCurrencyConversions.json");
+    Response<JSONArray> actualCardDetailsResponse = GettingStarted.getCurrencyConversions("NOK");
 
-    assertThat(actualInitPaymentDetailsResponse.getHttpResponse().getStatusCode())
-            .as("Test if status code is 200/OK").isEqualTo(200);
+    assertThat(actualCardDetailsResponse.getHttpResponse().getStatusCode())
+        .as("Test if status code is 200/OK").isEqualTo(200);
 
-    JSONObject actualInitPaymentDetailsJSONResponse = actualInitPaymentDetailsResponse.getAwsResponse();
+    JSONArray actualCardDetailsJSONResponse = actualCardDetailsResponse.getAwsResponse();
 
-    assertThat(actualInitPaymentDetailsJSONResponse.length())
-            .as("Check if objects have same amount of fields")
-            .isEqualTo(expectedInitPaymentDetailsResponse.length());
-    JSONAssert.assertEquals(expectedInitPaymentDetailsResponse, actualInitPaymentDetailsJSONResponse, false);
+    assertThat(actualCardDetailsJSONResponse.length())
+        .as("Check if objects have same amount of fields")
+        .isEqualTo(expectedCardDetailsResponse.length());
+    JSONAssert.assertEquals(expectedCardDetailsResponse, actualCardDetailsJSONResponse, false);
   }
+
+  @Test
+  void testGetCurrencyConversion() {
+    JSONObject expectedCustomerDetailsResponse = TestUtil.parseJSONFileFromResourceToJSONObject(
+        "GetCurrencyConversion.json");
+    Response<JSONObject> response = GettingStarted.getCurrencyConversion("NOK", "EUR");
+
+    assertThat(response.getHttpResponse().getStatusCode())
+        .as("Test if status code is 200/OK").isEqualTo(200);
+
+    JSONObject json = response.getAwsResponse();
+
+    assertThat(json.length())
+        .as("Check if objects have same amount of fields")
+        .isEqualTo(expectedCustomerDetailsResponse.length());
+    JSONAssert.assertEquals(expectedCustomerDetailsResponse, json, false);
+  }
+
 }
