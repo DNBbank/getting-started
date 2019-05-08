@@ -59,6 +59,15 @@ function createRequest({
   return options;
 }
 
+async function getTestCustomers() {
+  return request(
+    createRequest({
+      path: '/test-customers',
+      method: 'GET',
+    }),
+  );
+}
+
 async function getAccessToken(ssn) {
   const data = await request(
     createRequest({
@@ -95,6 +104,11 @@ async function main() {
   const dashes = '-------------------------------';
   const accessToken = await getAccessToken('29105573083');
 
+  const testCustomers = await getTestCustomers();
+  console.log(`${dashes} Test Customers ${dashes}`);
+  console.log(JSON.stringify(testCustomers, null, 2));
+  console.log('\n');
+
   const customerInfo = await getCustomerInfo(accessToken);
   console.log(`${dashes} Customer Info ${dashes}`);
   console.log(JSON.stringify(customerInfo, null, 2));
@@ -117,6 +131,7 @@ async function main() {
 }
 
 module.exports = {
+  getTestCustomers,
   getAccessToken,
   getCurrencyConversions,
   getCurrencyConversion,

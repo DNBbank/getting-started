@@ -1,4 +1,5 @@
 const {
+  getTestCustomers,
   getAccessToken,
   getCustomerInfo,
   getCards,
@@ -39,6 +40,13 @@ testRequiringCredentials('getAccessToken should retrieve token', async () => {
   expect(typeof accessToken).toEqual('string');
   expect(accessToken.length).toBeGreaterThan(500);
 });
+
+testRequiringCredentials(
+  'getTestCustomers should retrieve a list of test customers',
+  async () => {
+    expect(await getTestCustomers()).toMatchSnapshot();
+  },
+);
 
 testRequiringCredentials(
   'getCustomerInfo should retrieve customer info',
