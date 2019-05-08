@@ -932,3 +932,48 @@ Array [
   },
 ]
 `;
+
+exports[`getTestCustomers should retrieve a list of test customers 1`] = `
+Array [
+  Object {
+    "customerName": "Liv Ødegård",
+    "ssn": "29105573083",
+  },
+  Object {
+    "customerName": "Astrid Ruud",
+    "ssn": "18052903871",
+  },
+  Object {
+    "customerName": "Thor Knudsen",
+    "ssn": "08096203957",
+  },
+  Object {
+    "customerName": "Øyvind Hansen",
+    "ssn": "15025498515",
+  },
+  Object {
+    "customerName": "Siri Strand",
+    "ssn": "15047232429",
+  },
+  Object {
+    "customerName": "John Aune",
+    "ssn": "01103068170",
+  },
+  Object {
+    "customerName": "Sverre Jørgensen",
+    "ssn": "22121810569",
+  },
+  Object {
+    "customerName": "Karl Myhre",
+    "ssn": "15099564713",
+  },
+  Object {
+    "customerName": "Dag Andreassen",
+    "ssn": "12034802382",
+  },
+  Object {
+    "customerName": "Camilla Andresen",
+    "ssn": "10016956239",
+  },
+]
+`;
