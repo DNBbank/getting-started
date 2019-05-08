@@ -39,21 +39,21 @@ script that is helpful for running the examples:
 
 ## Steps to your first API call
 
-### 1. Generate the AWS signing V4 headers
-
-You need to use [AWS Signing V4][] to sign all requests towards our APIs. Every piece of
-code in this repo includes this signing step but the detailed process to do so will not
-be described here. We provide an implementation of the AWS Singing V4 step to make developers'
-start easier, but if you would like to understand the implementation, please have a look at
-AWS docs and particularly the [code example][aws-signing-example].
-
-### 2. Get the access token
+### 1. Get the access token
 
 Every request towards our APIs that requires end user authentication requires an access token.
 To obtain this token send a post request to `/tokens` with the SSN in the payload. Example SSNs
 can be fetched from the test-customers endpoint which only requires a API-key from the portal.
 
-### 3. Get customer details
+#### AWS signing
+
+You need to use [AWS Signing V4][] to sign all requests towards the token endpoint. Every piece of
+code in this repo includes this signing step but the detailed process to do so will not
+be described here. We provide an implementation of the AWS Singing V4 step to make developers'
+start easier, but if you would like to understand the implementation, please have a look at
+AWS docs and particularly the [code example][aws-signing-example].
+
+### 2. Get customer details
 
 This request will retrieve information about a dummy customer from our "Customers" endpoint.
 This is an example of a how to do a GET request towards our APIs, you will easily adapt the
