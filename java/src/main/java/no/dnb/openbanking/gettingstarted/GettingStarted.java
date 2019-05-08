@@ -79,14 +79,14 @@ public class GettingStarted {
   }
 
   public static Response<JSONArray> getCurrencyConversions(String quoteCurrency) {
-    final Request customerRequest = createRequest(HttpMethodName.GET, "/currencies/" + quoteCurrency);
+    final Request customerRequest = createRequest(HttpMethodName.GET, "/currencies/v1/" + quoteCurrency);
 
     return buildRequest(customerRequest).execute(new ResponseHandlerJSONArray(false));
   }
 
   public static Response<JSONObject> getCurrencyConversion(String quoteCurrency, String baseCurrency) {
     final Request customerRequest = createRequest(HttpMethodName.GET,
-        "/currencies/" + quoteCurrency + "/convert/" + baseCurrency);
+        "/currencies/v1/" + quoteCurrency + "/convert/" + baseCurrency);
 
     return buildRequest(customerRequest).execute(new ResponseHandlerJSONObject(false));
   }

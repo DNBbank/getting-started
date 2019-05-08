@@ -71,13 +71,13 @@ async function getAccessToken(ssn) {
 }
 
 async function getCurrencyConversions(quoteCurrency) {
-  return request(createRequest({ path: `/currencies/${quoteCurrency}` }));
+  return request(createRequest({ path: `/currencies/v1/${quoteCurrency}` }));
 }
 
 async function getCurrencyConversion(quoteCurrency, baseCurrency) {
   return request(
     createRequest({
-      path: `/currencies/${quoteCurrency}/convert/${baseCurrency}`,
+      path: `/currencies/v1/${quoteCurrency}/convert/${baseCurrency}`,
     }),
   );
 }
