@@ -26,12 +26,12 @@ request_handler = RequestHandler(
 
 
 def get_currency_conversions(quoteCurrency):
-    response = request_handler.request(path=f"/currencies/{quoteCurrency}")
+    response = request_handler.request(path=f"/currencies/v1/{quoteCurrency}")
     return response.json()
 
 
 def get_currency_conversion(quoteCurrency, baseCurrency):
-    response = request_handler.request(path=f"/currencies/{quoteCurrency}/convert/{baseCurrency}")
+    response = request_handler.request(path=f"/currencies/v1/{quoteCurrency}/convert/{baseCurrency}")
     return response.json()
 
 
