@@ -5,6 +5,7 @@ from getting_started.main import (
     get_currency_conversion,
     get_currency_conversions,
     get_customer_info,
+    get_test_customers,
 )
 
 if not os.environ.get("API_KEY"):
@@ -67,3 +68,10 @@ def test_get_customer_info(token):
         "lastName": "Ødegård",
         "phone": "+4713857252",
     }
+
+
+def test_get_test_customers():
+    data = get_test_customers()
+
+    assert len(data) > 5
+    assert list(data[0].keys()) == ["ssn", "customerName"]
