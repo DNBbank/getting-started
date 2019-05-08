@@ -31,7 +31,14 @@ def get_currency_conversions(quoteCurrency):
 
 
 def get_currency_conversion(quoteCurrency, baseCurrency):
-    response = request_handler.request(path=f"/currencies/v1/{quoteCurrency}/convert/{baseCurrency}")
+    response = request_handler.request(
+        path=f"/currencies/v1/{quoteCurrency}/convert/{baseCurrency}"
+    )
+    return response.json()
+
+
+def get_test_customers():
+    response = request_handler.request(path="/test-customers")
     return response.json()
 
 
@@ -48,6 +55,9 @@ def get_customer_info(api_token):
 def main():
     api_token = get_access_token(ssn="29105573083")
     print("\nAPI token: " + api_token)
+
+    test_customers = get_test_customers()
+    print("\nTest customers: " + json.dumps(test_customers, indent=4, sort_keys=True))
 
     customer = get_customer_info(api_token)
     print("\nCustomer info: " + json.dumps(customer, indent=4, sort_keys=True))
