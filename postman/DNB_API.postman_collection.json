@@ -169,7 +169,7 @@
 							"raw": ""
 						},
 						"url": {
-							"raw": "https://developer-api-testmode.dnb.no/currencies/NOK",
+							"raw": "https://developer-api-testmode.dnb.no/currencies/v1/convert/NOK",
 							"protocol": "https",
 							"host": [
 								"developer-api-testmode",
@@ -178,6 +178,8 @@
 							],
 							"path": [
 								"currencies",
+								"v1",
+								"convert",
 								"NOK"
 							]
 						}
@@ -207,7 +209,7 @@
 							"raw": ""
 						},
 						"url": {
-							"raw": "https://developer-api-testmode.dnb.no/currencies/NOK/convert/EUR",
+							"raw": "https://developer-api-testmode.dnb.no/currencies/v1/EUR/convert/NOK",
 							"protocol": "https",
 							"host": [
 								"developer-api-testmode",
@@ -216,9 +218,10 @@
 							],
 							"path": [
 								"currencies",
-								"NOK",
+								"v1",
+								"EUR",
 								"convert",
-								"EUR"
+								"NOK"
 							]
 						}
 					},
