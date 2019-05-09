@@ -1,5 +1,8 @@
 package no.dnb.openbanking.gettingstarted;
 
+import static org.assertj.core.api.Assertions.assertThat;
+import static org.junit.jupiter.api.Assertions.assertTrue;
+
 import com.amazonaws.Response;
 import com.amazonaws.auth.AWS4Signer;
 import com.amazonaws.auth.AWSCredentials;
@@ -9,8 +12,6 @@ import org.json.JSONObject;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 import org.skyscreamer.jsonassert.JSONAssert;
-
-import static org.assertj.core.api.Assertions.assertThat;
 
 public class GettingStartedIntegrationTest {
 
@@ -29,15 +30,31 @@ public class GettingStartedIntegrationTest {
 
   @Test
   void testGetApiToken() {
-    assertThat(jwtToken.length() > 500);
+    assertTrue(jwtToken.length() > 500);
+  }
+
+  @Test
+  void testGetTestCustomersInfoAPI() {
+    JSONArray expectedTestCustomersResponse = TestUtil.parseJSONFileFromResourceToJSONArray(
+        "GetTestCustomers.json");
+    Response<JSONArray> actualTestCustomersResponse = GettingStarted.getTestCustomers();
+
+    assertThat(actualTestCustomersResponse.getHttpResponse().getStatusCode())
+        .as("Test if status code is 200/OK").isEqualTo(200);
+
+    JSONArray actualTestCustomersJSONResponse = actualTestCustomersResponse.getAwsResponse();
+
+    assertThat(actualTestCustomersJSONResponse.length())
+        .as("Check if objects have same amount of fields")
+        .isEqualTo(expectedTestCustomersResponse.length());
+    JSONAssert.assertEquals(expectedTestCustomersResponse, actualTestCustomersJSONResponse , false);
   }
 
   @Test
   void testGetCustomerInfoAPI() {
     JSONObject expectedCustomerDetailsResponse = TestUtil.parseJSONFileFromResourceToJSONObject(
             "GetCustomerDetails.json");
-    Response<JSONObject> actualCustomerDetailsResponse = GettingStarted.getCustomerInfo(
-            jwtToken, signer, awsCredentials);
+    Response<JSONObject> actualCustomerDetailsResponse = GettingStarted.getCustomerInfo(jwtToken);
 
     assertThat(actualCustomerDetailsResponse.getHttpResponse().getStatusCode())
             .as("Test if status code is 200/OK").isEqualTo(200);
@@ -50,13 +67,11 @@ public class GettingStartedIntegrationTest {
     JSONAssert.assertEquals(expectedCustomerDetailsResponse, actualCustomerDetailsJSONResponse, false);
   }
 
-
   @Test
   void testGetCardInfoAPI() {
     JSONArray expectedCardDetailsResponse = TestUtil.parseJSONFileFromResourceToJSONArray(
             "GetCardDetails.json");
-    Response<JSONArray> actualCardDetailsResponse = GettingStarted.getCardInfo(
-            jwtToken, signer, awsCredentials);
+    Response<JSONArray> actualCardDetailsResponse = GettingStarted.getCardInfo(jwtToken);
 
     assertThat(actualCardDetailsResponse.getHttpResponse().getStatusCode())
             .as("Test if status code is 200/OK").isEqualTo(200);
@@ -102,5 +117,4 @@ public class GettingStartedIntegrationTest {
         .isEqualTo(expectedCustomerDetailsResponse.length());
     JSONAssert.assertEquals(expectedCustomerDetailsResponse, json, false);
   }
-
 }
