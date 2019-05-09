@@ -16,7 +16,6 @@ import org.json.JSONArray;
 import org.json.JSONObject;
 
 import java.io.ByteArrayInputStream;
-import java.io.InputStream;
 import java.net.URI;
 import java.nio.charset.Charset;
 
@@ -70,33 +69,39 @@ public class GettingStarted {
     return (String) (apiTokenResponse.get("jwtToken"));
   }
 
-  public static Response<JSONObject> getCustomerInfo(final String jwtToken, final AWS4Signer signer,
-      final AWSCredentials awsCredentials) {
-    final Request customerRequest = createRequest(HttpMethodName.GET, "/customers/current");
-    customerRequest.addHeader(JWT_TOKEN_HEADER, jwtToken);
-
-    return signAndBuildRequest(signer, awsCredentials, customerRequest).execute(new ResponseHandlerJSONObject(false));
-  }
-
-  public static Response<JSONArray> getCurrencyConversions(String quoteCurrency) {
-    final Request customerRequest = createRequest(HttpMethodName.GET, "/currencies/v1/" + quoteCurrency);
+  public static Response<JSONArray> getTestCustomers() {
+    final Request customerRequest = createRequest(HttpMethodName.GET, "/test-customers");
 
     return buildRequest(customerRequest).execute(new ResponseHandlerJSONArray(false));
   }
 
-  public static Response<JSONObject> getCurrencyConversion(String quoteCurrency, String baseCurrency) {
-    final Request customerRequest = createRequest(HttpMethodName.GET,
-        "/currencies/v1/" + quoteCurrency + "/convert/" + baseCurrency);
+  public static Response<JSONObject> getCustomerInfo(final String jwtToken) {
+    final Request customerRequest = createRequest(HttpMethodName.GET, "/customers/current");
+    customerRequest.addHeader(JWT_TOKEN_HEADER, jwtToken);
 
     return buildRequest(customerRequest).execute(new ResponseHandlerJSONObject(false));
   }
 
-  public static Response<JSONArray> getCardInfo(final String jwtToken, final AWS4Signer signer,
-      final AWSCredentials awsCredentials) {
+  public static Response<JSONArray> getCurrencyConversions(String quoteCurrency) {
+    final Request customerRequest = createRequest(
+        HttpMethodName.GET, "/currencies/v1/convert/" + quoteCurrency);
+
+    return buildRequest(customerRequest).execute(new ResponseHandlerJSONArray(false));
+  }
+
+  public static Response<JSONObject> getCurrencyConversion(
+      String quoteCurrency, String baseCurrency) {
+    final Request customerRequest = createRequest(
+        HttpMethodName.GET, "/currencies/v1/" + baseCurrency + "/convert/" + quoteCurrency);
+
+    return buildRequest(customerRequest).execute(new ResponseHandlerJSONObject(false));
+  }
+
+  public static Response<JSONArray> getCardInfo(final String jwtToken) {
     final Request cardRequest = createRequest(HttpMethodName.GET, "/cards");
     cardRequest.addHeader(JWT_TOKEN_HEADER, jwtToken);
 
-    return signAndBuildRequest(signer, awsCredentials, cardRequest).execute(new ResponseHandlerJSONArray(false));
+    return buildRequest(cardRequest).execute(new ResponseHandlerJSONArray(false));
   }
 
   public static void main(final String[] args) {
@@ -104,6 +109,9 @@ public class GettingStarted {
     final AWS4Signer signer = new AWS4Signer();
     signer.setRegionName(AWS_REGION);
     signer.setServiceName(AWS_SERVICE);
+
+    final Response<JSONArray> testCustomers = getTestCustomers();
+    System.out.println("Test customers: " + testCustomers.getAwsResponse().toString(4));
 
     final String jwtToken = getApiToken(signer, awsCredentials);
     System.out.println("JWT token: " + jwtToken);
@@ -114,10 +122,10 @@ public class GettingStarted {
     final Response<JSONObject> currencyResponse = getCurrencyConversion("NOK", "EUR");
     System.out.println("Currency: " + currencyResponse.getAwsResponse().toString(4));
 
-    final Response<JSONObject> customerResponse = getCustomerInfo(jwtToken, signer, awsCredentials);
+    final Response<JSONObject> customerResponse = getCustomerInfo(jwtToken);
     System.out.println("Customer info: " + customerResponse.getAwsResponse().toString(4));
 
-    final Response<JSONArray> cardResponse = getCardInfo(jwtToken, signer, awsCredentials);
+    final Response<JSONArray> cardResponse = getCardInfo(jwtToken);
     System.out.println("Card info: " + cardResponse.getAwsResponse().toString(4));
   }
 }

@@ -1,0 +1,42 @@
+[
+  {
+    "ssn": "29105573083",
+    "customerName": "Liv Ødegård"
+  },
+  {
+    "ssn": "18052903871",
+    "customerName": "Astrid Ruud"
+  },
+  {
+    "ssn": "08096203957",
+    "customerName": "Thor Knudsen"
+  },
+  {
+    "ssn": "15025498515",
+    "customerName": "Øyvind Hansen"
+  },
+  {
+    "ssn": "15047232429",
+    "customerName": "Siri Strand"
+  },
+  {
+    "ssn": "01103068170",
+    "customerName": "John Aune"
+  },
+  {
+    "ssn": "22121810569",
+    "customerName": "Sverre Jørgensen"
+  },
+  {
+    "ssn": "15099564713",
+    "customerName": "Karl Myhre"
+  },
+  {
+    "ssn": "12034802382",
+    "customerName": "Dag Andreassen"
+  },
+  {
+    "ssn": "10016956239",
+    "customerName": "Camilla Andresen"
+  }
+]

@@ -18,7 +18,7 @@ API_KEY=
 After adding the credentials you can run the example with
 
 ```
-mvn exec:java -Dexec.mainClass="com.dnb.openbanking.gettingstarted.GettingStarted"
+mvn clean compile exec:java
 ```
 
 
