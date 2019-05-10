@@ -26,13 +26,13 @@ request_handler = RequestHandler(
 
 
 def get_currency_conversions(quoteCurrency):
-    response = request_handler.request(path=f"/currencies/v1/{quoteCurrency}")
+    response = request_handler.request(path=f"/currencies/v1/convert/{quoteCurrency}")
     return response.json()
 
 
-def get_currency_conversion(quoteCurrency, baseCurrency):
+def get_currency_conversion(baseCurrency, quoteCurrency):
     response = request_handler.request(
-        path=f"/currencies/v1/{quoteCurrency}/convert/{baseCurrency}"
+        path=f"/currencies/v1/{baseCurrency}/convert/{quoteCurrency}"
     )
     return response.json()
 
@@ -65,8 +65,8 @@ def main():
     currencies = get_currency_conversions("NOK")
     print("\nCurrencies: " + json.dumps(currencies, indent=4, sort_keys=True))
 
-    currency = get_currency_conversion("NOK", "EUR")
-    print("\nNOK -> EUR: " + json.dumps(currency, indent=4, sort_keys=True))
+    currency = get_currency_conversion("EUR", "NOK")
+    print("\nEUR -> NOK: " + json.dumps(currency, indent=4, sort_keys=True))
 
 
 if __name__ == "__main__":

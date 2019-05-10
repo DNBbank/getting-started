@@ -76,7 +76,7 @@ testRequiringCredentials(
 testRequiringCredentials(
   'getCurrencyConversion should currency info',
   async () => {
-    const cards = await getCurrencyConversion('NOK', 'EUR');
+    const cards = await getCurrencyConversion('EUR', 'NOK');
 
     expect(cards).toMatchSnapshot();
   },

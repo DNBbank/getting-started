@@ -22,21 +22,21 @@ def test_get_access_token(token):
 
 
 def test_get_currency_conversion():
-    currency = get_currency_conversion("NOK", "EUR")
+    currency = get_currency_conversion("EUR", "NOK")
 
     assert currency == {
         "baseCurrency": "EUR",
         "quoteCurrency": "NOK",
-        "country": "EU",
-        "updatedDate": "2018-11-06 09:00:00.0",
-        "unit": 1,
-        "buyRateTransfer": 9.5047,
-        "sellRateTransfer": 9.5767,
-        "midRate": 9.5407,
-        "changeInRate": 1.17,
-        "previousRateTransfer": 9.529,
-        "buyRateCash": 9.0478,
-        "sellRateCash": 10.04,
+        "country": "NO",
+        "updatedDate": "2019-04-25 09:00:00.0",
+        "amount": 1,
+        "buyRateTransfer": 9.6727,
+        "sellRateTransfer": 9.6007,
+        "midRate": 9.6367,
+        "changeInMidRate": 0.0231,
+        "previousMidRate": 9.6136,
+        "buyRateCash": 10.1396,
+        "sellRateCash": 9.1438,
     }
 
 
