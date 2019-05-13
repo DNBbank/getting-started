@@ -80,13 +80,17 @@ async function getAccessToken(ssn) {
 }
 
 async function getCurrencyConversions(quoteCurrency) {
-  return request(createRequest({ path: `/currencies/v1/${quoteCurrency}` }));
-}
-
-async function getCurrencyConversion(quoteCurrency, baseCurrency) {
   return request(
     createRequest({
-      path: `/currencies/v1/${quoteCurrency}/convert/${baseCurrency}`,
+      path: `/currencies/v1/convert/${quoteCurrency}`,
+    }),
+  );
+}
+
+async function getCurrencyConversion(baseCurrency, quoteCurrency) {
+  return request(
+    createRequest({
+      path: `/currencies/v1/${baseCurrency}/convert/${quoteCurrency}`,
     }),
   );
 }
@@ -124,8 +128,8 @@ async function main() {
   console.log(JSON.stringify(currencies, null, 2));
   console.log('\n');
 
-  const currency = await getCurrencyConversion('NOK', 'EUR');
-  console.log(`${dashes} NOK -> EUR ${dashes}`);
+  const currency = await getCurrencyConversion('EUR', 'NOK');
+  console.log(`${dashes} EUR -> NOK ${dashes}`);
   console.log(JSON.stringify(currency, null, 2));
   console.log('\n');
 }
