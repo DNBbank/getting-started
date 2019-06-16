@@ -38,17 +38,17 @@ def get_currency_conversion(baseCurrency, quoteCurrency):
 
 
 def get_test_customers():
-    response = request_handler.request(path="/test-customers")
+    response = request_handler.request(path="/test-customers/v0")
     return response.json()
 
 
 def get_access_token(ssn):
-    response = request_handler.request(path="/tokens", method="POST", data={"ssn": ssn})
+    response = request_handler.request(path="/tokens/v0", method="POST", data={"ssn": ssn})
     return response.json()["jwtToken"]
 
 
 def get_customer_info(api_token):
-    response = request_handler.request(path="/customers/current", api_token=api_token)
+    response = request_handler.request(path="/customers/v0/current/", api_token=api_token)
     return response.json()
 
 

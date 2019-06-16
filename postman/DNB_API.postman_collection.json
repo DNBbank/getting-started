@@ -43,7 +43,7 @@
 							"raw": "{\n\t\"ssn\": \"29105573083\"\n}"
 						},
 						"url": {
-							"raw": "https://developer-api-testmode.dnb.no/tokens/",
+							"raw": "https://developer-api-testmode.dnb.no/tokens/v0",
 							"protocol": "https",
 							"host": [
 								"developer-api-testmode",
@@ -52,6 +52,7 @@
 							],
 							"path": [
 								"tokens",
+								"v0",
 								""
 							]
 						}
@@ -84,7 +85,7 @@
 							"raw": ""
 						},
 						"url": {
-							"raw": "https://developer-api-testmode.dnb.no/test-customers",
+							"raw": "https://developer-api-testmode.dnb.no/test-customers/v0",
 							"protocol": "https",
 							"host": [
 								"developer-api-testmode",
@@ -126,7 +127,7 @@
 							"raw": ""
 						},
 						"url": {
-							"raw": "https://developer-api-testmode.dnb.no/customers/current",
+							"raw": "https://developer-api-testmode.dnb.no/customers/v0/current",
 							"protocol": "https",
 							"host": [
 								"developer-api-testmode",
@@ -255,7 +256,7 @@
 							"raw": ""
 						},
 						"url": {
-							"raw": "https://developer-api-testmode.dnb.no/cards/",
+							"raw": "https://developer-api-testmode.dnb.no/cards/v0",
 							"protocol": "https",
 							"host": [
 								"developer-api-testmode",
@@ -293,7 +294,7 @@
 							"raw": ""
 						},
 						"url": {
-							"raw": "https://developer-api-testmode.dnb.no/cards/IHMR56189598S24L",
+							"raw": "https://developer-api-testmode.dnb.no/cards/v0/IHMR56189598S24L",
 							"protocol": "https",
 							"host": [
 								"developer-api-testmode",
@@ -331,7 +332,7 @@
 							"raw": ""
 						},
 						"url": {
-							"raw": "https://developer-api-testmode.dnb.no/cards/IHMR56189598S24L/balance",
+							"raw": "https://developer-api-testmode.dnb.no/cards/v0/IHMR56189598S24L/balance",
 							"protocol": "https",
 							"host": [
 								"developer-api-testmode",
@@ -370,7 +371,7 @@
 							"raw": ""
 						},
 						"url": {
-							"raw": "https://developer-api-testmode.dnb.no/cards/TQJQ95214468J85O/block",
+							"raw": "https://developer-api-testmode.dnb.no/cards/v0/TQJQ95214468J85O/block",
 							"protocol": "https",
 							"host": [
 								"developer-api-testmode",
@@ -409,7 +410,7 @@
 							"raw": ""
 						},
 						"url": {
-							"raw": "https://developer-api-testmode.dnb.no/cards/TQJQ95214468J85O/unblock",
+							"raw": "https://developer-api-testmode.dnb.no/cards/v0/TQJQ95214468J85O/unblock",
 							"protocol": "https",
 							"host": [
 								"developer-api-testmode",

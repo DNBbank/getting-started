@@ -60,7 +60,7 @@ public class GettingStarted {
   }
 
   public static String getApiToken(final AWS4Signer signer, final AWSCredentials awsCredentials) {
-    final Request apiTokenRequest = createRequest(HttpMethodName.POST, "/tokens");
+    final Request apiTokenRequest = createRequest(HttpMethodName.POST, "/tokens/v0");
     String content = "{\"ssn\": \"29105573083\"}";
     apiTokenRequest.setContent(new ByteArrayInputStream(content.getBytes(Charset.forName("UTF-8"))));
 
@@ -70,13 +70,13 @@ public class GettingStarted {
   }
 
   public static Response<JSONArray> getTestCustomers() {
-    final Request customerRequest = createRequest(HttpMethodName.GET, "/test-customers");
+    final Request customerRequest = createRequest(HttpMethodName.GET, "/test-customers/v0");
 
     return buildRequest(customerRequest).execute(new ResponseHandlerJSONArray(false));
   }
 
   public static Response<JSONObject> getCustomerInfo(final String jwtToken) {
-    final Request customerRequest = createRequest(HttpMethodName.GET, "/customers/current");
+    final Request customerRequest = createRequest(HttpMethodName.GET, "/customers/v0/current");
     customerRequest.addHeader(JWT_TOKEN_HEADER, jwtToken);
 
     return buildRequest(customerRequest).execute(new ResponseHandlerJSONObject(false));
@@ -98,7 +98,7 @@ public class GettingStarted {
   }
 
   public static Response<JSONArray> getCardInfo(final String jwtToken) {
-    final Request cardRequest = createRequest(HttpMethodName.GET, "/cards");
+    final Request cardRequest = createRequest(HttpMethodName.GET, "/cards/v0");
     cardRequest.addHeader(JWT_TOKEN_HEADER, jwtToken);
 
     return buildRequest(cardRequest).execute(new ResponseHandlerJSONArray(false));
