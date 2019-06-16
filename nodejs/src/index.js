@@ -62,7 +62,7 @@ function createRequest({
 async function getTestCustomers() {
   return request(
     createRequest({
-      path: '/test-customers',
+      path: '/test-customers/v0',
       method: 'GET',
     }),
   );
@@ -71,7 +71,7 @@ async function getTestCustomers() {
 async function getAccessToken(ssn) {
   const data = await request(
     createRequest({
-      path: '/tokens',
+      path: '/tokens/v0',
       method: 'POST',
       data: { ssn },
     }),
@@ -96,11 +96,11 @@ async function getCurrencyConversion(baseCurrency, quoteCurrency) {
 }
 
 async function getCustomerInfo(jwtToken) {
-  return request(createRequest({ path: '/customers/current', jwtToken }));
+  return request(createRequest({ path: '/customers/v0/current', jwtToken }));
 }
 
 async function getCards(jwtToken) {
-  const data = await request(createRequest({ path: '/cards', jwtToken }));
+  const data = await request(createRequest({ path: '/cards/v0', jwtToken }));
   return data;
 }
 
