@@ -51,9 +51,11 @@ def get_customer_info(api_token):
     response = request_handler.request(path="/customers/v0/current", api_token=api_token)
     return response.json()
 
+
 def get_cards(api_token):
     response = request_handler.request(path="/cards/v0", api_token=api_token)
     return response.json()
+
 
 def main():
     api_token = get_access_token(ssn="29105573083")
