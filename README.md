@@ -7,10 +7,10 @@ each subfolder that will add complementary information about the language-specif
 
 ## tldr;
 
-1. Register an application at [developer.dnb.no][]
+1. Register an application at [developer.dnb.no][].
 2. Configure credentials in `.env` file for running code examples. If you want
 to run postman please follow the [postman readme][].
-3. Run one of the examples and check out the code to see what is happening.
+3. Run one of the examples and check out the code to see what is happening. Make sure that you have attached all API's at [developer.dnb.no][] for the examples to run correctly.
 
 ### Getting client-id, client-secret and api-key
 
