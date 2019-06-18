@@ -52,6 +52,7 @@
 							],
 							"path": [
 								"tokens",
+                "v0",
 								""
 							]
 						}
@@ -92,7 +93,8 @@
 								"no"
 							],
 							"path": [
-								"test-customers"
+								"test-customers",
+                "v0"
 							]
 						}
 					},
@@ -135,6 +137,7 @@
 							],
 							"path": [
 								"customers",
+                "v0",
 								"current"
 							]
 						}
@@ -302,6 +305,7 @@
 							],
 							"path": [
 								"cards",
+                "v0",
 								"IHMR56189598S24L"
 							]
 						}
@@ -340,6 +344,7 @@
 							],
 							"path": [
 								"cards",
+                "v0",
 								"IHMR56189598S24L",
 								"balance"
 							]
@@ -379,6 +384,7 @@
 							],
 							"path": [
 								"cards",
+                "v0",
 								"TQJQ95214468J85O",
 								"block"
 							]
@@ -418,6 +424,7 @@
 							],
 							"path": [
 								"cards",
+                "v0",
 								"TQJQ95214468J85O",
 								"unblock"
 							]
