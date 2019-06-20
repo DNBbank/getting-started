@@ -1,485 +1,397 @@
 {
-	"info": {
-		"_postman_id": "032fb85a-3dd3-492f-9e4b-d0db138f023e",
-		"name": "DNB_API",
-		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
-	},
-	"item": [
-		{
-			"name": "Tokens",
-			"item": [
-				{
-					"name": "Get JWT",
-					"event": [
-						{
-							"listen": "test",
-							"script": {
-								"id": "d39b2c94-7732-4098-987e-48231d1f5225",
-								"exec": [
-									"var jsonData = JSON.parse(responseBody);",
-									"postman.setGlobalVariable(\"JwtToken\", jsonData.jwtToken);"
-								],
-								"type": "text/javascript"
-							}
-						}
-					],
-					"request": {
-						"method": "POST",
-						"header": [
-							{
-								"key": "Content-Type",
-								"name": "Content-Type",
-								"type": "text",
-								"value": "application/json"
-							},
-							{
-								"key": "x-api-key",
-								"type": "text",
-								"value": "{{ApiKey}}"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": "{\n\t\"ssn\": \"29105573083\"\n}"
-						},
-						"url": {
-							"raw": "https://developer-api-testmode.dnb.no/tokens/v0",
-							"protocol": "https",
-							"host": [
-								"developer-api-testmode",
-								"dnb",
-								"no"
-							],
-							"path": [
-								"tokens",
-                "v0",
-								""
-							]
-						}
-					},
-					"response": []
-				}
-			]
-		},
-		{
-			"name": "Test Customers",
-			"item": [
-				{
-					"name": "Test Customers",
-					"request": {
-						"method": "GET",
-						"header": [
-							{
-								"key": "x-api-key",
-								"type": "text",
-								"value": "{{ApiKey}}"
-							},
-							{
-								"key": "Content-Type",
-								"type": "text",
-								"value": "application/json"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": ""
-						},
-						"url": {
-							"raw": "https://developer-api-testmode.dnb.no/test-customers/v0",
-							"protocol": "https",
-							"host": [
-								"developer-api-testmode",
-								"dnb",
-								"no"
-							],
-							"path": [
-								"test-customers",
-                "v0"
-							]
-						}
-					},
-					"response": []
-				}
-			]
-		},
-		{
-			"name": "Customers",
-			"item": [
-				{
-					"name": "Customers: Get customer details",
-					"request": {
-						"method": "GET",
-						"header": [
-							{
-								"key": "x-dnbapi-jwt",
-								"value": "{{JwtToken}}"
-							},
-							{
-								"key": "x-api-key",
-								"value": "{{ApiKey}}"
-							},
-							{
-								"key": "Content-Type",
-								"value": "application/json"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": ""
-						},
-						"url": {
-							"raw": "https://developer-api-testmode.dnb.no/customers/v0/current",
-							"protocol": "https",
-							"host": [
-								"developer-api-testmode",
-								"dnb",
-								"no"
-							],
-							"path": [
-								"customers",
-                "v0",
-								"current"
-							]
-						}
-					},
-					"response": []
-				}
-			]
-		},
-		{
-			"name": "Currencies",
-			"item": [
-				{
-					"name": "Currencies: Get currency rate list",
-					"request": {
-						"method": "GET",
-						"header": [
-							{
-								"key": "x-api-key",
-								"value": "{{ApiKey}}"
-							},
-							{
-								"key": "x-dnbapi-jwt",
-								"value": "{{JwtToken}}"
-							},
-							{
-								"key": "Content-Type",
-								"value": "application/json"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": ""
-						},
-						"url": {
-							"raw": "https://developer-api-testmode.dnb.no/currencies/v1/convert/NOK",
-							"protocol": "https",
-							"host": [
-								"developer-api-testmode",
-								"dnb",
-								"no"
-							],
-							"path": [
-								"currencies",
-								"v1",
-								"convert",
-								"NOK"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Currencies: Currency conversion",
-					"request": {
-						"method": "GET",
-						"header": [
-							{
-								"key": "x-api-key",
-								"value": "{{ApiKey}}"
-							},
-							{
-								"key": "x-dnbapi-jwt",
-								"value": "{{JwtToken}}"
-							},
-							{
-								"key": "Content-Type",
-								"value": "application/json"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": ""
-						},
-						"url": {
-							"raw": "https://developer-api-testmode.dnb.no/currencies/v1/EUR/convert/NOK",
-							"protocol": "https",
-							"host": [
-								"developer-api-testmode",
-								"dnb",
-								"no"
-							],
-							"path": [
-								"currencies",
-								"v1",
-								"EUR",
-								"convert",
-								"NOK"
-							]
-						}
-					},
-					"response": []
-				}
-			]
-		},
-		{
-			"name": "Cards",
-			"item": [
-				{
-					"name": "Get cards",
-					"request": {
-						"method": "GET",
-						"header": [
-							{
-								"key": "x-dnbapi-jwt",
-								"value": "{{JwtToken}}"
-							},
-							{
-								"key": "x-api-key",
-								"value": "{{ApiKey}}"
-							},
-							{
-								"key": "Content-Type",
-								"value": "application/json"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": ""
-						},
-						"url": {
-							"raw": "https://developer-api-testmode.dnb.no/cards/v0/",
-							"protocol": "https",
-							"host": [
-								"developer-api-testmode",
-								"dnb",
-								"no"
-							],
-							"path": [
-								"cards",
-								""
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Get card",
-					"request": {
-						"method": "GET",
-						"header": [
-							{
-								"key": "x-dnbapi-jwt",
-								"value": "{{JwtToken}}"
-							},
-							{
-								"key": "x-api-key",
-								"value": "{{ApiKey}}"
-							},
-							{
-								"key": "Content-Type",
-								"value": "application/json"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": ""
-						},
-						"url": {
-							"raw": "https://developer-api-testmode.dnb.no/cards/v0/IHMR56189598S24L",
-							"protocol": "https",
-							"host": [
-								"developer-api-testmode",
-								"dnb",
-								"no"
-							],
-							"path": [
-								"cards",
-                "v0",
-								"IHMR56189598S24L"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Get card balance",
-					"request": {
-						"method": "GET",
-						"header": [
-							{
-								"key": "x-dnbapi-jwt",
-								"value": "{{JwtToken}}"
-							},
-							{
-								"key": "x-api-key",
-								"value": "{{ApiKey}}"
-							},
-							{
-								"key": "Content-Type",
-								"value": "application/json"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": ""
-						},
-						"url": {
-							"raw": "https://developer-api-testmode.dnb.no/cards/v0/IHMR56189598S24L/balance",
-							"protocol": "https",
-							"host": [
-								"developer-api-testmode",
-								"dnb",
-								"no"
-							],
-							"path": [
-								"cards",
-                "v0",
-								"IHMR56189598S24L",
-								"balance"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Block card",
-					"request": {
-						"method": "PUT",
-						"header": [
-							{
-								"key": "x-dnbapi-jwt",
-								"value": "{{JwtToken}}"
-							},
-							{
-								"key": "x-api-key",
-								"value": "{{ApiKey}}"
-							},
-							{
-								"key": "Content-Type",
-								"value": "application/json"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": ""
-						},
-						"url": {
-							"raw": "https://developer-api-testmode.dnb.no/cards/v0/TQJQ95214468J85O/block",
-							"protocol": "https",
-							"host": [
-								"developer-api-testmode",
-								"dnb",
-								"no"
-							],
-							"path": [
-								"cards",
-                "v0",
-								"TQJQ95214468J85O",
-								"block"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Unblock card",
-					"request": {
-						"method": "PUT",
-						"header": [
-							{
-								"key": "x-dnbapi-jwt",
-								"value": "{{JwtToken}}"
-							},
-							{
-								"key": "x-api-key",
-								"value": "{{ApiKey}}"
-							},
-							{
-								"key": "Content-Type",
-								"value": "application/json"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": ""
-						},
-						"url": {
-							"raw": "https://developer-api-testmode.dnb.no/cards/v0/TQJQ95214468J85O/unblock",
-							"protocol": "https",
-							"host": [
-								"developer-api-testmode",
-								"dnb",
-								"no"
-							],
-							"path": [
-								"cards",
-                "v0",
-								"TQJQ95214468J85O",
-								"unblock"
-							]
-						}
-					},
-					"response": []
-				}
-			]
-		}
-	],
-	"auth": {
-		"type": "awsv4",
-		"awsv4": [
-			{
-				"key": "service",
-				"value": "execute-api",
-				"type": "string"
-			},
-			{
-				"key": "region",
-				"value": "eu-west-1",
-				"type": "string"
-			},
-			{
-				"key": "secretKey",
-				"value": "{{SecretKey}}",
-				"type": "string"
-			},
-			{
-				"key": "accessKey",
-				"value": "{{AccessKey}}",
-				"type": "string"
-			}
-		]
-	},
-	"event": [
-		{
-			"listen": "prerequest",
-			"script": {
-				"id": "ecf2eb27-3db6-4b1e-bc4e-1ee8786f3f2b",
-				"type": "text/javascript",
-				"exec": [
-					""
-				]
-			}
-		},
-		{
-			"listen": "test",
-			"script": {
-				"id": "ecf60af7-f3ac-4234-ad33-39c6e2598635",
-				"type": "text/javascript",
-				"exec": [
-					""
-				]
-			}
-		}
-	]
+  "info": {
+    "_postman_id": "032fb85a-3dd3-492f-9e4b-d0db138f023e",
+    "name": "DNB_API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Tokens",
+      "item": [
+        {
+          "name": "Get JWT",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "id": "d39b2c94-7732-4098-987e-48231d1f5225",
+                "exec": [
+                  "var jsonData = JSON.parse(responseBody);",
+                  "postman.setGlobalVariable(\"JwtToken\", jsonData.jwtToken);"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "name": "Content-Type",
+                "type": "text",
+                "value": "application/json"
+              },
+              {
+                "key": "x-api-key",
+                "type": "text",
+                "value": "{{ApiKey}}"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n\t\"ssn\": \"29105573083\"\n}"
+            },
+            "url": {
+              "raw": "https://developer-api-testmode.dnb.no/tokens/v0",
+              "protocol": "https",
+              "host": ["developer-api-testmode", "dnb", "no"],
+              "path": ["tokens", "v0", ""]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Test Customers",
+      "item": [
+        {
+          "name": "Test Customers",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "x-api-key",
+                "type": "text",
+                "value": "{{ApiKey}}"
+              },
+              {
+                "key": "Content-Type",
+                "type": "text",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": ""
+            },
+            "url": {
+              "raw": "https://developer-api-testmode.dnb.no/test-customers/v0",
+              "protocol": "https",
+              "host": ["developer-api-testmode", "dnb", "no"],
+              "path": ["test-customers", "v0"]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Customers",
+      "item": [
+        {
+          "name": "Customers: Get customer details",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "x-dnbapi-jwt",
+                "value": "{{JwtToken}}"
+              },
+              {
+                "key": "x-api-key",
+                "value": "{{ApiKey}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": ""
+            },
+            "url": {
+              "raw": "https://developer-api-testmode.dnb.no/customers/v0/current",
+              "protocol": "https",
+              "host": ["developer-api-testmode", "dnb", "no"],
+              "path": ["customers", "v0", "current"]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Currencies",
+      "item": [
+        {
+          "name": "Currencies: Get currency rate list",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "x-api-key",
+                "value": "{{ApiKey}}"
+              },
+              {
+                "key": "x-dnbapi-jwt",
+                "value": "{{JwtToken}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": ""
+            },
+            "url": {
+              "raw": "https://developer-api-testmode.dnb.no/currencies/v1/convert/NOK",
+              "protocol": "https",
+              "host": ["developer-api-testmode", "dnb", "no"],
+              "path": ["currencies", "v1", "convert", "NOK"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Currencies: Currency conversion",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "x-api-key",
+                "value": "{{ApiKey}}"
+              },
+              {
+                "key": "x-dnbapi-jwt",
+                "value": "{{JwtToken}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": ""
+            },
+            "url": {
+              "raw": "https://developer-api-testmode.dnb.no/currencies/v1/EUR/convert/NOK",
+              "protocol": "https",
+              "host": ["developer-api-testmode", "dnb", "no"],
+              "path": ["currencies", "v1", "EUR", "convert", "NOK"]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Cards",
+      "item": [
+        {
+          "name": "Get cards",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "x-dnbapi-jwt",
+                "value": "{{JwtToken}}"
+              },
+              {
+                "key": "x-api-key",
+                "value": "{{ApiKey}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": ""
+            },
+            "url": {
+              "raw": "https://developer-api-testmode.dnb.no/cards/v0/",
+              "protocol": "https",
+              "host": ["developer-api-testmode", "dnb", "no"],
+              "path": ["cards", "v0", ""]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get card",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "x-dnbapi-jwt",
+                "value": "{{JwtToken}}"
+              },
+              {
+                "key": "x-api-key",
+                "value": "{{ApiKey}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": ""
+            },
+            "url": {
+              "raw": "https://developer-api-testmode.dnb.no/cards/v0/IHMR56189598S24L",
+              "protocol": "https",
+              "host": ["developer-api-testmode", "dnb", "no"],
+              "path": ["cards", "v0", "IHMR56189598S24L"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get card balance",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "x-dnbapi-jwt",
+                "value": "{{JwtToken}}"
+              },
+              {
+                "key": "x-api-key",
+                "value": "{{ApiKey}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": ""
+            },
+            "url": {
+              "raw": "https://developer-api-testmode.dnb.no/cards/v0/IHMR56189598S24L/balance",
+              "protocol": "https",
+              "host": ["developer-api-testmode", "dnb", "no"],
+              "path": ["cards", "v0", "IHMR56189598S24L", "balance"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Block card",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "x-dnbapi-jwt",
+                "value": "{{JwtToken}}"
+              },
+              {
+                "key": "x-api-key",
+                "value": "{{ApiKey}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": ""
+            },
+            "url": {
+              "raw": "https://developer-api-testmode.dnb.no/cards/v0/TQJQ95214468J85O/block",
+              "protocol": "https",
+              "host": ["developer-api-testmode", "dnb", "no"],
+              "path": ["cards", "v0", "TQJQ95214468J85O", "block"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Unblock card",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "x-dnbapi-jwt",
+                "value": "{{JwtToken}}"
+              },
+              {
+                "key": "x-api-key",
+                "value": "{{ApiKey}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": ""
+            },
+            "url": {
+              "raw": "https://developer-api-testmode.dnb.no/cards/v0/TQJQ95214468J85O/unblock",
+              "protocol": "https",
+              "host": ["developer-api-testmode", "dnb", "no"],
+              "path": ["cards", "v0", "TQJQ95214468J85O", "unblock"]
+            }
+          },
+          "response": []
+        }
+      ]
+    }
+  ],
+  "auth": {
+    "type": "awsv4",
+    "awsv4": [
+      {
+        "key": "service",
+        "value": "execute-api",
+        "type": "string"
+      },
+      {
+        "key": "region",
+        "value": "eu-west-1",
+        "type": "string"
+      },
+      {
+        "key": "secretKey",
+        "value": "{{SecretKey}}",
+        "type": "string"
+      },
+      {
+        "key": "accessKey",
+        "value": "{{AccessKey}}",
+        "type": "string"
+      }
+    ]
+  },
+  "event": [
+    {
+      "listen": "prerequest",
+      "script": {
+        "id": "ecf2eb27-3db6-4b1e-bc4e-1ee8786f3f2b",
+        "type": "text/javascript",
+        "exec": [""]
+      }
+    },
+    {
+      "listen": "test",
+      "script": {
+        "id": "ecf60af7-f3ac-4234-ad33-39c6e2598635",
+        "type": "text/javascript",
+        "exec": [""]
+      }
+    }
+  ]
 }
