@@ -5,5 +5,5 @@ extends:
 env:
   node: true
 rules:
-  no-console: off
-  unicorn/no-process-exit: off
+  no-console: 'off'
+  unicorn/no-process-exit: 'off'

@@ -35,12 +35,8 @@ exports.sign = (options, clientId, clientSecret) => {
   const canonicalHeaders = `host:${options.host}\nx-amz-date:${amzDate}\n`;
   const signedHeaders = 'host;x-amz-date';
   const payloadHash = exports.hash(options.data || '', 'hex');
-  const canonicalRequest = `${
-    options.method
-  }\n${canonicalUri}\n${canonicalQuerystring}\n${canonicalHeaders}\n${signedHeaders}\n${payloadHash}`;
-  const credentialScope = `${dateStamp}/${options.region}/${
-    options.service
-  }/aws4_request`;
+  const canonicalRequest = `${options.method}\n${canonicalUri}\n${canonicalQuerystring}\n${canonicalHeaders}\n${signedHeaders}\n${payloadHash}`;
+  const credentialScope = `${dateStamp}/${options.region}/${options.service}/aws4_request`;
   const stringToSign = `${algorithm}\n${amzDate}\n${credentialScope}\n${exports.hash(
     canonicalRequest,
     'hex',
