@@ -1,0 +1,4822 @@
+{
+	"id": "aa3f795a-1c4b-4169-b143-227b360ad65b",
+	"name": "PSD2",
+	"description": "Collection of Postman requests for PSD2.",
+	"auth": null,
+	"events": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "148adfb9-35a2-4f53-930b-f394fd79d98a",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "519f2198-74d9-45d4-ac2a-b51c226c1d57",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variables": [],
+	"order": [],
+	"folders_order": [
+		"6cafe240-65cf-45d3-99c6-92540ca96d18",
+		"8f015cd8-5bac-4a51-85ef-da5b193adf32",
+		"dbb8050f-07b5-4477-94dc-0fbee72cabdd"
+	],
+	"folders": [
+		{
+			"id": "6cafe240-65cf-45d3-99c6-92540ca96d18",
+			"name": "Account Information Service (AIS)",
+			"description": "",
+			"auth": null,
+			"events": null,
+			"collection": "aa3f795a-1c4b-4169-b143-227b360ad65b",
+			"folder": null,
+			"order": [
+				"0f711524-896c-4050-b073-73677fe0b331",
+				"8cd1b3e1-27ae-48a5-979b-252bf313cafb",
+				"b69b1ba8-e3f2-4272-b9da-eebc40638a29",
+				"b1211b43-a3ac-457a-ad33-e9575bfe1db2",
+				"8575fca9-28df-4ff4-9ce6-81c33d9f5bc8",
+				"2a17a9cd-5b05-4541-a354-32e25e36776a",
+				"b5d6b9ac-ffa9-4e28-9182-7203c03175b1",
+				"c6f7fbbe-989d-4909-8732-ee757074a986",
+				"3c478e3c-9b51-4bcf-a3e7-209d702465c3",
+				"cd05e987-a0c9-4c10-91f5-95f4d0185efb",
+				"2fd71f98-44f8-4e5a-89a2-b8b1d9e2b083",
+				"ad570570-6d48-46d3-983a-5664c99cd6ce"
+			],
+			"folders_order": []
+		},
+		{
+			"id": "8f015cd8-5bac-4a51-85ef-da5b193adf32",
+			"name": "Confirmation of Funds Service (PIIS)",
+			"description": "",
+			"auth": null,
+			"events": null,
+			"collection": "aa3f795a-1c4b-4169-b143-227b360ad65b",
+			"folder": null,
+			"order": [
+				"2f52011e-e2c6-414c-a3a8-6356919fc833"
+			],
+			"folders_order": []
+		},
+		{
+			"id": "e877a486-989a-419a-a59a-3f786d3054ef",
+			"name": "Denmark,Sweden,UK payments",
+			"description": "",
+			"auth": null,
+			"events": null,
+			"collection": "aa3f795a-1c4b-4169-b143-227b360ad65b",
+			"folder": "dbb8050f-07b5-4477-94dc-0fbee72cabdd",
+			"order": [
+				"4ef97c1a-da01-45de-ad01-1d0274f640cc",
+				"83fba537-275b-42df-9018-78e95ab3178e",
+				"72b912cd-8ad8-4a7e-bc63-c1bbf0b2cf14",
+				"182fbde1-820e-4d7f-95dd-e440dbc0d378",
+				"cdf581a9-3d9b-41c9-a844-fd472275e917",
+				"882fdd3b-4c15-4b00-a8d4-24c82a245617"
+			],
+			"folders_order": []
+		},
+		{
+			"id": "dbb8050f-07b5-4477-94dc-0fbee72cabdd",
+			"name": "Payment Initiation Service (PIS)",
+			"description": "",
+			"auth": null,
+			"events": null,
+			"collection": "aa3f795a-1c4b-4169-b143-227b360ad65b",
+			"folder": null,
+			"order": [
+				"bd23f955-6b94-478d-a4d0-5993caae55e4",
+				"331c9a4c-0561-4625-ac03-807950b2f967",
+				"7ab5b33e-c121-4753-9ffc-1671d58bdc1e",
+				"48e39da1-eeeb-447f-bd8e-3114b50efaca",
+				"78d30fa2-b5cc-43c8-939c-b52e18dd2e5c",
+				"092f3a2b-eb62-40fb-a5ca-db42bcca1d77",
+				"86b587c3-db2a-48e7-bf2b-e2a80cecf999",
+				"0a6ef337-4fbc-451f-85f8-8f47edccd81b",
+				"5871ca6e-052a-4e2b-bbdd-89c4523d6a6f",
+				"d010192b-c979-4b9b-8dc2-718971700a49",
+				"372ffd01-6476-4439-962c-dea243c95b86",
+				"2c0d6f3f-5d6a-4bd0-bff7-02794e56841b",
+				"09774a72-6ec4-4ca3-ad7c-b3c9ccda5059"
+			],
+			"folders_order": [
+				"0128f92c-a55c-4be1-9038-51648b97bbfa",
+				"e877a486-989a-419a-a59a-3f786d3054ef",
+				"851e48b5-a28a-4cb0-92d1-58247f6049aa"
+			]
+		},
+		{
+			"id": "0128f92c-a55c-4be1-9038-51648b97bbfa",
+			"name": "periodic-payments",
+			"description": "",
+			"auth": null,
+			"events": null,
+			"collection": "aa3f795a-1c4b-4169-b143-227b360ad65b",
+			"folder": "dbb8050f-07b5-4477-94dc-0fbee72cabdd",
+			"order": [
+				"c65cfdc8-7c8a-4edb-ae4b-647b5172531d",
+				"a4ee8986-d9df-4391-94d2-463e7167e422",
+				"24f7079d-d335-47eb-a2b8-e5b7cb950124",
+				"43d4735c-c3ca-476c-b845-afed9fd2b031",
+				"00502a0d-04f5-4f1e-b1a7-11b4bf8919d4",
+				"b290e1fb-1381-48a6-aee3-12e55cf02696"
+			],
+			"folders_order": []
+		},
+		{
+			"id": "851e48b5-a28a-4cb0-92d1-58247f6049aa",
+			"name": "signing-basket",
+			"description": "",
+			"auth": null,
+			"events": null,
+			"collection": "aa3f795a-1c4b-4169-b143-227b360ad65b",
+			"folder": "dbb8050f-07b5-4477-94dc-0fbee72cabdd",
+			"order": [
+				"3a245079-830a-4842-b485-6989a6818058",
+				"f4d30852-4c5f-4c56-a913-31e5e30d48a3",
+				"51f5f196-db30-48a2-b691-34788aae98aa",
+				"968cd55c-333c-4b68-9153-5d9d87178fed",
+				"fbddf537-4a6b-4282-9952-04e677ff0ab8"
+			],
+			"folders_order": []
+		}
+	],
+	"requests": [
+		{
+			"id": "00502a0d-04f5-4f1e-b1a7-11b4bf8919d4",
+			"name": "/v1/periodic-payments/norwegian-domestic-payment-to-self",
+			"url": "https://{{host}}/v1/periodic-payments/norwegian-domestic-payment-to-self/{{paymentId}}",
+			"description": "",
+			"data": null,
+			"dataMode": null,
+			"headerData": [
+				{
+					"description": "",
+					"enabled": true,
+					"key": "X-Request-ID",
+					"type": "text",
+					"value": "{{$guid}}"
+				},
+				{
+					"description": "",
+					"enabled": true,
+					"key": "PSU-IP-Address",
+					"type": "text",
+					"value": "{{psu_ip_address}}"
+				},
+				{
+					"description": "",
+					"enabled": true,
+					"key": "Accept",
+					"type": "text",
+					"value": "application/json"
+				},
+				{
+					"description": "",
+					"enabled": true,
+					"key": "Content-Type",
+					"type": "text",
+					"value": "application/json"
+				},
+				{
+					"description": "",
+					"enabled": true,
+					"key": "PSU-User-Agent",
+					"type": "text",
+					"value": "{{user_agent}}"
+				},
+				{
+					"description": "",
+					"enabled": true,
+					"key": "TPP-Redirect-URI",
+					"type": "text",
+					"value": "{{tpp_redirect_uri}}"
+				},
+				{
+					"description": "",
+					"enabled": true,
+					"key": "PSU-ID",
+					"type": "text",
+					"value": "{{ssn}}"
+				}
+			],
+			"method": "GET",
+			"pathVariableData": [],
+			"queryParams": [],
+			"auth": null,
+			"events": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "584a417a-aa24-4e5c-957d-a90af9ec9663",
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "8a013ebe-54e8-4a89-9819-ad50574f67d3",
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"folder": "0128f92c-a55c-4be1-9038-51648b97bbfa",
+			"responses": [
+				{
+					"id": "98e72da3-eb10-4be7-b3b8-24da20be46c5",
+					"name": "/v1/tpp",
+					"status": "",
+					"mime": "",
+					"language": "Text",
+					"text": "{\n  \"tppMetaData\": [\n    {\n      \"tppId\": \"PSDNO-TSTNCA-123123\",\n      \"tppName\": \"Acme Inc\",\n      \"tppRefId\": \"abc123tppRefId\",\n      \"activeLicenses\": [\n        {\n          \"license\": {\n            \"service\": \"AIS\"\n          },\n          \"countries\": [\n            \"NO\"\n          ]\n        }\n      ]\n    }\n  ]\n}",
+					"responseCode": {
+						"code": 200,
+						"detail": ""
+					},
+					"requestObject": {
+						"id": "f2b594cd-5eff-4284-93a7-1c30afbbc602",
+						"method": "GET",
+						"headers": "",
+						"dataMode": null,
+						"data": null,
+						"rawModeData": "",
+						"url": "{url}}/v1/tpp",
+						"pathVariableData": [],
+						"queryParams": [],
+						"headerData": []
+					},
+					"headers": [],
+					"cookies": [],
+					"request": "00502a0d-04f5-4f1e-b1a7-11b4bf8919d4",
+					"collection": "aa3f795a-1c4b-4169-b143-227b360ad65b"
+				}
+			],
+			"headers": "X-Request-ID: {{$guid}}\nPSU-IP-Address: {{psu_ip_address}}\nAccept: application/json\nContent-Type: application/json\nPSU-User-Agent: {{user_agent}}\nTPP-Redirect-URI: {{tpp_redirect_uri}}\nPSU-ID: {{ssn}}\n",
+			"pathVariables": {}
+		},
+		{
+			"id": "092f3a2b-eb62-40fb-a5ca-db42bcca1d77",
+			"name": "/v1/payments/norwegian-domestic-credit-transfers",
+			"url": "https://{{host}}/v1/payments/norwegian-domestic-credit-transfers/{{paymentId}}",
+			"description": "",
+			"data": null,
+			"dataMode": null,
+			"headerData": [
+				{
+					"description": "",
+					"enabled": true,
+					"key": "X-Request-ID",
+					"type": "text",
+					"value": "{{$guid}}"
+				},
+				{
+					"description": "",
+					"enabled": true,
+					"key": "PSU-IP-Address",
+					"type": "text",
+					"value": "{{psu_ip_address}}"
+				},
+				{
+					"description": "",
+					"enabled": true,
+					"key": "Accept",
+					"type": "text",
+					"value": "application/json"
+				},
+				{
+					"description": "",
+					"enabled": true,
+					"key": "Content-Type",
+					"type": "text",
+					"value": "application/json"
+				},
+				{
+					"description": "",
+					"enabled": true,
+					"key": "PSU-User-Agent",
+					"type": "text",
+					"value": "{{user_agent}}"
+				},
+				{
+					"description": "",
+					"enabled": true,
+					"key": "TPP-Redirect-URI",
+					"type": "text",
+					"value": "{{tpp_redirect_uri}}"
+				},
+				{
+					"description": "",
+					"enabled": true,
+					"key": "PSU-ID",
+					"type": "text",
+					"value": "{{ssn}}"
+				}
+			],
+			"method": "GET",
+			"pathVariableData": [],
+			"queryParams": [],
+			"auth": null,
+			"events": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "584a417a-aa24-4e5c-957d-a90af9ec9663",
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "8a013ebe-54e8-4a89-9819-ad50574f67d3",
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"folder": "dbb8050f-07b5-4477-94dc-0fbee72cabdd",
+			"responses": [
+				{
+					"id": "38fa92d9-46b3-4643-9e17-1386c82db651",
+					"name": "/v1/tpp",
+					"status": "",
+					"mime": "",
+					"language": "Text",
+					"text": "{\n  \"tppMetaData\": [\n    {\n      \"tppId\": \"PSDNO-TSTNCA-123123\",\n      \"tppName\": \"Acme Inc\",\n      \"tppRefId\": \"abc123tppRefId\",\n      \"activeLicenses\": [\n        {\n          \"license\": {\n            \"service\": \"AIS\"\n          },\n          \"countries\": [\n            \"NO\"\n          ]\n        }\n      ]\n    }\n  ]\n}",
+					"responseCode": {
+						"code": 200,
+						"detail": ""
+					},
+					"requestObject": {
+						"id": "f2b594cd-5eff-4284-93a7-1c30afbbc602",
+						"method": "GET",
+						"headers": "",
+						"dataMode": null,
+						"data": null,
+						"rawModeData": "",
+						"url": "{url}}/v1/tpp",
+						"pathVariableData": [],
+						"queryParams": [],
+						"headerData": []
+					},
+					"headers": [],
+					"cookies": [],
+					"request": "092f3a2b-eb62-40fb-a5ca-db42bcca1d77",
+					"collection": "aa3f795a-1c4b-4169-b143-227b360ad65b"
+				}
+			],
+			"headers": "X-Request-ID: {{$guid}}\nPSU-IP-Address: {{psu_ip_address}}\nAccept: application/json\nContent-Type: application/json\nPSU-User-Agent: {{user_agent}}\nTPP-Redirect-URI: {{tpp_redirect_uri}}\nPSU-ID: {{ssn}}\n",
+			"pathVariables": {}
+		},
+		{
+			"id": "09774a72-6ec4-4ca3-ad7c-b3c9ccda5059",
+			"name": "/v1/payments/sepa-credit-transfers",
+			"url": "https://{{host}}/v1/payments/norwegian-cross-border-credit-transfers/{{paymentId}}",
+			"description": "",
+			"data": null,
+			"dataMode": null,
+			"headerData": [
+				{
+					"description": "",
+					"enabled": true,
+					"key": "X-Request-ID",
+					"type": "text",
+					"value": "{{$guid}}"
+				},
+				{
+					"description": "",
+					"enabled": true,
+					"key": "PSU-IP-Address",
+					"type": "text",
+					"value": "{{psu_ip_address}}"
+				},
+				{
+					"description": "",
+					"enabled": true,
+					"key": "Accept",
+					"type": "text",
+					"value": "application/json"
+				},
+				{
+					"description": "",
+					"enabled": true,
+					"key": "Content-Type",
+					"type": "text",
+					"value": "application/json"
+				},
+				{
+					"description": "",
+					"enabled": true,
+					"key": "PSU-User-Agent",
+					"type": "text",
+					"value": "{{user_agent}}"
+				},
+				{
+					"description": "",
+					"enabled": true,
+					"key": "TPP-Redirect-URI",
+					"type": "text",
+					"value": "{{tpp_redirect_uri}}"
+				},
+				{
+					"description": "",
+					"enabled": true,
+					"key": "PSU-ID",
+					"type": "text",
+					"value": "{{ssn}}"
+				}
+			],
+			"method": "DELETE",
+			"pathVariableData": [],
+			"queryParams": [],
+			"auth": null,
+			"events": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "584a417a-aa24-4e5c-957d-a90af9ec9663",
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "8a013ebe-54e8-4a89-9819-ad50574f67d3",
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"folder": "dbb8050f-07b5-4477-94dc-0fbee72cabdd",
+			"responses": [
+				{
+					"id": "82595077-08ea-4f80-9b8c-cf885c44315b",
+					"name": "/v1/tpp",
+					"status": "",
+					"mime": "",
+					"language": "Text",
+					"text": "{\n  \"tppMetaData\": [\n    {\n      \"tppId\": \"PSDNO-TSTNCA-123123\",\n      \"tppName\": \"Acme Inc\",\n      \"tppRefId\": \"abc123tppRefId\",\n      \"activeLicenses\": [\n        {\n          \"license\": {\n            \"service\": \"AIS\"\n          },\n          \"countries\": [\n            \"NO\"\n          ]\n        }\n      ]\n    }\n  ]\n}",
+					"responseCode": {
+						"code": 200,
+						"detail": ""
+					},
+					"requestObject": {
+						"id": "f2b594cd-5eff-4284-93a7-1c30afbbc602",
+						"method": "GET",
+						"headers": "",
+						"dataMode": null,
+						"data": null,
+						"rawModeData": "",
+						"url": "{url}}/v1/tpp",
+						"pathVariableData": [],
+						"queryParams": [],
+						"headerData": []
+					},
+					"headers": [],
+					"cookies": [],
+					"request": "09774a72-6ec4-4ca3-ad7c-b3c9ccda5059",
+					"collection": "aa3f795a-1c4b-4169-b143-227b360ad65b"
+				}
+			],
+			"headers": "X-Request-ID: {{$guid}}\nPSU-IP-Address: {{psu_ip_address}}\nAccept: application/json\nContent-Type: application/json\nPSU-User-Agent: {{user_agent}}\nTPP-Redirect-URI: {{tpp_redirect_uri}}\nPSU-ID: {{ssn}}\n",
+			"pathVariables": {}
+		},
+		{
+			"id": "0a6ef337-4fbc-451f-85f8-8f47edccd81b",
+			"name": "/v1/payments/norwegian-domestic-payment-to-self",
+			"url": "https://{{host}}/v1/payments/norwegian-domestic-payment-to-self",
+			"description": "",
+			"data": [],
+			"dataMode": "raw",
+			"headerData": [
+				{
+					"description": "",
+					"enabled": true,
+					"key": "X-Request-ID",
+					"type": "text",
+					"value": "{{$guid}}"
+				},
+				{
+					"description": "",
+					"enabled": true,
+					"key": "PSU-IP-Address",
+					"type": "text",
+					"value": "{{psu_ip_address}}"
+				},
+				{
+					"description": "",
+					"enabled": true,
+					"key": "Accept",
+					"type": "text",
+					"value": "application/json"
+				},
+				{
+					"description": "",
+					"enabled": true,
+					"key": "Content-Type",
+					"type": "text",
+					"value": "application/json"
+				},
+				{
+					"description": "",
+					"enabled": true,
+					"key": "PSU-User-Agent",
+					"type": "text",
+					"value": "{{user_agent}}"
+				},
+				{
+					"description": "",
+					"enabled": true,
+					"key": "TPP-Redirect-URI",
+					"type": "text",
+					"value": "{{tpp_redirect_uri}}"
+				},
+				{
+					"description": "",
+					"enabled": true,
+					"key": "PSU-ID",
+					"type": "text",
+					"value": "{{ssn}}"
+				}
+			],
+			"method": "POST",
+			"pathVariableData": [],
+			"queryParams": [],
+			"auth": null,
+			"events": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "584a417a-aa24-4e5c-957d-a90af9ec9663",
+						"exec": [
+							"var jsonData = JSON.parse(responseBody);",
+							"pm.globals.set(\"paymentId\", jsonData.paymentId);"
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "8a013ebe-54e8-4a89-9819-ad50574f67d3",
+						"exec": [
+							"var date = new Date();",
+							"today = date.toISOString().split('T')[0];",
+							"pm.environment.set(\"today\", today);"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"folder": "dbb8050f-07b5-4477-94dc-0fbee72cabdd",
+			"responses": [
+				{
+					"id": "f4f50480-8e06-42ca-9dfc-f158e8cbcf2c",
+					"name": "/v1/tpp",
+					"status": "",
+					"mime": "",
+					"language": "Text",
+					"text": "{\n  \"tppMetaData\": [\n    {\n      \"tppId\": \"PSDNO-TSTNCA-123123\",\n      \"tppName\": \"Acme Inc\",\n      \"tppRefId\": \"abc123tppRefId\",\n      \"activeLicenses\": [\n        {\n          \"license\": {\n            \"service\": \"AIS\"\n          },\n          \"countries\": [\n            \"NO\"\n          ]\n        }\n      ]\n    }\n  ]\n}",
+					"responseCode": {
+						"code": 200,
+						"detail": ""
+					},
+					"requestObject": {
+						"id": "f2b594cd-5eff-4284-93a7-1c30afbbc602",
+						"method": "GET",
+						"headers": "",
+						"dataMode": null,
+						"data": null,
+						"rawModeData": "",
+						"url": "{url}}/v1/tpp",
+						"pathVariableData": [],
+						"queryParams": [],
+						"headerData": []
+					},
+					"headers": [],
+					"cookies": [],
+					"request": "0a6ef337-4fbc-451f-85f8-8f47edccd81b",
+					"collection": "aa3f795a-1c4b-4169-b143-227b360ad65b"
+				}
+			],
+			"rawModeData": "{\n    \"debtorAccount\": {\n        \"bban\": \"{{firstAccount}}\"\n    },\n    \"creditorAccount\": {\n        \"bban\": \"{{secondAccount}}\"\n    },\n    \"creditorName\": \"Foo Bar\",\n    \"instructedAmount\": {\n        \"amount\": 13.40,\n        \"currency\": \"NOK\"\n    },\n    \"remittanceInformationUnstructured\": \"Test of transfer between own accounts.\",\n    \"requestedExecutionDate\": \"{{today}}\"\n}",
+			"headers": "X-Request-ID: {{$guid}}\nPSU-IP-Address: {{psu_ip_address}}\nAccept: application/json\nContent-Type: application/json\nPSU-User-Agent: {{user_agent}}\nTPP-Redirect-URI: {{tpp_redirect_uri}}\nPSU-ID: {{ssn}}\n",
+			"pathVariables": {}
+		},
+		{
+			"id": "0f711524-896c-4050-b073-73677fe0b331",
+			"name": "/v1/consents",
+			"url": "https://{{host}}/v1/consents/",
+			"description": "Create a consent. Note: Manually go to the scaRedirect URL to authorize the consent (Cmd or Ctrl click on the URL).",
+			"data": [],
+			"dataMode": "raw",
+			"headerData": [
+				{
+					"key": "X-Request-ID",
+					"value": "{{$guid}}"
+				},
+				{
+					"key": "PSU-ID",
+					"value": "{{ssn}}"
+				},
+				{
+					"key": "PSU-IP-Address",
+					"value": "{{psu_ip_address}}"
+				},
+				{
+					"key": "TPP-Redirect-URI",
+					"value": "{{tpp_redirect_uri}}"
+				},
+				{
+					"key": "Accept",
+					"value": "application/json"
+				},
+				{
+					"key": "Content-Type",
+					"value": "application/json"
+				},
+				{
+					"description": "",
+					"enabled": true,
+					"key": "PSU-User-Agent",
+					"type": "text",
+					"value": "{{user_agent}}"
+				}
+			],
+			"method": "POST",
+			"pathVariableData": [],
+			"queryParams": [],
+			"auth": null,
+			"events": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "584a417a-aa24-4e5c-957d-a90af9ec9663",
+						"exec": [
+							"var jsonData = JSON.parse(responseBody);",
+							"pm.globals.set(\"consentId\", jsonData.consentId);"
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "8a013ebe-54e8-4a89-9819-ad50574f67d3",
+						"exec": [
+							"var date = new Date();",
+							"date.setMonth(date.getMonth() + 2);",
+							"validUntil = date.toISOString().split('T')[0];",
+							"pm.variables.set(\"validUntil\", validUntil);"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"folder": "6cafe240-65cf-45d3-99c6-92540ca96d18",
+			"responses": [
+				{
+					"id": "bcdeecc7-6166-4f08-b5fe-869b35914929",
+					"name": "/v1/tpp",
+					"status": "",
+					"mime": "",
+					"language": "Text",
+					"text": "{\n  \"tppMetaData\": [\n    {\n      \"tppId\": \"PSDNO-TSTNCA-123123\",\n      \"tppName\": \"Acme Inc\",\n      \"tppRefId\": \"abc123tppRefId\",\n      \"activeLicenses\": [\n        {\n          \"license\": {\n            \"service\": \"AIS\"\n          },\n          \"countries\": [\n            \"NO\"\n          ]\n        }\n      ]\n    }\n  ]\n}",
+					"responseCode": {
+						"code": 200,
+						"detail": ""
+					},
+					"requestObject": {
+						"id": "f2b594cd-5eff-4284-93a7-1c30afbbc602",
+						"method": "GET",
+						"headers": "",
+						"dataMode": null,
+						"data": null,
+						"rawModeData": "",
+						"url": "{url}}/v1/tpp",
+						"pathVariableData": [],
+						"queryParams": [],
+						"headerData": []
+					},
+					"headers": [],
+					"cookies": [],
+					"request": "0f711524-896c-4050-b073-73677fe0b331",
+					"collection": "aa3f795a-1c4b-4169-b143-227b360ad65b"
+				}
+			],
+			"rawModeData": "{\n    \"validUntil\": \"{{validUntil}}\",\n    \"frequencyPerDay\": 3,\n    \"access\": {\n        \"balances\": [],\n        \"accounts\": [],\n        \"transactions\": []\n    },\n    \"recurringIndicator\": true,\n    \"combinedServiceIndicator\": false\n}",
+			"headers": "X-Request-ID: {{$guid}}\nPSU-ID: {{ssn}}\nPSU-IP-Address: {{psu_ip_address}}\nTPP-Redirect-URI: {{tpp_redirect_uri}}\nAccept: application/json\nContent-Type: application/json\nPSU-User-Agent: {{user_agent}}\n",
+			"pathVariables": {}
+		},
+		{
+			"id": "182fbde1-820e-4d7f-95dd-e440dbc0d378",
+			"name": "/v1/payments/dnb-corporate-sweden-domestic-transfers",
+			"url": "https://{{host}}/v1/payments/dnb-corporate-sweden-domestic-transfers",
+			"description": "",
+			"data": [],
+			"dataMode": "raw",
+			"headerData": [
+				{
+					"description": "",
+					"enabled": true,
+					"key": "X-Request-ID",
+					"type": "text",
+					"value": "{{$guid}}"
+				},
+				{
+					"description": "",
+					"enabled": true,
+					"key": "PSU-IP-Address",
+					"type": "text",
+					"value": "{{psu_ip_address}}"
+				},
+				{
+					"description": "",
+					"enabled": true,
+					"key": "Accept",
+					"type": "text",
+					"value": "application/json"
+				},
+				{
+					"description": "",
+					"enabled": true,
+					"key": "Content-Type",
+					"type": "text",
+					"value": "application/json"
+				},
+				{
+					"description": "",
+					"enabled": true,
+					"key": "PSU-User-Agent",
+					"type": "text",
+					"value": "{{user_agent}}"
+				},
+				{
+					"description": "",
+					"enabled": true,
+					"key": "TPP-Redirect-URI",
+					"type": "text",
+					"value": "https://psd2.dnb.no"
+				},
+				{
+					"description": "",
+					"enabled": true,
+					"key": "PSU-ID",
+					"type": "text",
+					"value": "{{ssn}}"
+				}
+			],
+			"method": "POST",
+			"pathVariableData": [],
+			"queryParams": [],
+			"auth": null,
+			"events": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "584a417a-aa24-4e5c-957d-a90af9ec9663",
+						"exec": [
+							"var jsonData = JSON.parse(responseBody);",
+							"pm.globals.set(\"paymentId\", jsonData.paymentId);"
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "8a013ebe-54e8-4a89-9819-ad50574f67d3",
+						"exec": [
+							"var date = new Date();",
+							"today = date.toISOString().split('T')[0];",
+							"pm.environment.set(\"today\", today);"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"folder": "e877a486-989a-419a-a59a-3f786d3054ef",
+			"responses": [
+				{
+					"id": "9f7b74e3-41f7-4ec6-830e-c5303e4a9794",
+					"name": "/v1/tpp",
+					"status": "",
+					"mime": "",
+					"language": "Text",
+					"text": "{\n  \"tppMetaData\": [\n    {\n      \"tppId\": \"PSDNO-TSTNCA-123123\",\n      \"tppName\": \"Acme Inc\",\n      \"tppRefId\": \"abc123tppRefId\",\n      \"activeLicenses\": [\n        {\n          \"license\": {\n            \"service\": \"AIS\"\n          },\n          \"countries\": [\n            \"NO\"\n          ]\n        }\n      ]\n    }\n  ]\n}",
+					"responseCode": {
+						"code": 200,
+						"detail": ""
+					},
+					"requestObject": {
+						"id": "f2b594cd-5eff-4284-93a7-1c30afbbc602",
+						"method": "GET",
+						"headers": "",
+						"dataMode": null,
+						"data": null,
+						"rawModeData": "",
+						"url": "{url}}/v1/tpp",
+						"pathVariableData": [],
+						"queryParams": [],
+						"headerData": []
+					},
+					"headers": [],
+					"cookies": [],
+					"request": "182fbde1-820e-4d7f-95dd-e440dbc0d378",
+					"collection": "aa3f795a-1c4b-4169-b143-227b360ad65b"
+				}
+			],
+			"rawModeData": "{\n    \"debtorAccount\": {\n        \"bban\": \"{{firstAccount}}\"\n    },\n    \"debtorAgent\" : \"DNBASESX\",\n    \"creditorAccount\": {\n        \"bban\": \"12094355778\"\n    },\n    \"creditor\": {\n    \t\"name\": \"SEKtest\",\n    \t\"reference\": \"Reference\"\n  },\n    \"instructedAmount\": {\n        \"amount\": 13.37,\n        \"currency\": \"SEK\"\n    },\n    \"requestedExecutionDate\": \"{{today}}\"\n}",
+			"headers": "X-Request-ID: {{$guid}}\nPSU-IP-Address: {{psu_ip_address}}\nAccept: application/json\nContent-Type: application/json\nPSU-User-Agent: {{user_agent}}\nTPP-Redirect-URI: https://psd2.dnb.no\nPSU-ID: {{ssn}}\n",
+			"pathVariables": {}
+		},
+		{
+			"id": "24f7079d-d335-47eb-a2b8-e5b7cb950124",
+			"name": "/v1/periodic-payments/norwegian-domestic-credit-transfers",
+			"url": "https://{{host}}/v1/periodic-payments/norwegian-domestic-credit-transfers/{{paymentId}}",
+			"description": "",
+			"data": null,
+			"dataMode": null,
+			"headerData": [
+				{
+					"description": "",
+					"enabled": true,
+					"key": "X-Request-ID",
+					"type": "text",
+					"value": "{{$guid}}"
+				},
+				{
+					"description": "",
+					"enabled": true,
+					"key": "PSU-IP-Address",
+					"type": "text",
+					"value": "{{psu_ip_address}}"
+				},
+				{
+					"description": "",
+					"enabled": true,
+					"key": "Accept",
+					"type": "text",
+					"value": "application/json"
+				},
+				{
+					"description": "",
+					"enabled": true,
+					"key": "Content-Type",
+					"type": "text",
+					"value": "application/json"
+				},
+				{
+					"description": "",
+					"enabled": true,
+					"key": "PSU-User-Agent",
+					"type": "text",
+					"value": "{{user_agent}}"
+				},
+				{
+					"description": "",
+					"enabled": true,
+					"key": "TPP-Redirect-URI",
+					"type": "text",
+					"value": "{{tpp_redirect_uri}}"
+				},
+				{
+					"description": "",
+					"enabled": true,
+					"key": "PSU-ID",
+					"type": "text",
+					"value": "{{ssn}}"
+				}
+			],
+			"method": "DELETE",
+			"pathVariableData": [],
+			"queryParams": [],
+			"auth": null,
+			"events": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "584a417a-aa24-4e5c-957d-a90af9ec9663",
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "8a013ebe-54e8-4a89-9819-ad50574f67d3",
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"folder": "0128f92c-a55c-4be1-9038-51648b97bbfa",
+			"responses": [
+				{
+					"id": "08798f7f-d7c6-4cdc-8160-2a534116a029",
+					"name": "/v1/tpp",
+					"status": "",
+					"mime": "",
+					"language": "Text",
+					"text": "{\n  \"tppMetaData\": [\n    {\n      \"tppId\": \"PSDNO-TSTNCA-123123\",\n      \"tppName\": \"Acme Inc\",\n      \"tppRefId\": \"abc123tppRefId\",\n      \"activeLicenses\": [\n        {\n          \"license\": {\n            \"service\": \"AIS\"\n          },\n          \"countries\": [\n            \"NO\"\n          ]\n        }\n      ]\n    }\n  ]\n}",
+					"responseCode": {
+						"code": 200,
+						"detail": ""
+					},
+					"requestObject": {
+						"id": "f2b594cd-5eff-4284-93a7-1c30afbbc602",
+						"method": "GET",
+						"headers": "",
+						"dataMode": null,
+						"data": null,
+						"rawModeData": "",
+						"url": "{url}}/v1/tpp",
+						"pathVariableData": [],
+						"queryParams": [],
+						"headerData": []
+					},
+					"headers": [],
+					"cookies": [],
+					"request": "24f7079d-d335-47eb-a2b8-e5b7cb950124",
+					"collection": "aa3f795a-1c4b-4169-b143-227b360ad65b"
+				}
+			],
+			"headers": "X-Request-ID: {{$guid}}\nPSU-IP-Address: {{psu_ip_address}}\nAccept: application/json\nContent-Type: application/json\nPSU-User-Agent: {{user_agent}}\nTPP-Redirect-URI: {{tpp_redirect_uri}}\nPSU-ID: {{ssn}}\n",
+			"pathVariables": {}
+		},
+		{
+			"id": "2a17a9cd-5b05-4541-a354-32e25e36776a",
+			"name": "/v1/accounts/{account-id}",
+			"url": "https://{{host}}/v1/accounts/{{firstAccount}}",
+			"description": "",
+			"data": null,
+			"dataMode": null,
+			"headerData": [
+				{
+					"description": "",
+					"enabled": true,
+					"key": "X-Request-ID",
+					"type": "text",
+					"value": "{{$guid}}"
+				},
+				{
+					"description": "",
+					"enabled": true,
+					"key": "PSU-IP-Address",
+					"type": "text",
+					"value": "{{psu_ip_address}}"
+				},
+				{
+					"description": "",
+					"enabled": true,
+					"key": "Accept",
+					"type": "text",
+					"value": "application/json"
+				},
+				{
+					"description": "",
+					"enabled": true,
+					"key": "Content-Type",
+					"type": "text",
+					"value": "application/json"
+				},
+				{
+					"description": "",
+					"enabled": true,
+					"key": "PSU-User-Agent",
+					"type": "text",
+					"value": "{{user_agent}}"
+				},
+				{
+					"description": "",
+					"enabled": true,
+					"key": "Consent-ID",
+					"type": "text",
+					"value": "{{consentId}}"
+				}
+			],
+			"method": "GET",
+			"pathVariableData": [],
+			"queryParams": [],
+			"auth": null,
+			"events": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "584a417a-aa24-4e5c-957d-a90af9ec9663",
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "8a013ebe-54e8-4a89-9819-ad50574f67d3",
+						"exec": [
+							"",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"folder": "6cafe240-65cf-45d3-99c6-92540ca96d18",
+			"responses": [
+				{
+					"id": "b4f37e64-d02e-463c-9d57-44af41288724",
+					"name": "/v1/tpp",
+					"status": "",
+					"mime": "",
+					"language": "Text",
+					"text": "{\n  \"tppMetaData\": [\n    {\n      \"tppId\": \"PSDNO-TSTNCA-123123\",\n      \"tppName\": \"Acme Inc\",\n      \"tppRefId\": \"abc123tppRefId\",\n      \"activeLicenses\": [\n        {\n          \"license\": {\n            \"service\": \"AIS\"\n          },\n          \"countries\": [\n            \"NO\"\n          ]\n        }\n      ]\n    }\n  ]\n}",
+					"responseCode": {
+						"code": 200,
+						"detail": ""
+					},
+					"requestObject": {
+						"id": "f2b594cd-5eff-4284-93a7-1c30afbbc602",
+						"method": "GET",
+						"headers": "",
+						"dataMode": null,
+						"data": null,
+						"rawModeData": "",
+						"url": "{url}}/v1/tpp",
+						"pathVariableData": [],
+						"queryParams": [],
+						"headerData": []
+					},
+					"headers": [],
+					"cookies": [],
+					"request": "2a17a9cd-5b05-4541-a354-32e25e36776a",
+					"collection": "aa3f795a-1c4b-4169-b143-227b360ad65b"
+				}
+			],
+			"headers": "X-Request-ID: {{$guid}}\nPSU-IP-Address: {{psu_ip_address}}\nAccept: application/json\nContent-Type: application/json\nPSU-User-Agent: {{user_agent}}\nConsent-ID: {{consentId}}\n",
+			"pathVariables": {}
+		},
+		{
+			"id": "2c0d6f3f-5d6a-4bd0-bff7-02794e56841b",
+			"name": "/v1/payments/sepa-credit-transfers",
+			"url": "https://{{host}}/v1/payments/norwegian-cross-border-credit-transfers/{{paymentId}}",
+			"description": "",
+			"data": null,
+			"dataMode": null,
+			"headerData": [
+				{
+					"description": "",
+					"enabled": true,
+					"key": "X-Request-ID",
+					"type": "text",
+					"value": "{{$guid}}"
+				},
+				{
+					"description": "",
+					"enabled": true,
+					"key": "PSU-IP-Address",
+					"type": "text",
+					"value": "{{psu_ip_address}}"
+				},
+				{
+					"description": "",
+					"enabled": true,
+					"key": "Accept",
+					"type": "text",
+					"value": "application/json"
+				},
+				{
+					"description": "",
+					"enabled": true,
+					"key": "Content-Type",
+					"type": "text",
+					"value": "application/json"
+				},
+				{
+					"description": "",
+					"enabled": true,
+					"key": "PSU-User-Agent",
+					"type": "text",
+					"value": "{{user_agent}}"
+				},
+				{
+					"description": "",
+					"enabled": true,
+					"key": "TPP-Redirect-URI",
+					"type": "text",
+					"value": "{{tpp_redirect_uri}}"
+				},
+				{
+					"description": "",
+					"enabled": true,
+					"key": "PSU-ID",
+					"type": "text",
+					"value": "{{ssn}}"
+				}
+			],
+			"method": "GET",
+			"pathVariableData": [],
+			"queryParams": [],
+			"auth": null,
+			"events": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "584a417a-aa24-4e5c-957d-a90af9ec9663",
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "8a013ebe-54e8-4a89-9819-ad50574f67d3",
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"folder": "dbb8050f-07b5-4477-94dc-0fbee72cabdd",
+			"responses": [
+				{
+					"id": "893f2823-a5dc-4bc0-a960-d22c075e9b97",
+					"name": "/v1/tpp",
+					"status": "",
+					"mime": "",
+					"language": "Text",
+					"text": "{\n  \"tppMetaData\": [\n    {\n      \"tppId\": \"PSDNO-TSTNCA-123123\",\n      \"tppName\": \"Acme Inc\",\n      \"tppRefId\": \"abc123tppRefId\",\n      \"activeLicenses\": [\n        {\n          \"license\": {\n            \"service\": \"AIS\"\n          },\n          \"countries\": [\n            \"NO\"\n          ]\n        }\n      ]\n    }\n  ]\n}",
+					"responseCode": {
+						"code": 200,
+						"detail": ""
+					},
+					"requestObject": {
+						"id": "f2b594cd-5eff-4284-93a7-1c30afbbc602",
+						"method": "GET",
+						"headers": "",
+						"dataMode": null,
+						"data": null,
+						"rawModeData": "",
+						"url": "{url}}/v1/tpp",
+						"pathVariableData": [],
+						"queryParams": [],
+						"headerData": []
+					},
+					"headers": [],
+					"cookies": [],
+					"request": "2c0d6f3f-5d6a-4bd0-bff7-02794e56841b",
+					"collection": "aa3f795a-1c4b-4169-b143-227b360ad65b"
+				}
+			],
+			"headers": "X-Request-ID: {{$guid}}\nPSU-IP-Address: {{psu_ip_address}}\nAccept: application/json\nContent-Type: application/json\nPSU-User-Agent: {{user_agent}}\nTPP-Redirect-URI: {{tpp_redirect_uri}}\nPSU-ID: {{ssn}}\n",
+			"pathVariables": {}
+		},
+		{
+			"id": "2f52011e-e2c6-414c-a3a8-6356919fc833",
+			"name": "/v1/funds-confrirmations",
+			"url": "https://{{host}}/v1/funds-confirmations",
+			"description": "",
+			"data": [],
+			"dataMode": "raw",
+			"headerData": [
+				{
+					"key": "X-Request-ID",
+					"value": "{{$guid}}",
+					"type": "text",
+					"enabled": true,
+					"description": ""
+				},
+				{
+					"key": "PSU-IP-Address",
+					"value": "{{psu_ip_address}}",
+					"type": "text",
+					"enabled": true,
+					"description": ""
+				},
+				{
+					"key": "Accept",
+					"value": "application/json",
+					"type": "text",
+					"enabled": true,
+					"description": ""
+				},
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"type": "text",
+					"enabled": true,
+					"description": ""
+				},
+				{
+					"key": "PSU-User-Agent",
+					"value": "{{user_agent}}",
+					"type": "text",
+					"enabled": true,
+					"description": ""
+				},
+				{
+					"key": "PSU-ID",
+					"value": "{{ssn}}",
+					"type": "text",
+					"enabled": true,
+					"description": ""
+				}
+			],
+			"method": "POST",
+			"pathVariableData": [],
+			"queryParams": [],
+			"auth": null,
+			"events": [],
+			"folder": "8f015cd8-5bac-4a51-85ef-da5b193adf32",
+			"rawModeData": "{\n  \"account\": {\n\t\t\"bban\": \"{{firstAccount}}\"\n  },\n  \"instructedAmount\": {\n  \t\"amount\": \"123.00\",\n  \t\"currency\": \"NOK\"\n  }\n}",
+			"headers": "X-Request-ID: {{$guid}}\nPSU-IP-Address: {{psu_ip_address}}\nAccept: application/json\nContent-Type: application/json\nPSU-User-Agent: {{user_agent}}\nPSU-ID: {{ssn}}\n",
+			"pathVariables": {}
+		},
+		{
+			"id": "2fd71f98-44f8-4e5a-89a2-b8b1d9e2b083",
+			"name": "/v1/card-accounts/{accountNumber}/balances",
+			"url": "https://{{host}}/v1/card-accounts/{{firstCard}}/balances",
+			"description": "",
+			"data": null,
+			"dataMode": null,
+			"headerData": [
+				{
+					"description": "",
+					"enabled": true,
+					"key": "X-Request-ID",
+					"type": "text",
+					"value": "{{$guid}}"
+				},
+				{
+					"description": "",
+					"enabled": true,
+					"key": "PSU-IP-Address",
+					"type": "text",
+					"value": "{{psu_ip_address}}"
+				},
+				{
+					"description": "",
+					"enabled": true,
+					"key": "Accept",
+					"type": "text",
+					"value": "application/json"
+				},
+				{
+					"description": "",
+					"enabled": true,
+					"key": "Content-Type",
+					"type": "text",
+					"value": "application/json"
+				},
+				{
+					"description": "",
+					"enabled": true,
+					"key": "PSU-User-Agent",
+					"type": "text",
+					"value": "{{user_agent}}"
+				},
+				{
+					"description": "",
+					"enabled": true,
+					"key": "Consent-ID",
+					"type": "text",
+					"value": "{{consentId}}"
+				}
+			],
+			"method": "GET",
+			"pathVariableData": [],
+			"queryParams": [],
+			"auth": null,
+			"events": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "584a417a-aa24-4e5c-957d-a90af9ec9663",
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "8a013ebe-54e8-4a89-9819-ad50574f67d3",
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"folder": "6cafe240-65cf-45d3-99c6-92540ca96d18",
+			"responses": [
+				{
+					"id": "13294e62-f1ea-4582-a39f-9a327586062a",
+					"name": "/v1/tpp",
+					"status": "",
+					"mime": "",
+					"language": "Text",
+					"text": "{\n  \"tppMetaData\": [\n    {\n      \"tppId\": \"PSDNO-TSTNCA-123123\",\n      \"tppName\": \"Acme Inc\",\n      \"tppRefId\": \"abc123tppRefId\",\n      \"activeLicenses\": [\n        {\n          \"license\": {\n            \"service\": \"AIS\"\n          },\n          \"countries\": [\n            \"NO\"\n          ]\n        }\n      ]\n    }\n  ]\n}",
+					"responseCode": {
+						"code": 200,
+						"detail": ""
+					},
+					"requestObject": {
+						"id": "f2b594cd-5eff-4284-93a7-1c30afbbc602",
+						"method": "GET",
+						"headers": "",
+						"dataMode": null,
+						"data": null,
+						"rawModeData": "",
+						"url": "{url}}/v1/tpp",
+						"pathVariableData": [],
+						"queryParams": [],
+						"headerData": []
+					},
+					"headers": [],
+					"cookies": [],
+					"request": "2fd71f98-44f8-4e5a-89a2-b8b1d9e2b083",
+					"collection": "aa3f795a-1c4b-4169-b143-227b360ad65b"
+				}
+			],
+			"headers": "X-Request-ID: {{$guid}}\nPSU-IP-Address: {{psu_ip_address}}\nAccept: application/json\nContent-Type: application/json\nPSU-User-Agent: {{user_agent}}\nConsent-ID: {{consentId}}\n",
+			"pathVariables": {}
+		},
+		{
+			"id": "331c9a4c-0561-4625-ac03-807950b2f967",
+			"name": "/v1/payments/norwegian-cross-border-credit-transfers",
+			"url": "https://{{host}}/v1/payments/norwegian-cross-border-credit-transfers",
+			"description": "",
+			"data": [],
+			"dataMode": "raw",
+			"headerData": [
+				{
+					"description": "",
+					"enabled": true,
+					"key": "X-Request-ID",
+					"type": "text",
+					"value": "{{$guid}}"
+				},
+				{
+					"description": "",
+					"enabled": true,
+					"key": "PSU-IP-Address",
+					"type": "text",
+					"value": "{{psu_ip_address}}"
+				},
+				{
+					"description": "",
+					"enabled": true,
+					"key": "Accept",
+					"type": "text",
+					"value": "application/json"
+				},
+				{
+					"description": "",
+					"enabled": true,
+					"key": "Content-Type",
+					"type": "text",
+					"value": "application/json"
+				},
+				{
+					"description": "",
+					"enabled": true,
+					"key": "PSU-User-Agent",
+					"type": "text",
+					"value": "{{user_agent}}"
+				},
+				{
+					"description": "",
+					"enabled": true,
+					"key": "TPP-Redirect-URI",
+					"type": "text",
+					"value": "{{tpp_redirect_uri}}"
+				},
+				{
+					"description": "",
+					"enabled": true,
+					"key": "PSU-ID",
+					"type": "text",
+					"value": "{{ssn}}"
+				}
+			],
+			"method": "POST",
+			"pathVariableData": [],
+			"queryParams": [],
+			"auth": null,
+			"events": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "584a417a-aa24-4e5c-957d-a90af9ec9663",
+						"exec": [
+							"var jsonData = JSON.parse(responseBody);",
+							"pm.globals.set(\"paymentId\", jsonData.paymentId);"
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "8a013ebe-54e8-4a89-9819-ad50574f67d3",
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"folder": "dbb8050f-07b5-4477-94dc-0fbee72cabdd",
+			"responses": [
+				{
+					"id": "1ea87201-0bbb-43b5-97e1-e71801971bd0",
+					"name": "/v1/tpp",
+					"status": "",
+					"mime": "",
+					"language": "Text",
+					"text": "{\n  \"tppMetaData\": [\n    {\n      \"tppId\": \"PSDNO-TSTNCA-123123\",\n      \"tppName\": \"Acme Inc\",\n      \"tppRefId\": \"abc123tppRefId\",\n      \"activeLicenses\": [\n        {\n          \"license\": {\n            \"service\": \"AIS\"\n          },\n          \"countries\": [\n            \"NO\"\n          ]\n        }\n      ]\n    }\n  ]\n}",
+					"responseCode": {
+						"code": 200,
+						"detail": ""
+					},
+					"requestObject": {
+						"id": "f2b594cd-5eff-4284-93a7-1c30afbbc602",
+						"method": "GET",
+						"headers": "",
+						"dataMode": null,
+						"data": null,
+						"rawModeData": "",
+						"url": "{url}}/v1/tpp",
+						"pathVariableData": [],
+						"queryParams": [],
+						"headerData": []
+					},
+					"headers": [],
+					"cookies": [],
+					"request": "331c9a4c-0561-4625-ac03-807950b2f967",
+					"collection": "aa3f795a-1c4b-4169-b143-227b360ad65b"
+				}
+			],
+			"rawModeData": "{\n    \"debtorAccount\": {\n        \"bban\": \"{{firstAccount}}\",\n        \"currency\": \"NOK\"\n    },\n    \"creditorAccount\": {\n        \"iban\": \"SE8091900000091980562026\",\n        \"currency\": \"NOK\"\n    },\n    \"creditorAgent\": \"DNBASESXXXX\",\n    \"creditorName\": \"Foo Bar\",\n    \"creditorAddress\": {\n        \"buildingNumber\": \"5\",\n        \"city\": \"Copenhagen\",\n        \"street\": \"Købmagergade\",\n        \"postalCode\": \"1150\",\n        \"country\": \"DK\"\n    },\n    \"instructedAmount\": {\n        \"amount\": 1.1,\n        \"currency\": \"NOK\"\n    },\n    \"regulatoryReportingAmount\": {\n        \"amount\": 1.1,\n        \"currency\": \"NOK\"\n    },\n    \"remittanceInformationUnstructured\": \"Test of cross border payment.\"\n}",
+			"headers": "X-Request-ID: {{$guid}}\nPSU-IP-Address: {{psu_ip_address}}\nAccept: application/json\nContent-Type: application/json\nPSU-User-Agent: {{user_agent}}\nTPP-Redirect-URI: {{tpp_redirect_uri}}\nPSU-ID: {{ssn}}\n",
+			"pathVariables": {}
+		},
+		{
+			"id": "372ffd01-6476-4439-962c-dea243c95b86",
+			"name": "/v1/payments/sepa-credit-transfers",
+			"url": "https://{{host}}/v1/payments/sepa-credit-transfers",
+			"description": "",
+			"data": [],
+			"dataMode": "raw",
+			"headerData": [
+				{
+					"description": "",
+					"enabled": true,
+					"key": "X-Request-ID",
+					"type": "text",
+					"value": "{{$guid}}"
+				},
+				{
+					"description": "",
+					"enabled": true,
+					"key": "PSU-IP-Address",
+					"type": "text",
+					"value": "{{psu_ip_address}}"
+				},
+				{
+					"description": "",
+					"enabled": true,
+					"key": "Accept",
+					"type": "text",
+					"value": "application/json"
+				},
+				{
+					"description": "",
+					"enabled": true,
+					"key": "Content-Type",
+					"type": "text",
+					"value": "application/json"
+				},
+				{
+					"description": "",
+					"enabled": true,
+					"key": "PSU-User-Agent",
+					"type": "text",
+					"value": "{{user_agent}}"
+				},
+				{
+					"description": "",
+					"enabled": true,
+					"key": "TPP-Redirect-URI",
+					"type": "text",
+					"value": "{{tpp_redirect_uri}}"
+				},
+				{
+					"description": "",
+					"enabled": true,
+					"key": "PSU-ID",
+					"type": "text",
+					"value": "{{ssn}}"
+				}
+			],
+			"method": "POST",
+			"pathVariableData": [],
+			"queryParams": [],
+			"auth": null,
+			"events": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "584a417a-aa24-4e5c-957d-a90af9ec9663",
+						"exec": [
+							"var jsonData = JSON.parse(responseBody);",
+							"pm.globals.set(\"paymentId\", jsonData.paymentId);"
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "8a013ebe-54e8-4a89-9819-ad50574f67d3",
+						"exec": [
+							"var date = new Date();",
+							"today = date.toISOString().split('T')[0];",
+							"pm.environment.set(\"today\", today);"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"folder": "dbb8050f-07b5-4477-94dc-0fbee72cabdd",
+			"responses": [
+				{
+					"id": "1b738744-2ea0-4837-85a7-c48cf89b0445",
+					"name": "/v1/tpp",
+					"status": "",
+					"mime": "",
+					"language": "Text",
+					"text": "{\n  \"tppMetaData\": [\n    {\n      \"tppId\": \"PSDNO-TSTNCA-123123\",\n      \"tppName\": \"Acme Inc\",\n      \"tppRefId\": \"abc123tppRefId\",\n      \"activeLicenses\": [\n        {\n          \"license\": {\n            \"service\": \"AIS\"\n          },\n          \"countries\": [\n            \"NO\"\n          ]\n        }\n      ]\n    }\n  ]\n}",
+					"responseCode": {
+						"code": 200,
+						"detail": ""
+					},
+					"requestObject": {
+						"id": "f2b594cd-5eff-4284-93a7-1c30afbbc602",
+						"method": "GET",
+						"headers": "",
+						"dataMode": null,
+						"data": null,
+						"rawModeData": "",
+						"url": "{url}}/v1/tpp",
+						"pathVariableData": [],
+						"queryParams": [],
+						"headerData": []
+					},
+					"headers": [],
+					"cookies": [],
+					"request": "372ffd01-6476-4439-962c-dea243c95b86",
+					"collection": "aa3f795a-1c4b-4169-b143-227b360ad65b"
+				}
+			],
+			"rawModeData": "{\n   \"debtorAccount\": {\n       \"bban\": \"{{firstAccount}}\",\n       \"currency\": \"NOK\"\n   },\n   \"creditorAccount\": {\n       \"iban\": \"DK0952909010577001\"\n   },\n   \"creditorName\": \"Foo Bar\",\n   \"creditorAddress\":{\n   \"buildingNumber\":\"12B\",\n   \"city\":\"Oslo\",\n   \"country\":\"EN\",\n   \"postalCode\":\"0196\",\n   \"street\":\"Street\"\n   },\n   \"creditorAgent\":\"DNBADKKXXXX\",\n   \"debtorAgent\":\"DNBANOKK\",\n   \"instructedAmount\": {\n       \"amount\": 1.02,\n       \"currency\": \"EUR\"\n   },\n   \"regulatoryReportingAmount\": {\n    \"amount\": 1.02,\n    \"currency\": \"EUR\"\n  },\n  \"regulatoryReportingCode\": \"14\",\n  \"regulatoryReportingInformation\": \"test\",\n  \"remittanceInformationUnstructured\": \"test\"\n}",
+			"headers": "X-Request-ID: {{$guid}}\nPSU-IP-Address: {{psu_ip_address}}\nAccept: application/json\nContent-Type: application/json\nPSU-User-Agent: {{user_agent}}\nTPP-Redirect-URI: {{tpp_redirect_uri}}\nPSU-ID: {{ssn}}\n",
+			"pathVariables": {}
+		},
+		{
+			"id": "3a245079-830a-4842-b485-6989a6818058",
+			"name": "/v1/signing-baskets",
+			"url": "https://{{host}}/v1/signing-baskets",
+			"description": null,
+			"data": [],
+			"dataMode": "raw",
+			"headerData": [
+				{
+					"key": "PSU-ID",
+					"type": "text",
+					"value": "{{ssn}}"
+				},
+				{
+					"key": "PSU-IP-Address",
+					"type": "text",
+					"value": "123.123.123.123"
+				},
+				{
+					"key": "TPP-Redirect-Preferred",
+					"type": "text",
+					"value": "true"
+				},
+				{
+					"key": "TPP-Redirect-URI",
+					"type": "text",
+					"value": "http://tpp-service.net "
+				},
+				{
+					"key": "Accept",
+					"type": "text",
+					"value": "application/json"
+				},
+				{
+					"key": "Content-Type",
+					"type": "text",
+					"value": "application/json"
+				},
+				{
+					"key": "X-Request-ID",
+					"value": "{{$guid}}",
+					"type": "text"
+				},
+				{
+					"key": "TPP-Explicit-Authorisation-Preferred",
+					"value": "true",
+					"type": "text"
+				}
+			],
+			"method": "POST",
+			"pathVariableData": [],
+			"queryParams": [],
+			"auth": null,
+			"events": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "ed28ea66-5cde-492d-b065-7e2663120719",
+						"exec": [
+							"var jsonData = JSON.parse(responseBody);",
+							"pm.globals.set(\"basketId\", jsonData.basketId);"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"folder": "851e48b5-a28a-4cb0-92d1-58247f6049aa",
+			"rawModeData": "{\n  \"paymentIds\": [\"SSL_DOM-930103863\"]\n}",
+			"headers": "PSU-ID: {{ssn}}\nPSU-IP-Address: 123.123.123.123\nTPP-Redirect-Preferred: true\nTPP-Redirect-URI: http://tpp-service.net \nAccept: application/json\nContent-Type: application/json\nX-Request-ID: {{$guid}}\nTPP-Explicit-Authorisation-Preferred: true\n",
+			"pathVariables": {}
+		},
+		{
+			"id": "3c478e3c-9b51-4bcf-a3e7-209d702465c3",
+			"name": "/v1/card-accounts",
+			"url": "https://{{host}}/v1/card-accounts",
+			"description": "",
+			"data": null,
+			"dataMode": null,
+			"headerData": [
+				{
+					"description": "",
+					"enabled": true,
+					"key": "X-Request-ID",
+					"type": "text",
+					"value": "{{$guid}}"
+				},
+				{
+					"description": "",
+					"enabled": true,
+					"key": "PSU-IP-Address",
+					"type": "text",
+					"value": "{{psu_ip_address}}"
+				},
+				{
+					"description": "",
+					"enabled": true,
+					"key": "Accept",
+					"type": "text",
+					"value": "application/json"
+				},
+				{
+					"description": "",
+					"enabled": true,
+					"key": "Content-Type",
+					"type": "text",
+					"value": "application/json"
+				},
+				{
+					"description": "",
+					"enabled": true,
+					"key": "PSU-User-Agent",
+					"type": "text",
+					"value": "{{user_agent}}"
+				},
+				{
+					"description": "",
+					"enabled": true,
+					"key": "Consent-ID",
+					"type": "text",
+					"value": "{{consentId}}"
+				}
+			],
+			"method": "GET",
+			"pathVariableData": [],
+			"queryParams": [],
+			"auth": null,
+			"events": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "584a417a-aa24-4e5c-957d-a90af9ec9663",
+						"exec": [
+							"var jsonData = JSON.parse(responseBody);",
+							"pm.globals.set(\"firstCard\", jsonData.cardAccounts[0].resourceId);",
+							"pm.globals.set(\"secondCard\", jsonData.cardAccounts[1].resourceId);"
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "8a013ebe-54e8-4a89-9819-ad50574f67d3",
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"folder": "6cafe240-65cf-45d3-99c6-92540ca96d18",
+			"responses": [
+				{
+					"id": "5a43223e-a5f4-4c57-8916-b5499739738d",
+					"name": "/v1/tpp",
+					"status": "",
+					"mime": "",
+					"language": "Text",
+					"text": "{\n  \"tppMetaData\": [\n    {\n      \"tppId\": \"PSDNO-TSTNCA-123123\",\n      \"tppName\": \"Acme Inc\",\n      \"tppRefId\": \"abc123tppRefId\",\n      \"activeLicenses\": [\n        {\n          \"license\": {\n            \"service\": \"AIS\"\n          },\n          \"countries\": [\n            \"NO\"\n          ]\n        }\n      ]\n    }\n  ]\n}",
+					"responseCode": {
+						"code": 200,
+						"detail": ""
+					},
+					"requestObject": {
+						"id": "f2b594cd-5eff-4284-93a7-1c30afbbc602",
+						"method": "GET",
+						"headers": "",
+						"dataMode": null,
+						"data": null,
+						"rawModeData": "",
+						"url": "{url}}/v1/tpp",
+						"pathVariableData": [],
+						"queryParams": [],
+						"headerData": []
+					},
+					"headers": [],
+					"cookies": [],
+					"request": "3c478e3c-9b51-4bcf-a3e7-209d702465c3",
+					"collection": "aa3f795a-1c4b-4169-b143-227b360ad65b"
+				}
+			],
+			"headers": "X-Request-ID: {{$guid}}\nPSU-IP-Address: {{psu_ip_address}}\nAccept: application/json\nContent-Type: application/json\nPSU-User-Agent: {{user_agent}}\nConsent-ID: {{consentId}}\n",
+			"pathVariables": {}
+		},
+		{
+			"id": "43d4735c-c3ca-476c-b845-afed9fd2b031",
+			"name": "/v1/periodic-payments/norwegian-domestic-payment-to-self",
+			"url": "https://{{host}}/v1/periodic-payments/norwegian-domestic-payment-to-self",
+			"description": "",
+			"data": [],
+			"dataMode": "raw",
+			"headerData": [
+				{
+					"description": "",
+					"enabled": true,
+					"key": "X-Request-ID",
+					"type": "text",
+					"value": "{{$guid}}"
+				},
+				{
+					"description": "",
+					"enabled": true,
+					"key": "PSU-IP-Address",
+					"type": "text",
+					"value": "{{psu_ip_address}}"
+				},
+				{
+					"description": "",
+					"enabled": true,
+					"key": "Accept",
+					"type": "text",
+					"value": "application/json"
+				},
+				{
+					"description": "",
+					"enabled": true,
+					"key": "Content-Type",
+					"type": "text",
+					"value": "application/json"
+				},
+				{
+					"description": "",
+					"enabled": true,
+					"key": "PSU-User-Agent",
+					"type": "text",
+					"value": "{{user_agent}}"
+				},
+				{
+					"description": "",
+					"enabled": true,
+					"key": "TPP-Redirect-URI",
+					"type": "text",
+					"value": "{{tpp_redirect_uri}}"
+				},
+				{
+					"description": "",
+					"enabled": true,
+					"key": "PSU-ID",
+					"type": "text",
+					"value": "{{ssn}}"
+				},
+				{
+					"key": "PSU-IP-Adress",
+					"value": "{{psu_ip_address}}",
+					"description": "",
+					"type": "text",
+					"enabled": true
+				}
+			],
+			"method": "POST",
+			"pathVariableData": [],
+			"queryParams": [],
+			"auth": null,
+			"events": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "584a417a-aa24-4e5c-957d-a90af9ec9663",
+						"exec": [
+							"var jsonData = JSON.parse(responseBody);",
+							"pm.globals.set(\"paymentId\", jsonData.paymentId);"
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "8a013ebe-54e8-4a89-9819-ad50574f67d3",
+						"exec": [
+							"var date = new Date();",
+							"today = date.toISOString().split('T')[0];",
+							"pm.environment.set(\"today\", today);"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"folder": "0128f92c-a55c-4be1-9038-51648b97bbfa",
+			"responses": [
+				{
+					"id": "5053ba9d-2846-4bce-8d68-620a22f24ab4",
+					"name": "/v1/tpp",
+					"status": "",
+					"mime": "",
+					"language": "Text",
+					"text": "{\n  \"tppMetaData\": [\n    {\n      \"tppId\": \"PSDNO-TSTNCA-123123\",\n      \"tppName\": \"Acme Inc\",\n      \"tppRefId\": \"abc123tppRefId\",\n      \"activeLicenses\": [\n        {\n          \"license\": {\n            \"service\": \"AIS\"\n          },\n          \"countries\": [\n            \"NO\"\n          ]\n        }\n      ]\n    }\n  ]\n}",
+					"responseCode": {
+						"code": 200,
+						"detail": ""
+					},
+					"requestObject": {
+						"id": "f2b594cd-5eff-4284-93a7-1c30afbbc602",
+						"method": "GET",
+						"headers": "",
+						"dataMode": null,
+						"data": null,
+						"rawModeData": "",
+						"url": "{url}}/v1/tpp",
+						"pathVariableData": [],
+						"queryParams": [],
+						"headerData": []
+					},
+					"headers": [],
+					"cookies": [],
+					"request": "43d4735c-c3ca-476c-b845-afed9fd2b031",
+					"collection": "aa3f795a-1c4b-4169-b143-227b360ad65b"
+				}
+			],
+			"rawModeData": "{\n\t\"startDate\": \"2019-09-14\",\n    \"frequency\": \"Daily\",\n     \"debtorAccount\": {\n        \"bban\": \"{{firstAccount}}\"\n    },\n    \"creditorAccount\": {\n        \"bban\": \"{{secondAccount}}\"\n    },\n    \"creditorName\": \"Foo Bar\",\n    \"instructedAmount\": {\n        \"amount\": 13.40,\n        \"currency\": \"NOK\"\n    },\n    \"remittanceInformationUnstructured\": \"Test of transfer between own accounts.\",\n    \"requestedExecutionDate\": \"{{today}}\"\n}",
+			"headers": "X-Request-ID: {{$guid}}\nPSU-IP-Address: {{psu_ip_address}}\nAccept: application/json\nContent-Type: application/json\nPSU-User-Agent: {{user_agent}}\nTPP-Redirect-URI: {{tpp_redirect_uri}}\nPSU-ID: {{ssn}}\nPSU-IP-Adress: {{psu_ip_address}}\n",
+			"pathVariables": {}
+		},
+		{
+			"id": "48e39da1-eeeb-447f-bd8e-3114b50efaca",
+			"name": "/v1/payments/norwegian-cross-border-credit-transfers",
+			"url": "https://{{host}}/v1/payments/norwegian-cross-border-credit-transfers/{{paymentId}}",
+			"description": "",
+			"data": null,
+			"dataMode": null,
+			"headerData": [
+				{
+					"description": "",
+					"enabled": true,
+					"key": "X-Request-ID",
+					"type": "text",
+					"value": "{{$guid}}"
+				},
+				{
+					"description": "",
+					"enabled": true,
+					"key": "PSU-IP-Address",
+					"type": "text",
+					"value": "{{psu_ip_address}}"
+				},
+				{
+					"description": "",
+					"enabled": true,
+					"key": "Accept",
+					"type": "text",
+					"value": "application/json"
+				},
+				{
+					"description": "",
+					"enabled": true,
+					"key": "Content-Type",
+					"type": "text",
+					"value": "application/json"
+				},
+				{
+					"description": "",
+					"enabled": true,
+					"key": "PSU-User-Agent",
+					"type": "text",
+					"value": "{{user_agent}}"
+				},
+				{
+					"description": "",
+					"enabled": true,
+					"key": "TPP-Redirect-URI",
+					"type": "text",
+					"value": "{{tpp_redirect_uri}}"
+				},
+				{
+					"description": "",
+					"enabled": true,
+					"key": "PSU-ID",
+					"type": "text",
+					"value": "{{ssn}}"
+				}
+			],
+			"method": "DELETE",
+			"pathVariableData": [],
+			"queryParams": [],
+			"auth": null,
+			"events": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "584a417a-aa24-4e5c-957d-a90af9ec9663",
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "8a013ebe-54e8-4a89-9819-ad50574f67d3",
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"folder": "dbb8050f-07b5-4477-94dc-0fbee72cabdd",
+			"responses": [
+				{
+					"id": "c8486b41-e87c-41f5-93b4-2bc36d2f320e",
+					"name": "/v1/tpp",
+					"status": "",
+					"mime": "",
+					"language": "Text",
+					"text": "{\n  \"tppMetaData\": [\n    {\n      \"tppId\": \"PSDNO-TSTNCA-123123\",\n      \"tppName\": \"Acme Inc\",\n      \"tppRefId\": \"abc123tppRefId\",\n      \"activeLicenses\": [\n        {\n          \"license\": {\n            \"service\": \"AIS\"\n          },\n          \"countries\": [\n            \"NO\"\n          ]\n        }\n      ]\n    }\n  ]\n}",
+					"responseCode": {
+						"code": 200,
+						"detail": ""
+					},
+					"requestObject": {
+						"id": "f2b594cd-5eff-4284-93a7-1c30afbbc602",
+						"method": "GET",
+						"headers": "",
+						"dataMode": null,
+						"data": null,
+						"rawModeData": "",
+						"url": "{url}}/v1/tpp",
+						"pathVariableData": [],
+						"queryParams": [],
+						"headerData": []
+					},
+					"headers": [],
+					"cookies": [],
+					"request": "48e39da1-eeeb-447f-bd8e-3114b50efaca",
+					"collection": "aa3f795a-1c4b-4169-b143-227b360ad65b"
+				}
+			],
+			"headers": "X-Request-ID: {{$guid}}\nPSU-IP-Address: {{psu_ip_address}}\nAccept: application/json\nContent-Type: application/json\nPSU-User-Agent: {{user_agent}}\nTPP-Redirect-URI: {{tpp_redirect_uri}}\nPSU-ID: {{ssn}}\n",
+			"pathVariables": {}
+		},
+		{
+			"id": "4ef97c1a-da01-45de-ad01-1d0274f640cc",
+			"name": "/v1/payments/dnb-corporate-denmark-domestic-transfers",
+			"url": "https://{{host}}/v1/payments/dnb-corporate-denmark-domestic-transfers",
+			"description": "",
+			"data": [],
+			"dataMode": "raw",
+			"headerData": [
+				{
+					"description": "",
+					"enabled": true,
+					"key": "X-Request-ID",
+					"type": "text",
+					"value": "{{$guid}}"
+				},
+				{
+					"description": "",
+					"enabled": true,
+					"key": "PSU-IP-Address",
+					"type": "text",
+					"value": "{{psu_ip_address}}"
+				},
+				{
+					"description": "",
+					"enabled": true,
+					"key": "Accept",
+					"type": "text",
+					"value": "application/json"
+				},
+				{
+					"description": "",
+					"enabled": true,
+					"key": "Content-Type",
+					"type": "text",
+					"value": "application/json"
+				},
+				{
+					"description": "",
+					"enabled": true,
+					"key": "PSU-User-Agent",
+					"type": "text",
+					"value": "{{user_agent}}"
+				},
+				{
+					"description": "",
+					"enabled": true,
+					"key": "TPP-Redirect-URI",
+					"type": "text",
+					"value": "https://psd2.dnb.no"
+				},
+				{
+					"description": "",
+					"enabled": true,
+					"key": "PSU-ID",
+					"type": "text",
+					"value": "{{ssn}}"
+				}
+			],
+			"method": "POST",
+			"pathVariableData": [],
+			"queryParams": [],
+			"auth": null,
+			"events": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "584a417a-aa24-4e5c-957d-a90af9ec9663",
+						"exec": [
+							"var jsonData = JSON.parse(responseBody);",
+							"pm.globals.set(\"paymentId\", jsonData.paymentId);"
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "8a013ebe-54e8-4a89-9819-ad50574f67d3",
+						"exec": [
+							"var date = new Date();",
+							"today = date.toISOString().split('T')[0];",
+							"pm.environment.set(\"today\", today);"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"folder": "e877a486-989a-419a-a59a-3f786d3054ef",
+			"responses": [
+				{
+					"id": "94fdf58b-8a57-44ef-a87e-f5024b4acb21",
+					"name": "/v1/tpp",
+					"status": "",
+					"mime": "",
+					"language": "Text",
+					"text": "{\n  \"tppMetaData\": [\n    {\n      \"tppId\": \"PSDNO-TSTNCA-123123\",\n      \"tppName\": \"Acme Inc\",\n      \"tppRefId\": \"abc123tppRefId\",\n      \"activeLicenses\": [\n        {\n          \"license\": {\n            \"service\": \"AIS\"\n          },\n          \"countries\": [\n            \"NO\"\n          ]\n        }\n      ]\n    }\n  ]\n}",
+					"responseCode": {
+						"code": 200,
+						"detail": ""
+					},
+					"requestObject": {
+						"id": "f2b594cd-5eff-4284-93a7-1c30afbbc602",
+						"method": "GET",
+						"headers": "",
+						"dataMode": null,
+						"data": null,
+						"rawModeData": "",
+						"url": "{url}}/v1/tpp",
+						"pathVariableData": [],
+						"queryParams": [],
+						"headerData": []
+					},
+					"headers": [],
+					"cookies": [],
+					"request": "4ef97c1a-da01-45de-ad01-1d0274f640cc",
+					"collection": "aa3f795a-1c4b-4169-b143-227b360ad65b"
+				}
+			],
+			"rawModeData": "{\n    \"debtorAccount\": {\n        \"bban\": \"{{firstAccount}}\"\n    },\n    \"debtorAgent\" : \"DNBADKKX\",\n    \"creditorAccount\": {\n        \"bban\": \"12094355778\"\n    },\n    \"creditorName\" : \"DKKtest\",\n    \"instructedAmount\": {\n        \"amount\": 13.37,\n        \"currency\": \"DKK\"\n    },\n    \"requestedExecutionDate\": \"{{today}}\",\n    \"remittanceInformationUnstructured\": \"Test of payment of denmark transfer\"\n}",
+			"headers": "X-Request-ID: {{$guid}}\nPSU-IP-Address: {{psu_ip_address}}\nAccept: application/json\nContent-Type: application/json\nPSU-User-Agent: {{user_agent}}\nTPP-Redirect-URI: https://psd2.dnb.no\nPSU-ID: {{ssn}}\n",
+			"pathVariables": {}
+		},
+		{
+			"id": "51f5f196-db30-48a2-b691-34788aae98aa",
+			"name": "/v1/signing-baskets/{basketId}",
+			"url": "https://{{host}}/v1/signing-baskets/{{basketId}}",
+			"description": null,
+			"data": null,
+			"dataMode": null,
+			"headerData": [
+				{
+					"key": "PSU-ID",
+					"value": "{{ssn}}",
+					"type": "text",
+					"enabled": true,
+					"description": ""
+				},
+				{
+					"key": "PSU-IP-Address",
+					"value": "123.123.123.123",
+					"type": "text",
+					"enabled": true,
+					"description": ""
+				},
+				{
+					"key": "TPP-Redirect-Preferred",
+					"value": "true",
+					"type": "text",
+					"enabled": true,
+					"description": ""
+				},
+				{
+					"key": "TPP-Redirect-URI",
+					"value": "http://tpp-service.net ",
+					"type": "text",
+					"enabled": true,
+					"description": ""
+				},
+				{
+					"key": "Accept",
+					"value": "application/json",
+					"type": "text",
+					"enabled": true,
+					"description": ""
+				},
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"type": "text",
+					"enabled": true,
+					"description": ""
+				},
+				{
+					"key": "X-Request-ID",
+					"value": "{{$guid}}",
+					"type": "text",
+					"enabled": true,
+					"description": ""
+				},
+				{
+					"key": "TPP-Explicit-Authorisation-Preferred",
+					"value": "true",
+					"type": "text",
+					"enabled": true,
+					"description": ""
+				}
+			],
+			"method": "DELETE",
+			"pathVariableData": [],
+			"queryParams": [],
+			"auth": null,
+			"events": null,
+			"folder": "851e48b5-a28a-4cb0-92d1-58247f6049aa",
+			"headers": "PSU-ID: {{ssn}}\nPSU-IP-Address: 123.123.123.123\nTPP-Redirect-Preferred: true\nTPP-Redirect-URI: http://tpp-service.net \nAccept: application/json\nContent-Type: application/json\nX-Request-ID: {{$guid}}\nTPP-Explicit-Authorisation-Preferred: true\n",
+			"pathVariables": {}
+		},
+		{
+			"id": "5871ca6e-052a-4e2b-bbdd-89c4523d6a6f",
+			"name": "/v1/payments/norwegian-domestic-payment-to-self",
+			"url": "https://{{host}}/v1/payments/norwegian-domestic-payment-to-self/{{paymentId}}",
+			"description": "",
+			"data": null,
+			"dataMode": null,
+			"headerData": [
+				{
+					"description": "",
+					"enabled": true,
+					"key": "X-Request-ID",
+					"type": "text",
+					"value": "{{$guid}}"
+				},
+				{
+					"description": "",
+					"enabled": true,
+					"key": "PSU-IP-Address",
+					"type": "text",
+					"value": "{{psu_ip_address}}"
+				},
+				{
+					"description": "",
+					"enabled": true,
+					"key": "Accept",
+					"type": "text",
+					"value": "application/json"
+				},
+				{
+					"description": "",
+					"enabled": true,
+					"key": "Content-Type",
+					"type": "text",
+					"value": "application/json"
+				},
+				{
+					"description": "",
+					"enabled": true,
+					"key": "PSU-User-Agent",
+					"type": "text",
+					"value": "{{user_agent}}"
+				},
+				{
+					"description": "",
+					"enabled": true,
+					"key": "TPP-Redirect-URI",
+					"type": "text",
+					"value": "{{tpp_redirect_uri}}"
+				},
+				{
+					"description": "",
+					"enabled": true,
+					"key": "PSU-ID",
+					"type": "text",
+					"value": "{{ssn}}"
+				}
+			],
+			"method": "GET",
+			"pathVariableData": [],
+			"queryParams": [],
+			"auth": null,
+			"events": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "584a417a-aa24-4e5c-957d-a90af9ec9663",
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "8a013ebe-54e8-4a89-9819-ad50574f67d3",
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"folder": "dbb8050f-07b5-4477-94dc-0fbee72cabdd",
+			"responses": [
+				{
+					"id": "9c4252f1-9b89-4da2-bada-9ef1cbfd7703",
+					"name": "/v1/tpp",
+					"status": "",
+					"mime": "",
+					"language": "Text",
+					"text": "{\n  \"tppMetaData\": [\n    {\n      \"tppId\": \"PSDNO-TSTNCA-123123\",\n      \"tppName\": \"Acme Inc\",\n      \"tppRefId\": \"abc123tppRefId\",\n      \"activeLicenses\": [\n        {\n          \"license\": {\n            \"service\": \"AIS\"\n          },\n          \"countries\": [\n            \"NO\"\n          ]\n        }\n      ]\n    }\n  ]\n}",
+					"responseCode": {
+						"code": 200,
+						"detail": ""
+					},
+					"requestObject": {
+						"id": "f2b594cd-5eff-4284-93a7-1c30afbbc602",
+						"method": "GET",
+						"headers": "",
+						"dataMode": null,
+						"data": null,
+						"rawModeData": "",
+						"url": "{url}}/v1/tpp",
+						"pathVariableData": [],
+						"queryParams": [],
+						"headerData": []
+					},
+					"headers": [],
+					"cookies": [],
+					"request": "5871ca6e-052a-4e2b-bbdd-89c4523d6a6f",
+					"collection": "aa3f795a-1c4b-4169-b143-227b360ad65b"
+				}
+			],
+			"headers": "X-Request-ID: {{$guid}}\nPSU-IP-Address: {{psu_ip_address}}\nAccept: application/json\nContent-Type: application/json\nPSU-User-Agent: {{user_agent}}\nTPP-Redirect-URI: {{tpp_redirect_uri}}\nPSU-ID: {{ssn}}\n",
+			"pathVariables": {}
+		},
+		{
+			"id": "72b912cd-8ad8-4a7e-bc63-c1bbf0b2cf14",
+			"name": "/v1/payments/dnb-corporate-sweden-domestic-bgpg-transfers",
+			"url": "https://{{host}}/v1/payments/dnb-corporate-sweden-domestic-bgpg-transfers",
+			"description": "",
+			"data": [],
+			"dataMode": "raw",
+			"headerData": [
+				{
+					"description": "",
+					"enabled": true,
+					"key": "X-Request-ID",
+					"type": "text",
+					"value": "{{$guid}}"
+				},
+				{
+					"description": "",
+					"enabled": true,
+					"key": "PSU-IP-Address",
+					"type": "text",
+					"value": "{{psu_ip_address}}"
+				},
+				{
+					"description": "",
+					"enabled": true,
+					"key": "Accept",
+					"type": "text",
+					"value": "application/json"
+				},
+				{
+					"description": "",
+					"enabled": true,
+					"key": "Content-Type",
+					"type": "text",
+					"value": "application/json"
+				},
+				{
+					"description": "",
+					"enabled": true,
+					"key": "PSU-User-Agent",
+					"type": "text",
+					"value": "{{user_agent}}"
+				},
+				{
+					"description": "",
+					"enabled": true,
+					"key": "TPP-Redirect-URI",
+					"type": "text",
+					"value": "https://psd2.dnb.no"
+				},
+				{
+					"description": "",
+					"enabled": true,
+					"key": "PSU-ID",
+					"type": "text",
+					"value": "{{ssn}}"
+				}
+			],
+			"method": "POST",
+			"pathVariableData": [],
+			"queryParams": [],
+			"auth": null,
+			"events": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "584a417a-aa24-4e5c-957d-a90af9ec9663",
+						"exec": [
+							"var jsonData = JSON.parse(responseBody);",
+							"pm.globals.set(\"paymentId\", jsonData.paymentId);"
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "8a013ebe-54e8-4a89-9819-ad50574f67d3",
+						"exec": [
+							"var date = new Date();",
+							"today = date.toISOString().split('T')[0];",
+							"pm.environment.set(\"today\", today);"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"folder": "e877a486-989a-419a-a59a-3f786d3054ef",
+			"responses": [
+				{
+					"id": "c7279074-6dd4-48ad-8166-f4f8aa887d26",
+					"name": "/v1/tpp",
+					"status": "",
+					"mime": "",
+					"language": "Text",
+					"text": "{\n  \"tppMetaData\": [\n    {\n      \"tppId\": \"PSDNO-TSTNCA-123123\",\n      \"tppName\": \"Acme Inc\",\n      \"tppRefId\": \"abc123tppRefId\",\n      \"activeLicenses\": [\n        {\n          \"license\": {\n            \"service\": \"AIS\"\n          },\n          \"countries\": [\n            \"NO\"\n          ]\n        }\n      ]\n    }\n  ]\n}",
+					"responseCode": {
+						"code": 200,
+						"detail": ""
+					},
+					"requestObject": {
+						"id": "f2b594cd-5eff-4284-93a7-1c30afbbc602",
+						"method": "GET",
+						"headers": "",
+						"dataMode": null,
+						"data": null,
+						"rawModeData": "",
+						"url": "{url}}/v1/tpp",
+						"pathVariableData": [],
+						"queryParams": [],
+						"headerData": []
+					},
+					"headers": [],
+					"cookies": [],
+					"request": "72b912cd-8ad8-4a7e-bc63-c1bbf0b2cf14",
+					"collection": "aa3f795a-1c4b-4169-b143-227b360ad65b"
+				}
+			],
+			"rawModeData": "{\n    \"debtorAccount\": {\n        \"bban\": \"{{firstAccount}}\"\n    },\n    \"debtorAgent\" : \"DNBASESX\",\n    \"creditorAccount\": {\n        \"bban\": \"12345678\"\n    },\n    \"creditorName\" : \"SEKtest\",\n    \"instructedAmount\": {\n        \"amount\": 13.37,\n        \"currency\": \"SEK\"\n    },\n    \"requestedExecutionDate\": \"{{today}}\",\n    \"remittanceInformation\": {\n\t\t\"unstructured\": \"sweden bgpg transfer\"\n\t},\n\t\"type\": \"bg\"\n\n}",
+			"headers": "X-Request-ID: {{$guid}}\nPSU-IP-Address: {{psu_ip_address}}\nAccept: application/json\nContent-Type: application/json\nPSU-User-Agent: {{user_agent}}\nTPP-Redirect-URI: https://psd2.dnb.no\nPSU-ID: {{ssn}}\n",
+			"pathVariables": {}
+		},
+		{
+			"id": "78d30fa2-b5cc-43c8-939c-b52e18dd2e5c",
+			"name": "/v1/payments/norwegian-domestic-credit-transfers",
+			"url": "https://{{host}}/v1/payments/norwegian-domestic-credit-transfers",
+			"description": "",
+			"data": [],
+			"dataMode": "raw",
+			"headerData": [
+				{
+					"description": "",
+					"enabled": true,
+					"key": "X-Request-ID",
+					"type": "text",
+					"value": "{{$guid}}"
+				},
+				{
+					"description": "",
+					"enabled": true,
+					"key": "PSU-IP-Address",
+					"type": "text",
+					"value": "{{psu_ip_address}}"
+				},
+				{
+					"description": "",
+					"enabled": true,
+					"key": "Accept",
+					"type": "text",
+					"value": "application/json"
+				},
+				{
+					"description": "",
+					"enabled": true,
+					"key": "Content-Type",
+					"type": "text",
+					"value": "application/json"
+				},
+				{
+					"description": "",
+					"enabled": true,
+					"key": "PSU-User-Agent",
+					"type": "text",
+					"value": "{{user_agent}}"
+				},
+				{
+					"description": "",
+					"enabled": true,
+					"key": "TPP-Redirect-URI",
+					"type": "text",
+					"value": "{{tpp_redirect_uri}}"
+				},
+				{
+					"description": "",
+					"enabled": true,
+					"key": "PSU-ID",
+					"type": "text",
+					"value": "{{ssn}}"
+				}
+			],
+			"method": "POST",
+			"pathVariableData": [],
+			"queryParams": [],
+			"auth": null,
+			"events": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "584a417a-aa24-4e5c-957d-a90af9ec9663",
+						"exec": [
+							"var jsonData = JSON.parse(responseBody);",
+							"pm.globals.set(\"paymentId\", jsonData.paymentId);"
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "8a013ebe-54e8-4a89-9819-ad50574f67d3",
+						"exec": [
+							"var date = new Date();",
+							"today = date.toISOString().split('T')[0];",
+							"pm.environment.set(\"today\", today);"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"folder": "dbb8050f-07b5-4477-94dc-0fbee72cabdd",
+			"responses": [
+				{
+					"id": "e3d6e97a-ae45-4fae-92aa-3a99d484027d",
+					"name": "/v1/tpp",
+					"status": "",
+					"mime": "",
+					"language": "Text",
+					"text": "{\n  \"tppMetaData\": [\n    {\n      \"tppId\": \"PSDNO-TSTNCA-123123\",\n      \"tppName\": \"Acme Inc\",\n      \"tppRefId\": \"abc123tppRefId\",\n      \"activeLicenses\": [\n        {\n          \"license\": {\n            \"service\": \"AIS\"\n          },\n          \"countries\": [\n            \"NO\"\n          ]\n        }\n      ]\n    }\n  ]\n}",
+					"responseCode": {
+						"code": 200,
+						"detail": ""
+					},
+					"requestObject": {
+						"id": "f2b594cd-5eff-4284-93a7-1c30afbbc602",
+						"method": "GET",
+						"headers": "",
+						"dataMode": null,
+						"data": null,
+						"rawModeData": "",
+						"url": "{url}}/v1/tpp",
+						"pathVariableData": [],
+						"queryParams": [],
+						"headerData": []
+					},
+					"headers": [],
+					"cookies": [],
+					"request": "78d30fa2-b5cc-43c8-939c-b52e18dd2e5c",
+					"collection": "aa3f795a-1c4b-4169-b143-227b360ad65b"
+				}
+			],
+			"rawModeData": "{\n    \"debtorAccount\": {\n        \"bban\": \"{{firstAccount}}\"\n    },\n    \"creditorAccount\": {\n        \"bban\": \"12094355778\"\n    },\n    \"creditorName\": \"Foo Bar\",\n    \"instructedAmount\": {\n        \"amount\": 13.37,\n        \"currency\": \"NOK\"\n    },\n    \"remittanceInformationUnstructured\": \"Test of payment to another Norwegian account.\",\n    \"requestedExecutionDate\": \"{{today}}\"\n}",
+			"headers": "X-Request-ID: {{$guid}}\nPSU-IP-Address: {{psu_ip_address}}\nAccept: application/json\nContent-Type: application/json\nPSU-User-Agent: {{user_agent}}\nTPP-Redirect-URI: {{tpp_redirect_uri}}\nPSU-ID: {{ssn}}\n",
+			"pathVariables": {}
+		},
+		{
+			"id": "7ab5b33e-c121-4753-9ffc-1671d58bdc1e",
+			"name": "/v1/payments/norwegian-crossborder-credit-transfers",
+			"url": "https://{{host}}/v1/payments/norwegian-cross-border-credit-transfers/{{paymentId}}",
+			"description": "",
+			"data": null,
+			"dataMode": null,
+			"headerData": [
+				{
+					"description": "",
+					"enabled": true,
+					"key": "X-Request-ID",
+					"type": "text",
+					"value": "{{$guid}}"
+				},
+				{
+					"description": "",
+					"enabled": true,
+					"key": "PSU-IP-Address",
+					"type": "text",
+					"value": "{{psu_ip_address}}"
+				},
+				{
+					"description": "",
+					"enabled": true,
+					"key": "Accept",
+					"type": "text",
+					"value": "application/json"
+				},
+				{
+					"description": "",
+					"enabled": true,
+					"key": "Content-Type",
+					"type": "text",
+					"value": "application/json"
+				},
+				{
+					"description": "",
+					"enabled": true,
+					"key": "PSU-User-Agent",
+					"type": "text",
+					"value": "{{user_agent}}"
+				},
+				{
+					"description": "",
+					"enabled": true,
+					"key": "TPP-Redirect-URI",
+					"type": "text",
+					"value": "{{tpp_redirect_uri}}"
+				},
+				{
+					"description": "",
+					"enabled": true,
+					"key": "PSU-ID",
+					"type": "text",
+					"value": "{{ssn}}"
+				}
+			],
+			"method": "GET",
+			"pathVariableData": [],
+			"queryParams": [],
+			"auth": null,
+			"events": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "584a417a-aa24-4e5c-957d-a90af9ec9663",
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "8a013ebe-54e8-4a89-9819-ad50574f67d3",
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"folder": "dbb8050f-07b5-4477-94dc-0fbee72cabdd",
+			"responses": [
+				{
+					"id": "ec0d217c-7c8b-4fac-ba17-d9f89ac1e13a",
+					"name": "/v1/tpp",
+					"status": "",
+					"mime": "",
+					"language": "Text",
+					"text": "{\n  \"tppMetaData\": [\n    {\n      \"tppId\": \"PSDNO-TSTNCA-123123\",\n      \"tppName\": \"Acme Inc\",\n      \"tppRefId\": \"abc123tppRefId\",\n      \"activeLicenses\": [\n        {\n          \"license\": {\n            \"service\": \"AIS\"\n          },\n          \"countries\": [\n            \"NO\"\n          ]\n        }\n      ]\n    }\n  ]\n}",
+					"responseCode": {
+						"code": 200,
+						"detail": ""
+					},
+					"requestObject": {
+						"id": "f2b594cd-5eff-4284-93a7-1c30afbbc602",
+						"method": "GET",
+						"headers": "",
+						"dataMode": null,
+						"data": null,
+						"rawModeData": "",
+						"url": "{url}}/v1/tpp",
+						"pathVariableData": [],
+						"queryParams": [],
+						"headerData": []
+					},
+					"headers": [],
+					"cookies": [],
+					"request": "7ab5b33e-c121-4753-9ffc-1671d58bdc1e",
+					"collection": "aa3f795a-1c4b-4169-b143-227b360ad65b"
+				}
+			],
+			"headers": "X-Request-ID: {{$guid}}\nPSU-IP-Address: {{psu_ip_address}}\nAccept: application/json\nContent-Type: application/json\nPSU-User-Agent: {{user_agent}}\nTPP-Redirect-URI: {{tpp_redirect_uri}}\nPSU-ID: {{ssn}}\n",
+			"pathVariables": {}
+		},
+		{
+			"id": "83fba537-275b-42df-9018-78e95ab3178e",
+			"name": "/v1/payments/dnb-corporate-denmark-domestic-figiro-transfers",
+			"url": "https://{{host}}/v1/payments/dnb-corporate-denmark-domestic-figiro-transfers",
+			"description": "",
+			"data": [],
+			"dataMode": "raw",
+			"headerData": [
+				{
+					"description": "",
+					"enabled": true,
+					"key": "X-Request-ID",
+					"type": "text",
+					"value": "{{$guid}}"
+				},
+				{
+					"description": "",
+					"enabled": true,
+					"key": "PSU-IP-Address",
+					"type": "text",
+					"value": "{{psu_ip_address}}"
+				},
+				{
+					"description": "",
+					"enabled": true,
+					"key": "Accept",
+					"type": "text",
+					"value": "application/json"
+				},
+				{
+					"description": "",
+					"enabled": true,
+					"key": "Content-Type",
+					"type": "text",
+					"value": "application/json"
+				},
+				{
+					"description": "",
+					"enabled": true,
+					"key": "PSU-User-Agent",
+					"type": "text",
+					"value": "{{user_agent}}"
+				},
+				{
+					"description": "",
+					"enabled": true,
+					"key": "TPP-Redirect-URI",
+					"type": "text",
+					"value": "https://psd2.dnb.no"
+				},
+				{
+					"description": "",
+					"enabled": true,
+					"key": "PSU-ID",
+					"type": "text",
+					"value": "{{ssn}}"
+				}
+			],
+			"method": "POST",
+			"pathVariableData": [],
+			"queryParams": [],
+			"auth": null,
+			"events": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "584a417a-aa24-4e5c-957d-a90af9ec9663",
+						"exec": [
+							"var jsonData = JSON.parse(responseBody);",
+							"pm.globals.set(\"paymentId\", jsonData.paymentId);"
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "8a013ebe-54e8-4a89-9819-ad50574f67d3",
+						"exec": [
+							"var date = new Date();",
+							"today = date.toISOString().split('T')[0];",
+							"pm.environment.set(\"today\", today);"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"folder": "e877a486-989a-419a-a59a-3f786d3054ef",
+			"responses": [
+				{
+					"id": "5ebd0d53-f037-44e5-97ff-0f896246bc2c",
+					"name": "/v1/tpp",
+					"status": "",
+					"mime": "",
+					"language": "Text",
+					"text": "{\n  \"tppMetaData\": [\n    {\n      \"tppId\": \"PSDNO-TSTNCA-123123\",\n      \"tppName\": \"Acme Inc\",\n      \"tppRefId\": \"abc123tppRefId\",\n      \"activeLicenses\": [\n        {\n          \"license\": {\n            \"service\": \"AIS\"\n          },\n          \"countries\": [\n            \"NO\"\n          ]\n        }\n      ]\n    }\n  ]\n}",
+					"responseCode": {
+						"code": 200,
+						"detail": ""
+					},
+					"requestObject": {
+						"id": "f2b594cd-5eff-4284-93a7-1c30afbbc602",
+						"method": "GET",
+						"headers": "",
+						"dataMode": null,
+						"data": null,
+						"rawModeData": "",
+						"url": "{url}}/v1/tpp",
+						"pathVariableData": [],
+						"queryParams": [],
+						"headerData": []
+					},
+					"headers": [],
+					"cookies": [],
+					"request": "83fba537-275b-42df-9018-78e95ab3178e",
+					"collection": "aa3f795a-1c4b-4169-b143-227b360ad65b"
+				}
+			],
+			"rawModeData": "{\n    \"debtorAccount\": {\n        \"bban\": \"{{firstAccount}}\"\n    },\n    \"debtorAgent\" : \"DNBADKKX\",\n    \"creditorAccount\": {\n        \"bban\": \"12345678\"\n    },\n    \"creditorName\" : \"DKKtest\",\n    \"instructedAmount\": {\n        \"amount\": 13.37,\n        \"currency\": \"DKK\"\n    },\n    \"requestedExecutionDate\": \"{{today}}\",\n    \"remittanceInformationUnstructured\": \"Test of payment of denmark figro transfer\"\n}",
+			"headers": "X-Request-ID: {{$guid}}\nPSU-IP-Address: {{psu_ip_address}}\nAccept: application/json\nContent-Type: application/json\nPSU-User-Agent: {{user_agent}}\nTPP-Redirect-URI: https://psd2.dnb.no\nPSU-ID: {{ssn}}\n",
+			"pathVariables": {}
+		},
+		{
+			"id": "8575fca9-28df-4ff4-9ce6-81c33d9f5bc8",
+			"name": "/v1/accounts",
+			"url": "https://{{host}}/v1/accounts",
+			"description": "",
+			"data": null,
+			"dataMode": null,
+			"headerData": [
+				{
+					"description": "",
+					"enabled": true,
+					"key": "X-Request-ID",
+					"type": "text",
+					"value": "{{$guid}}"
+				},
+				{
+					"description": "",
+					"enabled": true,
+					"key": "PSU-IP-Address",
+					"type": "text",
+					"value": "{{psu_ip_address}}"
+				},
+				{
+					"description": "",
+					"enabled": true,
+					"key": "Accept",
+					"type": "text",
+					"value": "application/json"
+				},
+				{
+					"description": "",
+					"enabled": true,
+					"key": "Content-Type",
+					"type": "text",
+					"value": "application/json"
+				},
+				{
+					"description": "",
+					"enabled": true,
+					"key": "PSU-User-Agent",
+					"type": "text",
+					"value": "{{user_agent}}"
+				},
+				{
+					"description": "",
+					"enabled": true,
+					"key": "Consent-ID",
+					"type": "text",
+					"value": "{{consentId}}"
+				},
+				{
+					"key": "TPP-Redirect-URI",
+					"value": "{{tpp_redirect_uri}}",
+					"description": "",
+					"type": "text",
+					"enabled": false
+				}
+			],
+			"method": "GET",
+			"pathVariableData": [],
+			"queryParams": [],
+			"auth": null,
+			"events": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "584a417a-aa24-4e5c-957d-a90af9ec9663",
+						"exec": [
+							"var jsonData = JSON.parse(responseBody);",
+							"pm.globals.set(\"firstAccount\", jsonData.accounts[0].bban);",
+							"pm.globals.set(\"secondAccount\", jsonData.accounts[1].bban);"
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "8a013ebe-54e8-4a89-9819-ad50574f67d3",
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"folder": "6cafe240-65cf-45d3-99c6-92540ca96d18",
+			"responses": [
+				{
+					"id": "ccf06bdf-174f-4751-b31f-c6822fdf4c79",
+					"name": "/v1/tpp",
+					"status": "",
+					"mime": "",
+					"language": "Text",
+					"text": "{\n  \"tppMetaData\": [\n    {\n      \"tppId\": \"PSDNO-TSTNCA-123123\",\n      \"tppName\": \"Acme Inc\",\n      \"tppRefId\": \"abc123tppRefId\",\n      \"activeLicenses\": [\n        {\n          \"license\": {\n            \"service\": \"AIS\"\n          },\n          \"countries\": [\n            \"NO\"\n          ]\n        }\n      ]\n    }\n  ]\n}",
+					"responseCode": {
+						"code": 200,
+						"detail": ""
+					},
+					"requestObject": {
+						"id": "f2b594cd-5eff-4284-93a7-1c30afbbc602",
+						"method": "GET",
+						"headers": "",
+						"dataMode": null,
+						"data": null,
+						"rawModeData": "",
+						"url": "{url}}/v1/tpp",
+						"pathVariableData": [],
+						"queryParams": [],
+						"headerData": []
+					},
+					"headers": [],
+					"cookies": [],
+					"request": "8575fca9-28df-4ff4-9ce6-81c33d9f5bc8",
+					"collection": "aa3f795a-1c4b-4169-b143-227b360ad65b"
+				}
+			],
+			"headers": "X-Request-ID: {{$guid}}\nPSU-IP-Address: {{psu_ip_address}}\nAccept: application/json\nContent-Type: application/json\nPSU-User-Agent: {{user_agent}}\nConsent-ID: {{consentId}}\n//TPP-Redirect-URI: {{tpp_redirect_uri}}\n",
+			"pathVariables": {}
+		},
+		{
+			"id": "86b587c3-db2a-48e7-bf2b-e2a80cecf999",
+			"name": "/v1/payments/norwegian-domestic-credit-transfers",
+			"url": "https://{{host}}/v1/payments/norwegian-domestic-credit-transfers/{{paymentId}}",
+			"description": "",
+			"data": null,
+			"dataMode": null,
+			"headerData": [
+				{
+					"description": "",
+					"enabled": true,
+					"key": "X-Request-ID",
+					"type": "text",
+					"value": "{{$guid}}"
+				},
+				{
+					"description": "",
+					"enabled": true,
+					"key": "PSU-IP-Address",
+					"type": "text",
+					"value": "{{psu_ip_address}}"
+				},
+				{
+					"description": "",
+					"enabled": true,
+					"key": "Accept",
+					"type": "text",
+					"value": "application/json"
+				},
+				{
+					"description": "",
+					"enabled": true,
+					"key": "Content-Type",
+					"type": "text",
+					"value": "application/json"
+				},
+				{
+					"description": "",
+					"enabled": true,
+					"key": "PSU-User-Agent",
+					"type": "text",
+					"value": "{{user_agent}}"
+				},
+				{
+					"description": "",
+					"enabled": true,
+					"key": "TPP-Redirect-URI",
+					"type": "text",
+					"value": "{{tpp_redirect_uri}}"
+				},
+				{
+					"description": "",
+					"enabled": true,
+					"key": "PSU-ID",
+					"type": "text",
+					"value": "{{ssn}}"
+				}
+			],
+			"method": "DELETE",
+			"pathVariableData": [],
+			"queryParams": [],
+			"auth": null,
+			"events": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "584a417a-aa24-4e5c-957d-a90af9ec9663",
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "8a013ebe-54e8-4a89-9819-ad50574f67d3",
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"folder": "dbb8050f-07b5-4477-94dc-0fbee72cabdd",
+			"responses": [
+				{
+					"id": "01268af6-3522-4426-83e6-96d060ac2c2f",
+					"name": "/v1/tpp",
+					"status": "",
+					"mime": "",
+					"language": "Text",
+					"text": "{\n  \"tppMetaData\": [\n    {\n      \"tppId\": \"PSDNO-TSTNCA-123123\",\n      \"tppName\": \"Acme Inc\",\n      \"tppRefId\": \"abc123tppRefId\",\n      \"activeLicenses\": [\n        {\n          \"license\": {\n            \"service\": \"AIS\"\n          },\n          \"countries\": [\n            \"NO\"\n          ]\n        }\n      ]\n    }\n  ]\n}",
+					"responseCode": {
+						"code": 200,
+						"detail": ""
+					},
+					"requestObject": {
+						"id": "f2b594cd-5eff-4284-93a7-1c30afbbc602",
+						"method": "GET",
+						"headers": "",
+						"dataMode": null,
+						"data": null,
+						"rawModeData": "",
+						"url": "{url}}/v1/tpp",
+						"pathVariableData": [],
+						"queryParams": [],
+						"headerData": []
+					},
+					"headers": [],
+					"cookies": [],
+					"request": "86b587c3-db2a-48e7-bf2b-e2a80cecf999",
+					"collection": "aa3f795a-1c4b-4169-b143-227b360ad65b"
+				}
+			],
+			"headers": "X-Request-ID: {{$guid}}\nPSU-IP-Address: {{psu_ip_address}}\nAccept: application/json\nContent-Type: application/json\nPSU-User-Agent: {{user_agent}}\nTPP-Redirect-URI: {{tpp_redirect_uri}}\nPSU-ID: {{ssn}}\n",
+			"pathVariables": {}
+		},
+		{
+			"id": "882fdd3b-4c15-4b00-a8d4-24c82a245617",
+			"name": "/v1/payments/dnb-corporate-uk-domestic-chaps-transfers",
+			"url": "https://{{host}}/v1/payments/dnb-corporate-uk-domestic-chaps-transfers",
+			"description": "",
+			"data": [],
+			"dataMode": "raw",
+			"headerData": [
+				{
+					"description": "",
+					"enabled": true,
+					"key": "X-Request-ID",
+					"type": "text",
+					"value": "{{$guid}}"
+				},
+				{
+					"description": "",
+					"enabled": true,
+					"key": "PSU-IP-Address",
+					"type": "text",
+					"value": "{{psu_ip_address}}"
+				},
+				{
+					"description": "",
+					"enabled": true,
+					"key": "Accept",
+					"type": "text",
+					"value": "application/json"
+				},
+				{
+					"description": "",
+					"enabled": true,
+					"key": "Content-Type",
+					"type": "text",
+					"value": "application/json"
+				},
+				{
+					"description": "",
+					"enabled": true,
+					"key": "PSU-User-Agent",
+					"type": "text",
+					"value": "{{user_agent}}"
+				},
+				{
+					"description": "",
+					"enabled": true,
+					"key": "TPP-Redirect-URI",
+					"type": "text",
+					"value": "https://psd2.dnb.no"
+				},
+				{
+					"description": "",
+					"enabled": true,
+					"key": "PSU-ID",
+					"type": "text",
+					"value": "{{ssn}}"
+				}
+			],
+			"method": "POST",
+			"pathVariableData": [],
+			"queryParams": [],
+			"auth": null,
+			"events": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "584a417a-aa24-4e5c-957d-a90af9ec9663",
+						"exec": [
+							"var jsonData = JSON.parse(responseBody);",
+							"pm.globals.set(\"paymentId\", jsonData.paymentId);"
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "8a013ebe-54e8-4a89-9819-ad50574f67d3",
+						"exec": [
+							"var date = new Date();",
+							"today = date.toISOString().split('T')[0];",
+							"pm.environment.set(\"today\", today);"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"folder": "e877a486-989a-419a-a59a-3f786d3054ef",
+			"responses": [
+				{
+					"id": "1ffd63cf-46bc-4dbd-a73f-f6db12f8a253",
+					"name": "/v1/tpp",
+					"status": "",
+					"mime": "",
+					"language": "Text",
+					"text": "{\n  \"tppMetaData\": [\n    {\n      \"tppId\": \"PSDNO-TSTNCA-123123\",\n      \"tppName\": \"Acme Inc\",\n      \"tppRefId\": \"abc123tppRefId\",\n      \"activeLicenses\": [\n        {\n          \"license\": {\n            \"service\": \"AIS\"\n          },\n          \"countries\": [\n            \"NO\"\n          ]\n        }\n      ]\n    }\n  ]\n}",
+					"responseCode": {
+						"code": 200,
+						"detail": ""
+					},
+					"requestObject": {
+						"id": "f2b594cd-5eff-4284-93a7-1c30afbbc602",
+						"method": "GET",
+						"headers": "",
+						"dataMode": null,
+						"data": null,
+						"rawModeData": "",
+						"url": "{url}}/v1/tpp",
+						"pathVariableData": [],
+						"queryParams": [],
+						"headerData": []
+					},
+					"headers": [],
+					"cookies": [],
+					"request": "882fdd3b-4c15-4b00-a8d4-24c82a245617",
+					"collection": "aa3f795a-1c4b-4169-b143-227b360ad65b"
+				}
+			],
+			"rawModeData": "{\n    \"debtorAccount\": {\n        \"bban\": \"{{firstAccount}}\"\n    },\n    \"creditorAccount\": {\n        \"bban\": \"12094355\"\n    },\n    \"instructedAmount\": {\n        \"amount\": 13.37,\n        \"currency\": \"GBP\"\n    },\n    \"creditorAgent\": \"123456\",\n    \"creditorName\": \"UKtest\",\n    \"requestedExecutionDate\": \"{{today}}\"\n}",
+			"headers": "X-Request-ID: {{$guid}}\nPSU-IP-Address: {{psu_ip_address}}\nAccept: application/json\nContent-Type: application/json\nPSU-User-Agent: {{user_agent}}\nTPP-Redirect-URI: https://psd2.dnb.no\nPSU-ID: {{ssn}}\n",
+			"pathVariables": {}
+		},
+		{
+			"id": "8cd1b3e1-27ae-48a5-979b-252bf313cafb",
+			"name": "/v1/consents",
+			"url": "https://{{host}}/v1/consents/{{consentId}}",
+			"description": null,
+			"data": null,
+			"dataMode": null,
+			"headerData": [
+				{
+					"key": "X-Request-ID",
+					"value": "{{$guid}}"
+				},
+				{
+					"key": "PSU-ID",
+					"value": "{{ssn}}"
+				},
+				{
+					"key": "PSU-IP-Address",
+					"value": "{{psu_ip_address}}"
+				},
+				{
+					"key": "Accept",
+					"value": "application/json"
+				},
+				{
+					"key": "Content-Type",
+					"value": "application/json"
+				},
+				{
+					"description": "",
+					"enabled": true,
+					"key": "PSU-User-Agent",
+					"type": "text",
+					"value": "{{user_agent}}"
+				}
+			],
+			"method": "GET",
+			"pathVariableData": [],
+			"queryParams": [],
+			"auth": null,
+			"events": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "584a417a-aa24-4e5c-957d-a90af9ec9663",
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "8a013ebe-54e8-4a89-9819-ad50574f67d3",
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"folder": "6cafe240-65cf-45d3-99c6-92540ca96d18",
+			"responses": [
+				{
+					"id": "147be077-24a6-4646-b7a3-c766df5576f5",
+					"name": "/v1/tpp",
+					"status": "",
+					"mime": "",
+					"language": "Text",
+					"text": "{\n  \"tppMetaData\": [\n    {\n      \"tppId\": \"PSDNO-TSTNCA-123123\",\n      \"tppName\": \"Acme Inc\",\n      \"tppRefId\": \"abc123tppRefId\",\n      \"activeLicenses\": [\n        {\n          \"license\": {\n            \"service\": \"AIS\"\n          },\n          \"countries\": [\n            \"NO\"\n          ]\n        }\n      ]\n    }\n  ]\n}",
+					"responseCode": {
+						"code": 200,
+						"detail": ""
+					},
+					"requestObject": {
+						"id": "f2b594cd-5eff-4284-93a7-1c30afbbc602",
+						"method": "GET",
+						"headers": "",
+						"dataMode": null,
+						"data": null,
+						"rawModeData": "",
+						"url": "{url}}/v1/tpp",
+						"pathVariableData": [],
+						"queryParams": [],
+						"headerData": []
+					},
+					"headers": [],
+					"cookies": [],
+					"request": "8cd1b3e1-27ae-48a5-979b-252bf313cafb",
+					"collection": "aa3f795a-1c4b-4169-b143-227b360ad65b"
+				}
+			],
+			"headers": "X-Request-ID: {{$guid}}\nPSU-ID: {{ssn}}\nPSU-IP-Address: {{psu_ip_address}}\nAccept: application/json\nContent-Type: application/json\nPSU-User-Agent: {{user_agent}}\n",
+			"pathVariables": {}
+		},
+		{
+			"id": "968cd55c-333c-4b68-9153-5d9d87178fed",
+			"name": "/v1/signing-baskets/{basketId}",
+			"url": "https://{{host}}/v1/signing-baskets/{{basketId}}",
+			"description": null,
+			"data": null,
+			"dataMode": null,
+			"headerData": [
+				{
+					"key": "PSU-ID",
+					"value": "TB11238",
+					"type": "text"
+				},
+				{
+					"key": "PSU-IP-Address",
+					"value": "123.123.123.123",
+					"type": "text"
+				},
+				{
+					"key": "TPP-Redirect-Preferred",
+					"value": "true",
+					"type": "text"
+				},
+				{
+					"key": "TPP-Redirect-URI",
+					"value": "http://tpp-service.net ",
+					"type": "text"
+				},
+				{
+					"key": "Accept",
+					"value": "application/json",
+					"type": "text"
+				},
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"type": "text"
+				},
+				{
+					"key": "X-Request-ID",
+					"value": "{{$guid}}",
+					"type": "text"
+				},
+				{
+					"key": "TPP-Explicit-Authorisation-Preferred",
+					"value": "true",
+					"type": "text"
+				}
+			],
+			"method": "GET",
+			"pathVariableData": [],
+			"queryParams": [],
+			"auth": null,
+			"events": null,
+			"folder": "851e48b5-a28a-4cb0-92d1-58247f6049aa",
+			"headers": "PSU-ID: TB11238\nPSU-IP-Address: 123.123.123.123\nTPP-Redirect-Preferred: true\nTPP-Redirect-URI: http://tpp-service.net \nAccept: application/json\nContent-Type: application/json\nX-Request-ID: {{$guid}}\nTPP-Explicit-Authorisation-Preferred: true\n",
+			"pathVariables": {}
+		},
+		{
+			"id": "a4ee8986-d9df-4391-94d2-463e7167e422",
+			"name": "/v1/periodic-payments/norwegian-domestic-credit-transfers",
+			"url": "https://{{host}}/v1/periodic-payments/norwegian-domestic-credit-transfers/{{paymentId}}",
+			"description": "",
+			"data": null,
+			"dataMode": null,
+			"headerData": [
+				{
+					"description": "",
+					"enabled": true,
+					"key": "X-Request-ID",
+					"type": "text",
+					"value": "{{$guid}}"
+				},
+				{
+					"description": "",
+					"enabled": true,
+					"key": "PSU-IP-Address",
+					"type": "text",
+					"value": "{{psu_ip_address}}"
+				},
+				{
+					"description": "",
+					"enabled": true,
+					"key": "Accept",
+					"type": "text",
+					"value": "application/json"
+				},
+				{
+					"description": "",
+					"enabled": true,
+					"key": "Content-Type",
+					"type": "text",
+					"value": "application/json"
+				},
+				{
+					"description": "",
+					"enabled": true,
+					"key": "PSU-User-Agent",
+					"type": "text",
+					"value": "{{user_agent}}"
+				},
+				{
+					"description": "",
+					"enabled": true,
+					"key": "TPP-Redirect-URI",
+					"type": "text",
+					"value": "{{tpp_redirect_uri}}"
+				},
+				{
+					"description": "",
+					"enabled": true,
+					"key": "PSU-ID",
+					"type": "text",
+					"value": "{{ssn}}"
+				}
+			],
+			"method": "GET",
+			"pathVariableData": [],
+			"queryParams": [],
+			"auth": null,
+			"events": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "584a417a-aa24-4e5c-957d-a90af9ec9663",
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "8a013ebe-54e8-4a89-9819-ad50574f67d3",
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"folder": "0128f92c-a55c-4be1-9038-51648b97bbfa",
+			"responses": [
+				{
+					"id": "114cc66e-163e-43b7-b230-0e91f21c6acb",
+					"name": "/v1/tpp",
+					"status": "",
+					"mime": "",
+					"language": "Text",
+					"text": "{\n  \"tppMetaData\": [\n    {\n      \"tppId\": \"PSDNO-TSTNCA-123123\",\n      \"tppName\": \"Acme Inc\",\n      \"tppRefId\": \"abc123tppRefId\",\n      \"activeLicenses\": [\n        {\n          \"license\": {\n            \"service\": \"AIS\"\n          },\n          \"countries\": [\n            \"NO\"\n          ]\n        }\n      ]\n    }\n  ]\n}",
+					"responseCode": {
+						"code": 200,
+						"detail": ""
+					},
+					"requestObject": {
+						"id": "f2b594cd-5eff-4284-93a7-1c30afbbc602",
+						"method": "GET",
+						"headers": "",
+						"dataMode": null,
+						"data": null,
+						"rawModeData": "",
+						"url": "{url}}/v1/tpp",
+						"pathVariableData": [],
+						"queryParams": [],
+						"headerData": []
+					},
+					"headers": [],
+					"cookies": [],
+					"request": "a4ee8986-d9df-4391-94d2-463e7167e422",
+					"collection": "aa3f795a-1c4b-4169-b143-227b360ad65b"
+				}
+			],
+			"headers": "X-Request-ID: {{$guid}}\nPSU-IP-Address: {{psu_ip_address}}\nAccept: application/json\nContent-Type: application/json\nPSU-User-Agent: {{user_agent}}\nTPP-Redirect-URI: {{tpp_redirect_uri}}\nPSU-ID: {{ssn}}\n",
+			"pathVariables": {}
+		},
+		{
+			"id": "ad570570-6d48-46d3-983a-5664c99cd6ce",
+			"name": "/v1/card-accounts/{accountNumber}/transactions",
+			"url": "https://{{host}}/v1/card-accounts/{{firstCard}}/transactions?bookingStatus=BOTH&dateFrom=2019-01-01",
+			"description": "",
+			"data": null,
+			"dataMode": null,
+			"headerData": [
+				{
+					"description": "",
+					"enabled": true,
+					"key": "X-Request-ID",
+					"type": "text",
+					"value": "{{$guid}}"
+				},
+				{
+					"description": "",
+					"enabled": true,
+					"key": "PSU-IP-Address",
+					"type": "text",
+					"value": "{{psu_ip_address}}"
+				},
+				{
+					"description": "",
+					"enabled": true,
+					"key": "Accept",
+					"type": "text",
+					"value": "application/json"
+				},
+				{
+					"description": "",
+					"enabled": true,
+					"key": "Content-Type",
+					"type": "text",
+					"value": "application/json"
+				},
+				{
+					"description": "",
+					"enabled": true,
+					"key": "PSU-User-Agent",
+					"type": "text",
+					"value": "{{user_agent}}"
+				},
+				{
+					"description": "",
+					"enabled": true,
+					"key": "Consent-ID",
+					"type": "text",
+					"value": "{{consentId}}"
+				}
+			],
+			"method": "GET",
+			"pathVariableData": [],
+			"queryParams": [
+				{
+					"key": "bookingStatus",
+					"value": "BOTH",
+					"equals": true,
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "dateFrom",
+					"value": "2019-01-01",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"auth": null,
+			"events": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "584a417a-aa24-4e5c-957d-a90af9ec9663",
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "8a013ebe-54e8-4a89-9819-ad50574f67d3",
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"folder": "6cafe240-65cf-45d3-99c6-92540ca96d18",
+			"responses": [
+				{
+					"id": "1c4a5e26-68cf-4c32-bcde-7cb0221fc670",
+					"name": "/v1/tpp",
+					"status": "",
+					"mime": "",
+					"language": "Text",
+					"text": "{\n  \"tppMetaData\": [\n    {\n      \"tppId\": \"PSDNO-TSTNCA-123123\",\n      \"tppName\": \"Acme Inc\",\n      \"tppRefId\": \"abc123tppRefId\",\n      \"activeLicenses\": [\n        {\n          \"license\": {\n            \"service\": \"AIS\"\n          },\n          \"countries\": [\n            \"NO\"\n          ]\n        }\n      ]\n    }\n  ]\n}",
+					"responseCode": {
+						"code": 200,
+						"detail": ""
+					},
+					"requestObject": {
+						"id": "f2b594cd-5eff-4284-93a7-1c30afbbc602",
+						"method": "GET",
+						"headers": "",
+						"dataMode": null,
+						"data": null,
+						"rawModeData": "",
+						"url": "{url}}/v1/tpp",
+						"pathVariableData": [],
+						"queryParams": [],
+						"headerData": []
+					},
+					"headers": [],
+					"cookies": [],
+					"request": "ad570570-6d48-46d3-983a-5664c99cd6ce",
+					"collection": "aa3f795a-1c4b-4169-b143-227b360ad65b"
+				}
+			],
+			"headers": "X-Request-ID: {{$guid}}\nPSU-IP-Address: {{psu_ip_address}}\nAccept: application/json\nContent-Type: application/json\nPSU-User-Agent: {{user_agent}}\nConsent-ID: {{consentId}}\n",
+			"pathVariables": {}
+		},
+		{
+			"id": "b1211b43-a3ac-457a-ad33-e9575bfe1db2",
+			"name": "/v1/consents/status",
+			"url": "https://{{host}}/v1/consents/{{consentId}}/status",
+			"description": null,
+			"data": null,
+			"dataMode": null,
+			"headerData": [
+				{
+					"description": "",
+					"enabled": true,
+					"key": "X-Request-ID",
+					"type": "text",
+					"value": "{{$guid}}"
+				},
+				{
+					"description": "",
+					"enabled": true,
+					"key": "PSU-ID",
+					"type": "text",
+					"value": "{{ssn}}"
+				},
+				{
+					"description": "",
+					"enabled": true,
+					"key": "PSU-IP-Address",
+					"type": "text",
+					"value": "{{psu_ip_address}}"
+				},
+				{
+					"description": "",
+					"enabled": true,
+					"key": "Accept",
+					"type": "text",
+					"value": "application/json"
+				},
+				{
+					"description": "",
+					"enabled": true,
+					"key": "Content-Type",
+					"type": "text",
+					"value": "application/json"
+				},
+				{
+					"description": "",
+					"enabled": true,
+					"key": "PSU-User-Agent",
+					"type": "text",
+					"value": "{{user_agent}}"
+				}
+			],
+			"method": "GET",
+			"pathVariableData": [],
+			"queryParams": [],
+			"auth": null,
+			"events": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "584a417a-aa24-4e5c-957d-a90af9ec9663",
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "8a013ebe-54e8-4a89-9819-ad50574f67d3",
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"folder": "6cafe240-65cf-45d3-99c6-92540ca96d18",
+			"responses": [
+				{
+					"id": "753f8519-d073-4453-8069-8f4a2d39a618",
+					"name": "/v1/tpp",
+					"status": "",
+					"mime": "",
+					"language": "Text",
+					"text": "{\n  \"tppMetaData\": [\n    {\n      \"tppId\": \"PSDNO-TSTNCA-123123\",\n      \"tppName\": \"Acme Inc\",\n      \"tppRefId\": \"abc123tppRefId\",\n      \"activeLicenses\": [\n        {\n          \"license\": {\n            \"service\": \"AIS\"\n          },\n          \"countries\": [\n            \"NO\"\n          ]\n        }\n      ]\n    }\n  ]\n}",
+					"responseCode": {
+						"code": 200,
+						"detail": ""
+					},
+					"requestObject": {
+						"id": "f2b594cd-5eff-4284-93a7-1c30afbbc602",
+						"method": "GET",
+						"headers": "",
+						"dataMode": null,
+						"data": null,
+						"rawModeData": "",
+						"url": "{url}}/v1/tpp",
+						"pathVariableData": [],
+						"queryParams": [],
+						"headerData": []
+					},
+					"headers": [],
+					"cookies": [],
+					"request": "b1211b43-a3ac-457a-ad33-e9575bfe1db2",
+					"collection": "aa3f795a-1c4b-4169-b143-227b360ad65b"
+				}
+			],
+			"headers": "X-Request-ID: {{$guid}}\nPSU-ID: {{ssn}}\nPSU-IP-Address: {{psu_ip_address}}\nAccept: application/json\nContent-Type: application/json\nPSU-User-Agent: {{user_agent}}\n",
+			"pathVariables": {}
+		},
+		{
+			"id": "b290e1fb-1381-48a6-aee3-12e55cf02696",
+			"name": "/v1/periodic-payments/norwegian-domestic-payment-to-self",
+			"url": "https://{{host}}/v1/periodic-payments/norwegian-domestic-payment-to-self/{{paymentId}}",
+			"description": "",
+			"data": null,
+			"dataMode": null,
+			"headerData": [
+				{
+					"description": "",
+					"enabled": true,
+					"key": "X-Request-ID",
+					"type": "text",
+					"value": "{{$guid}}"
+				},
+				{
+					"description": "",
+					"enabled": true,
+					"key": "PSU-IP-Address",
+					"type": "text",
+					"value": "{{psu_ip_address}}"
+				},
+				{
+					"description": "",
+					"enabled": true,
+					"key": "Accept",
+					"type": "text",
+					"value": "application/json"
+				},
+				{
+					"description": "",
+					"enabled": true,
+					"key": "Content-Type",
+					"type": "text",
+					"value": "application/json"
+				},
+				{
+					"description": "",
+					"enabled": true,
+					"key": "PSU-User-Agent",
+					"type": "text",
+					"value": "{{user_agent}}"
+				},
+				{
+					"description": "",
+					"enabled": true,
+					"key": "TPP-Redirect-URI",
+					"type": "text",
+					"value": "{{tpp_redirect_uri}}"
+				},
+				{
+					"description": "",
+					"enabled": true,
+					"key": "PSU-ID",
+					"type": "text",
+					"value": "{{ssn}}"
+				}
+			],
+			"method": "DELETE",
+			"pathVariableData": [],
+			"queryParams": [],
+			"auth": null,
+			"events": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "584a417a-aa24-4e5c-957d-a90af9ec9663",
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "8a013ebe-54e8-4a89-9819-ad50574f67d3",
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"folder": "0128f92c-a55c-4be1-9038-51648b97bbfa",
+			"responses": [
+				{
+					"id": "606cf107-0c87-4da2-9497-d408a5baf73d",
+					"name": "/v1/tpp",
+					"status": "",
+					"mime": "",
+					"language": "Text",
+					"text": "{\n  \"tppMetaData\": [\n    {\n      \"tppId\": \"PSDNO-TSTNCA-123123\",\n      \"tppName\": \"Acme Inc\",\n      \"tppRefId\": \"abc123tppRefId\",\n      \"activeLicenses\": [\n        {\n          \"license\": {\n            \"service\": \"AIS\"\n          },\n          \"countries\": [\n            \"NO\"\n          ]\n        }\n      ]\n    }\n  ]\n}",
+					"responseCode": {
+						"code": 200,
+						"detail": ""
+					},
+					"requestObject": {
+						"id": "f2b594cd-5eff-4284-93a7-1c30afbbc602",
+						"method": "GET",
+						"headers": "",
+						"dataMode": null,
+						"data": null,
+						"rawModeData": "",
+						"url": "{url}}/v1/tpp",
+						"pathVariableData": [],
+						"queryParams": [],
+						"headerData": []
+					},
+					"headers": [],
+					"cookies": [],
+					"request": "b290e1fb-1381-48a6-aee3-12e55cf02696",
+					"collection": "aa3f795a-1c4b-4169-b143-227b360ad65b"
+				}
+			],
+			"headers": "X-Request-ID: {{$guid}}\nPSU-IP-Address: {{psu_ip_address}}\nAccept: application/json\nContent-Type: application/json\nPSU-User-Agent: {{user_agent}}\nTPP-Redirect-URI: {{tpp_redirect_uri}}\nPSU-ID: {{ssn}}\n",
+			"pathVariables": {}
+		},
+		{
+			"id": "b5d6b9ac-ffa9-4e28-9182-7203c03175b1",
+			"name": "/v1/accounts/{account-id}/balances",
+			"url": "https://{{host}}/v1/accounts/{{firstAccount}}/balances",
+			"description": "",
+			"data": null,
+			"dataMode": null,
+			"headerData": [
+				{
+					"description": "",
+					"enabled": true,
+					"key": "X-Request-ID",
+					"type": "text",
+					"value": "{{$guid}}"
+				},
+				{
+					"description": "",
+					"enabled": true,
+					"key": "PSU-IP-Address",
+					"type": "text",
+					"value": "{{psu_ip_address}}"
+				},
+				{
+					"description": "",
+					"enabled": true,
+					"key": "Accept",
+					"type": "text",
+					"value": "application/json"
+				},
+				{
+					"description": "",
+					"enabled": true,
+					"key": "Content-Type",
+					"type": "text",
+					"value": "application/json"
+				},
+				{
+					"description": "",
+					"enabled": true,
+					"key": "PSU-User-Agent",
+					"type": "text",
+					"value": "{{user_agent}}"
+				},
+				{
+					"description": "",
+					"enabled": true,
+					"key": "Consent-ID",
+					"type": "text",
+					"value": "{{consentId}}"
+				}
+			],
+			"method": "GET",
+			"pathVariableData": [],
+			"queryParams": [],
+			"auth": null,
+			"events": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "584a417a-aa24-4e5c-957d-a90af9ec9663",
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "8a013ebe-54e8-4a89-9819-ad50574f67d3",
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"folder": "6cafe240-65cf-45d3-99c6-92540ca96d18",
+			"responses": [
+				{
+					"id": "c9968a7c-66ea-46a3-af50-ab2d769403db",
+					"name": "/v1/tpp",
+					"status": "",
+					"mime": "",
+					"language": "Text",
+					"text": "{\n  \"tppMetaData\": [\n    {\n      \"tppId\": \"PSDNO-TSTNCA-123123\",\n      \"tppName\": \"Acme Inc\",\n      \"tppRefId\": \"abc123tppRefId\",\n      \"activeLicenses\": [\n        {\n          \"license\": {\n            \"service\": \"AIS\"\n          },\n          \"countries\": [\n            \"NO\"\n          ]\n        }\n      ]\n    }\n  ]\n}",
+					"responseCode": {
+						"code": 200,
+						"detail": ""
+					},
+					"requestObject": {
+						"id": "f2b594cd-5eff-4284-93a7-1c30afbbc602",
+						"method": "GET",
+						"headers": "",
+						"dataMode": null,
+						"data": null,
+						"rawModeData": "",
+						"url": "{url}}/v1/tpp",
+						"pathVariableData": [],
+						"queryParams": [],
+						"headerData": []
+					},
+					"headers": [],
+					"cookies": [],
+					"request": "b5d6b9ac-ffa9-4e28-9182-7203c03175b1",
+					"collection": "aa3f795a-1c4b-4169-b143-227b360ad65b"
+				}
+			],
+			"headers": "X-Request-ID: {{$guid}}\nPSU-IP-Address: {{psu_ip_address}}\nAccept: application/json\nContent-Type: application/json\nPSU-User-Agent: {{user_agent}}\nConsent-ID: {{consentId}}\n",
+			"pathVariables": {}
+		},
+		{
+			"id": "b69b1ba8-e3f2-4272-b9da-eebc40638a29",
+			"name": "/v1/consents",
+			"url": "https://{{host}}/v1/consents/{{consentId}}",
+			"description": null,
+			"data": null,
+			"dataMode": null,
+			"headerData": [
+				{
+					"key": "X-Request-ID",
+					"value": "{{$guid}}"
+				},
+				{
+					"key": "PSU-ID",
+					"value": "{{ssn}}"
+				},
+				{
+					"key": "PSU-IP-Address",
+					"value": "{{psu_ip_address}}"
+				},
+				{
+					"key": "Accept",
+					"value": "application/json"
+				},
+				{
+					"key": "Content-Type",
+					"value": "application/json"
+				},
+				{
+					"description": "",
+					"enabled": true,
+					"key": "PSU-User-Agent",
+					"type": "text",
+					"value": "{{user_agent}}"
+				}
+			],
+			"method": "DELETE",
+			"pathVariableData": [],
+			"queryParams": [],
+			"auth": null,
+			"events": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "584a417a-aa24-4e5c-957d-a90af9ec9663",
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "8a013ebe-54e8-4a89-9819-ad50574f67d3",
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"folder": "6cafe240-65cf-45d3-99c6-92540ca96d18",
+			"responses": [
+				{
+					"id": "67e6c10b-fd72-49d1-b29c-bcb870d38510",
+					"name": "/v1/tpp",
+					"status": "",
+					"mime": "",
+					"language": "Text",
+					"text": "{\n  \"tppMetaData\": [\n    {\n      \"tppId\": \"PSDNO-TSTNCA-123123\",\n      \"tppName\": \"Acme Inc\",\n      \"tppRefId\": \"abc123tppRefId\",\n      \"activeLicenses\": [\n        {\n          \"license\": {\n            \"service\": \"AIS\"\n          },\n          \"countries\": [\n            \"NO\"\n          ]\n        }\n      ]\n    }\n  ]\n}",
+					"responseCode": {
+						"code": 200,
+						"detail": ""
+					},
+					"requestObject": {
+						"id": "f2b594cd-5eff-4284-93a7-1c30afbbc602",
+						"method": "GET",
+						"headers": "",
+						"dataMode": null,
+						"data": null,
+						"rawModeData": "",
+						"url": "{url}}/v1/tpp",
+						"pathVariableData": [],
+						"queryParams": [],
+						"headerData": []
+					},
+					"headers": [],
+					"cookies": [],
+					"request": "b69b1ba8-e3f2-4272-b9da-eebc40638a29",
+					"collection": "aa3f795a-1c4b-4169-b143-227b360ad65b"
+				}
+			],
+			"headers": "X-Request-ID: {{$guid}}\nPSU-ID: {{ssn}}\nPSU-IP-Address: {{psu_ip_address}}\nAccept: application/json\nContent-Type: application/json\nPSU-User-Agent: {{user_agent}}\n",
+			"pathVariables": {}
+		},
+		{
+			"id": "bd23f955-6b94-478d-a4d0-5993caae55e4",
+			"name": "/v1/payments/approval",
+			"url": "https://{{host}}/v1/payments/approval",
+			"description": "",
+			"data": null,
+			"dataMode": null,
+			"headerData": [
+				{
+					"key": "X-Request-ID",
+					"value": "{{$guid}}",
+					"type": "text",
+					"enabled": true,
+					"description": ""
+				},
+				{
+					"key": "PSU-IP-Address",
+					"value": "{{psu_ip_address}}",
+					"type": "text",
+					"enabled": true,
+					"description": ""
+				},
+				{
+					"key": "Accept",
+					"value": "application/json",
+					"type": "text",
+					"enabled": true,
+					"description": ""
+				},
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"type": "text",
+					"enabled": true,
+					"description": ""
+				},
+				{
+					"key": "PSU-User-Agent",
+					"value": "{{user_agent}}",
+					"type": "text",
+					"enabled": true,
+					"description": ""
+				},
+				{
+					"key": "PSU-ID",
+					"value": "{{ssn}}",
+					"description": "",
+					"type": "text",
+					"enabled": true
+				}
+			],
+			"method": "GET",
+			"pathVariableData": [],
+			"queryParams": [],
+			"auth": null,
+			"events": [],
+			"folder": "dbb8050f-07b5-4477-94dc-0fbee72cabdd",
+			"headers": "X-Request-ID: {{$guid}}\nPSU-IP-Address: {{psu_ip_address}}\nAccept: application/json\nContent-Type: application/json\nPSU-User-Agent: {{user_agent}}\nPSU-ID: {{ssn}}\n",
+			"pathVariables": {}
+		},
+		{
+			"id": "c65cfdc8-7c8a-4edb-ae4b-647b5172531d",
+			"name": "/v1/periodic-payments/norwegian-domestic-credit-transfers",
+			"url": "https://{{host}}/v1/periodic-payments/norwegian-domestic-credit-transfers",
+			"description": "",
+			"data": [],
+			"dataMode": "raw",
+			"headerData": [
+				{
+					"description": "",
+					"enabled": true,
+					"key": "X-Request-ID",
+					"type": "text",
+					"value": "{{$guid}}"
+				},
+				{
+					"description": "",
+					"enabled": true,
+					"key": "PSU-IP-Address",
+					"type": "text",
+					"value": "{{psu_ip_address}}"
+				},
+				{
+					"description": "",
+					"enabled": true,
+					"key": "Accept",
+					"type": "text",
+					"value": "application/json"
+				},
+				{
+					"description": "",
+					"enabled": true,
+					"key": "Content-Type",
+					"type": "text",
+					"value": "application/json"
+				},
+				{
+					"description": "",
+					"enabled": true,
+					"key": "PSU-User-Agent",
+					"type": "text",
+					"value": "{{user_agent}}"
+				},
+				{
+					"description": "",
+					"enabled": true,
+					"key": "TPP-Redirect-URI",
+					"type": "text",
+					"value": "{{tpp_redirect_uri}}"
+				},
+				{
+					"description": "",
+					"enabled": true,
+					"key": "PSU-ID",
+					"type": "text",
+					"value": "{{ssn}}"
+				},
+				{
+					"key": "PSU-IP-Adress",
+					"value": "{{psu_ip_address}}",
+					"description": "",
+					"type": "text",
+					"enabled": true
+				}
+			],
+			"method": "POST",
+			"pathVariableData": [],
+			"queryParams": [],
+			"auth": null,
+			"events": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "584a417a-aa24-4e5c-957d-a90af9ec9663",
+						"exec": [
+							"var jsonData = JSON.parse(responseBody);",
+							"pm.globals.set(\"paymentId\", jsonData.paymentId);"
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "8a013ebe-54e8-4a89-9819-ad50574f67d3",
+						"exec": [
+							"var date = new Date();",
+							"today = date.toISOString().split('T')[0];",
+							"pm.environment.set(\"today\", today);"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"folder": "0128f92c-a55c-4be1-9038-51648b97bbfa",
+			"responses": [
+				{
+					"id": "f7af1bf8-16d1-4c1f-a380-ae614aff5ca8",
+					"name": "/v1/tpp",
+					"status": "",
+					"mime": "",
+					"language": "Text",
+					"text": "{\n  \"tppMetaData\": [\n    {\n      \"tppId\": \"PSDNO-TSTNCA-123123\",\n      \"tppName\": \"Acme Inc\",\n      \"tppRefId\": \"abc123tppRefId\",\n      \"activeLicenses\": [\n        {\n          \"license\": {\n            \"service\": \"AIS\"\n          },\n          \"countries\": [\n            \"NO\"\n          ]\n        }\n      ]\n    }\n  ]\n}",
+					"responseCode": {
+						"code": 200,
+						"detail": ""
+					},
+					"requestObject": {
+						"id": "f2b594cd-5eff-4284-93a7-1c30afbbc602",
+						"method": "GET",
+						"headers": "",
+						"dataMode": null,
+						"data": null,
+						"rawModeData": "",
+						"url": "{url}}/v1/tpp",
+						"pathVariableData": [],
+						"queryParams": [],
+						"headerData": []
+					},
+					"headers": [],
+					"cookies": [],
+					"request": "c65cfdc8-7c8a-4edb-ae4b-647b5172531d",
+					"collection": "aa3f795a-1c4b-4169-b143-227b360ad65b"
+				}
+			],
+			"rawModeData": "{\n\t\"startDate\": \"2019-09-14\",\n    \"frequency\": \"Daily\",\n    \"debtorAccount\": {\n        \"bban\": \"{{firstAccount}}\"\n    },\n    \"creditorAccount\": {\n        \"bban\": \"12094355778\"\n    },\n    \"creditorName\": \"Foo Bar\",\n    \"instructedAmount\": {\n        \"amount\": 13.37,\n        \"currency\": \"NOK\"\n    },\n    \"remittanceInformationUnstructured\": \"Test of payment to another Norwegian account.\",\n    \"requestedExecutionDate\": \"{{today}}\"\n}",
+			"headers": "X-Request-ID: {{$guid}}\nPSU-IP-Address: {{psu_ip_address}}\nAccept: application/json\nContent-Type: application/json\nPSU-User-Agent: {{user_agent}}\nTPP-Redirect-URI: {{tpp_redirect_uri}}\nPSU-ID: {{ssn}}\nPSU-IP-Adress: {{psu_ip_address}}\n",
+			"pathVariables": {}
+		},
+		{
+			"id": "c6f7fbbe-989d-4909-8732-ee757074a986",
+			"name": "/v1/accounts/{account-id}/transactions",
+			"url": "https://{{host}}/v1/accounts/{{firstAccount}}/transactions?bookingStatus=both",
+			"description": "",
+			"data": null,
+			"dataMode": null,
+			"headerData": [
+				{
+					"description": "",
+					"enabled": true,
+					"key": "X-Request-ID",
+					"type": "text",
+					"value": "{{$guid}}"
+				},
+				{
+					"description": "",
+					"enabled": true,
+					"key": "PSU-IP-Address",
+					"type": "text",
+					"value": "{{psu_ip_address}}"
+				},
+				{
+					"description": "",
+					"enabled": true,
+					"key": "Accept",
+					"type": "text",
+					"value": "application/json"
+				},
+				{
+					"description": "",
+					"enabled": true,
+					"key": "Content-Type",
+					"type": "text",
+					"value": "application/json"
+				},
+				{
+					"description": "",
+					"enabled": true,
+					"key": "PSU-User-Agent",
+					"type": "text",
+					"value": "{{user_agent}}"
+				},
+				{
+					"description": "",
+					"enabled": true,
+					"key": "Consent-ID",
+					"type": "text",
+					"value": "{{consentId}}"
+				}
+			],
+			"method": "GET",
+			"pathVariableData": [],
+			"queryParams": [
+				{
+					"key": "bookingStatus",
+					"value": "both",
+					"equals": true,
+					"description": "",
+					"enabled": true
+				}
+			],
+			"auth": null,
+			"events": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "584a417a-aa24-4e5c-957d-a90af9ec9663",
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "8a013ebe-54e8-4a89-9819-ad50574f67d3",
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"folder": "6cafe240-65cf-45d3-99c6-92540ca96d18",
+			"responses": [
+				{
+					"id": "57b62277-8fd7-46d7-a9d4-fa896fd72486",
+					"name": "/v1/tpp",
+					"status": "",
+					"mime": "",
+					"language": "Text",
+					"text": "{\n  \"tppMetaData\": [\n    {\n      \"tppId\": \"PSDNO-TSTNCA-123123\",\n      \"tppName\": \"Acme Inc\",\n      \"tppRefId\": \"abc123tppRefId\",\n      \"activeLicenses\": [\n        {\n          \"license\": {\n            \"service\": \"AIS\"\n          },\n          \"countries\": [\n            \"NO\"\n          ]\n        }\n      ]\n    }\n  ]\n}",
+					"responseCode": {
+						"code": 200,
+						"detail": ""
+					},
+					"requestObject": {
+						"id": "f2b594cd-5eff-4284-93a7-1c30afbbc602",
+						"method": "GET",
+						"headers": "",
+						"dataMode": null,
+						"data": null,
+						"rawModeData": "",
+						"url": "{url}}/v1/tpp",
+						"pathVariableData": [],
+						"queryParams": [],
+						"headerData": []
+					},
+					"headers": [],
+					"cookies": [],
+					"request": "c6f7fbbe-989d-4909-8732-ee757074a986",
+					"collection": "aa3f795a-1c4b-4169-b143-227b360ad65b"
+				}
+			],
+			"headers": "X-Request-ID: {{$guid}}\nPSU-IP-Address: {{psu_ip_address}}\nAccept: application/json\nContent-Type: application/json\nPSU-User-Agent: {{user_agent}}\nConsent-ID: {{consentId}}\n",
+			"pathVariables": {}
+		},
+		{
+			"id": "cd05e987-a0c9-4c10-91f5-95f4d0185efb",
+			"name": "/v1/card-accounts/{accountNumber}",
+			"url": "https://{{host}}/v1/card-accounts/{{firstCard}}",
+			"description": "",
+			"data": null,
+			"dataMode": null,
+			"headerData": [
+				{
+					"description": "",
+					"enabled": true,
+					"key": "X-Request-ID",
+					"type": "text",
+					"value": "{{$guid}}"
+				},
+				{
+					"description": "",
+					"enabled": true,
+					"key": "PSU-IP-Address",
+					"type": "text",
+					"value": "{{psu_ip_address}}"
+				},
+				{
+					"description": "",
+					"enabled": true,
+					"key": "Accept",
+					"type": "text",
+					"value": "application/json"
+				},
+				{
+					"description": "",
+					"enabled": true,
+					"key": "Content-Type",
+					"type": "text",
+					"value": "application/json"
+				},
+				{
+					"description": "",
+					"enabled": true,
+					"key": "PSU-User-Agent",
+					"type": "text",
+					"value": "{{user_agent}}"
+				},
+				{
+					"description": "",
+					"enabled": true,
+					"key": "Consent-ID",
+					"type": "text",
+					"value": "{{consentId}}"
+				}
+			],
+			"method": "GET",
+			"pathVariableData": [],
+			"queryParams": [],
+			"auth": null,
+			"events": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "584a417a-aa24-4e5c-957d-a90af9ec9663",
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "8a013ebe-54e8-4a89-9819-ad50574f67d3",
+						"exec": [
+							"",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"folder": "6cafe240-65cf-45d3-99c6-92540ca96d18",
+			"responses": [
+				{
+					"id": "3b734b5c-c9c1-4720-a6ae-595e7d4b3011",
+					"name": "/v1/tpp",
+					"status": "",
+					"mime": "",
+					"language": "Text",
+					"text": "{\n  \"tppMetaData\": [\n    {\n      \"tppId\": \"PSDNO-TSTNCA-123123\",\n      \"tppName\": \"Acme Inc\",\n      \"tppRefId\": \"abc123tppRefId\",\n      \"activeLicenses\": [\n        {\n          \"license\": {\n            \"service\": \"AIS\"\n          },\n          \"countries\": [\n            \"NO\"\n          ]\n        }\n      ]\n    }\n  ]\n}",
+					"responseCode": {
+						"code": 200,
+						"detail": ""
+					},
+					"requestObject": {
+						"id": "f2b594cd-5eff-4284-93a7-1c30afbbc602",
+						"method": "GET",
+						"headers": "",
+						"dataMode": null,
+						"data": null,
+						"rawModeData": "",
+						"url": "{url}}/v1/tpp",
+						"pathVariableData": [],
+						"queryParams": [],
+						"headerData": []
+					},
+					"headers": [],
+					"cookies": [],
+					"request": "cd05e987-a0c9-4c10-91f5-95f4d0185efb",
+					"collection": "aa3f795a-1c4b-4169-b143-227b360ad65b"
+				}
+			],
+			"headers": "X-Request-ID: {{$guid}}\nPSU-IP-Address: {{psu_ip_address}}\nAccept: application/json\nContent-Type: application/json\nPSU-User-Agent: {{user_agent}}\nConsent-ID: {{consentId}}\n",
+			"pathVariables": {}
+		},
+		{
+			"id": "cdf581a9-3d9b-41c9-a844-fd472275e917",
+			"name": "/v1/payments/dnb-corporate-uk-domestic-bacs-transfers",
+			"url": "https://{{host}}/v1/payments/dnb-corporate-uk-domestic-bacs-transfers",
+			"description": "",
+			"data": [],
+			"dataMode": "raw",
+			"headerData": [
+				{
+					"description": "",
+					"enabled": true,
+					"key": "X-Request-ID",
+					"type": "text",
+					"value": "{{$guid}}"
+				},
+				{
+					"description": "",
+					"enabled": true,
+					"key": "PSU-IP-Address",
+					"type": "text",
+					"value": "{{psu_ip_address}}"
+				},
+				{
+					"description": "",
+					"enabled": true,
+					"key": "Accept",
+					"type": "text",
+					"value": "application/json"
+				},
+				{
+					"description": "",
+					"enabled": true,
+					"key": "Content-Type",
+					"type": "text",
+					"value": "application/json"
+				},
+				{
+					"description": "",
+					"enabled": true,
+					"key": "PSU-User-Agent",
+					"type": "text",
+					"value": "{{user_agent}}"
+				},
+				{
+					"description": "",
+					"enabled": true,
+					"key": "TPP-Redirect-URI",
+					"type": "text",
+					"value": "https://psd2.dnb.no"
+				},
+				{
+					"description": "",
+					"enabled": true,
+					"key": "PSU-ID",
+					"type": "text",
+					"value": "{{ssn}}"
+				}
+			],
+			"method": "POST",
+			"pathVariableData": [],
+			"queryParams": [],
+			"auth": null,
+			"events": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "584a417a-aa24-4e5c-957d-a90af9ec9663",
+						"exec": [
+							"var jsonData = JSON.parse(responseBody);",
+							"pm.globals.set(\"paymentId\", jsonData.paymentId);"
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "8a013ebe-54e8-4a89-9819-ad50574f67d3",
+						"exec": [
+							"var date = new Date();",
+							"today = date.toISOString().split('T')[0];",
+							"pm.environment.set(\"today\", today);"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"folder": "e877a486-989a-419a-a59a-3f786d3054ef",
+			"responses": [
+				{
+					"id": "8e320ee2-43df-4edf-b28a-28bcffba790a",
+					"name": "/v1/tpp",
+					"status": "",
+					"mime": "",
+					"language": "Text",
+					"text": "{\n  \"tppMetaData\": [\n    {\n      \"tppId\": \"PSDNO-TSTNCA-123123\",\n      \"tppName\": \"Acme Inc\",\n      \"tppRefId\": \"abc123tppRefId\",\n      \"activeLicenses\": [\n        {\n          \"license\": {\n            \"service\": \"AIS\"\n          },\n          \"countries\": [\n            \"NO\"\n          ]\n        }\n      ]\n    }\n  ]\n}",
+					"responseCode": {
+						"code": 200,
+						"detail": ""
+					},
+					"requestObject": {
+						"id": "f2b594cd-5eff-4284-93a7-1c30afbbc602",
+						"method": "GET",
+						"headers": "",
+						"dataMode": null,
+						"data": null,
+						"rawModeData": "",
+						"url": "{url}}/v1/tpp",
+						"pathVariableData": [],
+						"queryParams": [],
+						"headerData": []
+					},
+					"headers": [],
+					"cookies": [],
+					"request": "cdf581a9-3d9b-41c9-a844-fd472275e917",
+					"collection": "aa3f795a-1c4b-4169-b143-227b360ad65b"
+				}
+			],
+			"rawModeData": "{\n    \"debtorAccount\": {\n        \"bban\": \"{{firstAccount}}\"\n    },\n    \"creditorAccount\": {\n        \"bban\": \"12094355\"\n    },\n    \"instructedAmount\": {\n        \"amount\": 13.37,\n        \"currency\": \"GBP\"\n    },\n    \"creditorAgent\": \"123456\",\n    \"creditorName\": \"UKtest\",\n    \"requestedExecutionDate\": \"{{today}}\"\n}",
+			"headers": "X-Request-ID: {{$guid}}\nPSU-IP-Address: {{psu_ip_address}}\nAccept: application/json\nContent-Type: application/json\nPSU-User-Agent: {{user_agent}}\nTPP-Redirect-URI: https://psd2.dnb.no\nPSU-ID: {{ssn}}\n",
+			"pathVariables": {}
+		},
+		{
+			"id": "d010192b-c979-4b9b-8dc2-718971700a49",
+			"name": "/v1/payments/norwegian-domestic-payment-to-self",
+			"url": "https://{{host}}/v1/payments/norwegian-domestic-payment-to-self/{{paymentId}}",
+			"description": "",
+			"data": null,
+			"dataMode": null,
+			"headerData": [
+				{
+					"description": "",
+					"enabled": true,
+					"key": "X-Request-ID",
+					"type": "text",
+					"value": "{{$guid}}"
+				},
+				{
+					"description": "",
+					"enabled": true,
+					"key": "PSU-IP-Address",
+					"type": "text",
+					"value": "{{psu_ip_address}}"
+				},
+				{
+					"description": "",
+					"enabled": true,
+					"key": "Accept",
+					"type": "text",
+					"value": "application/json"
+				},
+				{
+					"description": "",
+					"enabled": true,
+					"key": "Content-Type",
+					"type": "text",
+					"value": "application/json"
+				},
+				{
+					"description": "",
+					"enabled": true,
+					"key": "PSU-User-Agent",
+					"type": "text",
+					"value": "{{user_agent}}"
+				},
+				{
+					"description": "",
+					"enabled": true,
+					"key": "TPP-Redirect-URI",
+					"type": "text",
+					"value": "{{tpp_redirect_uri}}"
+				},
+				{
+					"description": "",
+					"enabled": true,
+					"key": "PSU-ID",
+					"type": "text",
+					"value": "{{ssn}}"
+				}
+			],
+			"method": "DELETE",
+			"pathVariableData": [],
+			"queryParams": [],
+			"auth": null,
+			"events": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "584a417a-aa24-4e5c-957d-a90af9ec9663",
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "8a013ebe-54e8-4a89-9819-ad50574f67d3",
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"folder": "dbb8050f-07b5-4477-94dc-0fbee72cabdd",
+			"responses": [
+				{
+					"id": "d2b0403e-1233-4746-842b-bd2192c1ad17",
+					"name": "/v1/tpp",
+					"status": "",
+					"mime": "",
+					"language": "Text",
+					"text": "{\n  \"tppMetaData\": [\n    {\n      \"tppId\": \"PSDNO-TSTNCA-123123\",\n      \"tppName\": \"Acme Inc\",\n      \"tppRefId\": \"abc123tppRefId\",\n      \"activeLicenses\": [\n        {\n          \"license\": {\n            \"service\": \"AIS\"\n          },\n          \"countries\": [\n            \"NO\"\n          ]\n        }\n      ]\n    }\n  ]\n}",
+					"responseCode": {
+						"code": 200,
+						"detail": ""
+					},
+					"requestObject": {
+						"id": "f2b594cd-5eff-4284-93a7-1c30afbbc602",
+						"method": "GET",
+						"headers": "",
+						"dataMode": null,
+						"data": null,
+						"rawModeData": "",
+						"url": "{url}}/v1/tpp",
+						"pathVariableData": [],
+						"queryParams": [],
+						"headerData": []
+					},
+					"headers": [],
+					"cookies": [],
+					"request": "d010192b-c979-4b9b-8dc2-718971700a49",
+					"collection": "aa3f795a-1c4b-4169-b143-227b360ad65b"
+				}
+			],
+			"headers": "X-Request-ID: {{$guid}}\nPSU-IP-Address: {{psu_ip_address}}\nAccept: application/json\nContent-Type: application/json\nPSU-User-Agent: {{user_agent}}\nTPP-Redirect-URI: {{tpp_redirect_uri}}\nPSU-ID: {{ssn}}\n",
+			"pathVariables": {}
+		},
+		{
+			"id": "f4d30852-4c5f-4c56-a913-31e5e30d48a3",
+			"name": "/v1/signing-baskets/{basketId}",
+			"url": "https://{{host}}/v1/signing-baskets/{{basketId}}/authorisations ",
+			"description": null,
+			"data": [],
+			"dataMode": "raw",
+			"headerData": [
+				{
+					"key": "PSU-ID",
+					"type": "text",
+					"value": "{{ssn}}"
+				},
+				{
+					"key": "PSU-IP-Address",
+					"type": "text",
+					"value": "123.123.123.123"
+				},
+				{
+					"key": "TPP-Redirect-Preferred",
+					"type": "text",
+					"value": "true"
+				},
+				{
+					"key": "TPP-Redirect-URI",
+					"type": "text",
+					"value": "http://tpp-service.net "
+				},
+				{
+					"key": "Accept",
+					"type": "text",
+					"value": "application/json"
+				},
+				{
+					"key": "Content-Type",
+					"type": "text",
+					"value": "application/json"
+				},
+				{
+					"key": "X-Request-ID",
+					"value": "{{$guid}}",
+					"type": "text"
+				},
+				{
+					"key": "TPP-Explicit-Authorisation-Preferred",
+					"value": "true",
+					"type": "text"
+				}
+			],
+			"method": "POST",
+			"pathVariableData": [],
+			"queryParams": [],
+			"auth": null,
+			"events": null,
+			"folder": "851e48b5-a28a-4cb0-92d1-58247f6049aa",
+			"rawModeData": "",
+			"headers": "PSU-ID: {{ssn}}\nPSU-IP-Address: 123.123.123.123\nTPP-Redirect-Preferred: true\nTPP-Redirect-URI: http://tpp-service.net \nAccept: application/json\nContent-Type: application/json\nX-Request-ID: {{$guid}}\nTPP-Explicit-Authorisation-Preferred: true\n",
+			"pathVariables": {}
+		},
+		{
+			"id": "fbddf537-4a6b-4282-9952-04e677ff0ab8",
+			"name": "/v1/signing-baskets/{basketId}/status",
+			"url": "https://{{host}}/v1/signing-baskets/{{basketId}}/status",
+			"description": null,
+			"data": null,
+			"dataMode": null,
+			"headerData": [
+				{
+					"key": "PSU-ID",
+					"type": "text",
+					"value": "TB11238"
+				},
+				{
+					"key": "PSU-IP-Address",
+					"type": "text",
+					"value": "123.123.123.123"
+				},
+				{
+					"key": "TPP-Redirect-Preferred",
+					"type": "text",
+					"value": "true"
+				},
+				{
+					"key": "TPP-Redirect-URI",
+					"type": "text",
+					"value": "http://tpp-service.net "
+				},
+				{
+					"key": "Accept",
+					"type": "text",
+					"value": "application/json"
+				},
+				{
+					"key": "Content-Type",
+					"type": "text",
+					"value": "application/json"
+				},
+				{
+					"key": "X-Request-ID",
+					"type": "text",
+					"value": "{{$guid}}"
+				},
+				{
+					"key": "TPP-Explicit-Authorisation-Preferred",
+					"type": "text",
+					"value": "true"
+				}
+			],
+			"method": "GET",
+			"pathVariableData": [],
+			"queryParams": [],
+			"auth": null,
+			"events": null,
+			"folder": "851e48b5-a28a-4cb0-92d1-58247f6049aa",
+			"headers": "PSU-ID: TB11238\nPSU-IP-Address: 123.123.123.123\nTPP-Redirect-Preferred: true\nTPP-Redirect-URI: http://tpp-service.net \nAccept: application/json\nContent-Type: application/json\nX-Request-ID: {{$guid}}\nTPP-Explicit-Authorisation-Preferred: true\n",
+			"pathVariables": {}
+		}
+	]
+}
