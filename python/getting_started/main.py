@@ -3,26 +3,15 @@ import json
 
 from dotenv import load_dotenv
 
-from .aws_signing import AwsSigningV4
 from .request_handler import RequestHandler
 
 load_dotenv()
 load_dotenv(os.path.join(os.path.dirname(__name__), "..", ".env"))
 
 
-client_id = os.environ.get("CLIENT_ID")
-client_secret = os.environ.get("CLIENT_SECRET")
 api_key = os.environ.get("API_KEY")
 
-aws_signer = AwsSigningV4(
-    aws_access_key_id=client_id,
-    aws_secret_access_key=client_secret,
-    aws_host="developer-api-testmode.dnb.no",
-)
-
-request_handler = RequestHandler(
-    endpoint="https://developer-api-testmode.dnb.no", api_key=api_key, aws_signer=aws_signer
-)
+request_handler = RequestHandler(endpoint="https://developer-api-testmode.dnb.no", api_key=api_key)
 
 
 def get_currency_conversions(quoteCurrency):
