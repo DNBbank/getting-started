@@ -5,8 +5,6 @@ import com.amazonaws.ClientConfiguration;
 import com.amazonaws.DefaultRequest;
 import com.amazonaws.Request;
 import com.amazonaws.Response;
-import com.amazonaws.auth.AWS4Signer;
-import com.amazonaws.auth.AWSCredentials;
 import com.amazonaws.auth.BasicAWSCredentials;
 import com.amazonaws.http.AmazonHttpClient;
 import com.amazonaws.http.AmazonHttpClient.RequestExecutionBuilder;
@@ -20,9 +18,6 @@ import java.net.URI;
 import java.nio.charset.Charset;
 
 public class GettingStarted {
-
-  // AWS signing V4 constants
-  private static final String AWS_REGION = "eu-west-1";
   private static final String AWS_SERVICE = "execute-api";
 
   // Open Banking constants
@@ -53,19 +48,13 @@ public class GettingStarted {
     }
   }
 
-  private static RequestExecutionBuilder signAndBuildRequest(final AWS4Signer signer,
-      final AWSCredentials awsCredentials, final Request request) {
-    signer.sign(request, awsCredentials);
-    return buildRequest(request);
-  }
-
-  public static String getApiToken(final AWS4Signer signer, final AWSCredentials awsCredentials) {
+  public static String getApiToken() {
     final Request apiTokenRequest = createRequest(HttpMethodName.POST, "/tokens/v0");
     String content = "{\"ssn\": \"29105573083\"}";
     apiTokenRequest.setContent(new ByteArrayInputStream(content.getBytes(Charset.forName("UTF-8"))));
 
-    final JSONObject apiTokenResponse = signAndBuildRequest(signer, awsCredentials, apiTokenRequest)
-        .execute(new ResponseHandlerJSONObject(false)).getAwsResponse();
+    final JSONObject apiTokenResponse = buildRequest(apiTokenRequest).execute(new ResponseHandlerJSONObject(false))
+        .getAwsResponse();
     return (String) (apiTokenResponse.get("jwtToken"));
   }
 
@@ -83,16 +72,14 @@ public class GettingStarted {
   }
 
   public static Response<JSONArray> getCurrencyConversions(String quoteCurrency) {
-    final Request customerRequest = createRequest(
-        HttpMethodName.GET, "/currencies/v1/convert/" + quoteCurrency);
+    final Request customerRequest = createRequest(HttpMethodName.GET, "/currencies/v1/convert/" + quoteCurrency);
 
     return buildRequest(customerRequest).execute(new ResponseHandlerJSONArray(false));
   }
 
-  public static Response<JSONObject> getCurrencyConversion(
-      String quoteCurrency, String baseCurrency) {
-    final Request customerRequest = createRequest(
-        HttpMethodName.GET, "/currencies/v1/" + baseCurrency + "/convert/" + quoteCurrency);
+  public static Response<JSONObject> getCurrencyConversion(String quoteCurrency, String baseCurrency) {
+    final Request customerRequest = createRequest(HttpMethodName.GET,
+        "/currencies/v1/" + baseCurrency + "/convert/" + quoteCurrency);
 
     return buildRequest(customerRequest).execute(new ResponseHandlerJSONObject(false));
   }
@@ -105,15 +92,10 @@ public class GettingStarted {
   }
 
   public static void main(final String[] args) {
-    final AWSCredentials awsCredentials = new BasicAWSCredentials(Config.get("CLIENT_ID"), Config.get("CLIENT_SECRET"));
-    final AWS4Signer signer = new AWS4Signer();
-    signer.setRegionName(AWS_REGION);
-    signer.setServiceName(AWS_SERVICE);
-
     final Response<JSONArray> testCustomers = getTestCustomers();
     System.out.println("Test customers: " + testCustomers.getAwsResponse().toString(4));
 
-    final String jwtToken = getApiToken(signer, awsCredentials);
+    final String jwtToken = getApiToken();
     System.out.println("JWT token: " + jwtToken);
 
     final Response<JSONArray> currenciesResponse = getCurrencyConversions("NOK");

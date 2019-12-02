@@ -4,10 +4,9 @@ import urllib.parse
 
 
 class RequestHandler(object):
-    def __init__(self, endpoint, api_key, aws_signer):
+    def __init__(self, endpoint, api_key):
         self.endpoint = endpoint
         self.api_key = api_key
-        self.aws_signer = aws_signer
 
     def __to_canonical_querystring(self, params):
         canonical_querystring = ""
@@ -22,14 +21,7 @@ class RequestHandler(object):
         canonical_querystring = self.__to_canonical_querystring(params)
         data = json.dumps(data) if data else None
         headers = {}
-        if "tokens" in path:
-            headers.update(
-                self.aws_signer.create_headers(
-                    path, method=method, querystring=canonical_querystring, data=data
-                )
-            )
 
-        # 'host' header is added automatically by the Python 'requests' library.
         headers["Accept"] = "application/json"
         headers["Content-type"] = "application/json"
         headers["x-api-key"] = self.api_key

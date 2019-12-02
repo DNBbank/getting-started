@@ -2,18 +2,13 @@
 const dotenv = require('dotenv');
 const { join } = require('path');
 
-const asv4 = require('./asv4');
 const loadCredentials = require('./credentials');
 const request = require('./request');
 
 dotenv.config({ path: join(__dirname, '..', '.env') });
 dotenv.config({ path: join(__dirname, '..', '..', '.env') });
 
-const { clientId, clientSecret, apiKey } = loadCredentials();
-
-// AWS signing v4 constants
-const awsRegion = 'eu-west-1';
-const awsService = 'execute-api';
+const { apiKey } = loadCredentials();
 
 const openbankingEndpoint = 'developer-api-testmode.dnb.no';
 
@@ -40,8 +35,6 @@ function createRequest({
     path,
     method,
     params: queryString,
-    service: awsService,
-    region: awsRegion,
   };
   if (queryString !== '') {
     options.path += `?${queryString}`;
@@ -51,10 +44,6 @@ function createRequest({
   }
   if (data) {
     options.data = JSON.stringify(data);
-    options.headers['x-amz-content-sha256'] = asv4.hash(options.data, 'hex');
-  }
-  if (path.includes('token')) {
-    options.headers.Authorization = asv4.sign(options, clientId, clientSecret);
   }
   return options;
 }

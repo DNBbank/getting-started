@@ -3,15 +3,13 @@
 ## Usage
 
 See [the main readme][] of the repo for a description on how to
-retrieve client id, client secret and api key.
+retrieve API key.
 
 To configure the credentials use environment variables. You can
 put them in a file called `.env` in this directory or the main directory 
 following variables set.
 
 ```
-CLIENT_ID=
-CLIENT_SECRET=
 API_KEY=
 ```
 
@@ -26,10 +24,8 @@ This requires pipenv, which can be installed with pip install pipenv.
 
 ## Code structure
 
-The code has three main parts, the main.py, request_handler.py and aws_signing.py. The
-AWS signing is an implementation of the signing process which is described
-in [the main readme][]. The main part is in main.py, which handles the
-process of getting an api token and and calling our APIs as described in the
-[the main readme][].
+The code has three main parts, the main.py, request_handler.py. The main part is 
+in main.py, which handles the process of getting an api token and and calling our
+APIs as described in the [the main readme][].
 
 [the main readme]: ../README.md
