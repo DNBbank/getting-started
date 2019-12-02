@@ -89,7 +89,6 @@ jobs:
           command: mvn <<parameters.task>>
           working_directory: java
 
-
 workflows:
   version: 2
   nodejs:
@@ -111,9 +110,6 @@ workflows:
       - python:
           name: python-example flake8
           task: flake8
-      - python:
-          name: python-example test
-          task: pytest
   java:
     jobs:
       - maven:
