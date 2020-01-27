@@ -4,9 +4,6 @@ import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import com.amazonaws.Response;
-import com.amazonaws.auth.AWS4Signer;
-import com.amazonaws.auth.AWSCredentials;
-import com.amazonaws.auth.BasicAWSCredentials;
 import org.json.JSONArray;
 import org.json.JSONObject;
 import org.junit.jupiter.api.BeforeAll;
@@ -15,17 +12,11 @@ import org.skyscreamer.jsonassert.JSONAssert;
 
 public class GettingStartedIntegrationTest {
 
-  private static final String AWS_REGION = "eu-west-1";
-  private static final String AWS_SERVICE = "execute-api";
-  private static final AWSCredentials awsCredentials = new BasicAWSCredentials(Config.get("CLIENT_ID"), Config.get("CLIENT_SECRET"));
-  private static final AWS4Signer signer = new AWS4Signer();
   private static String jwtToken;
 
   @BeforeAll
   static void initAll() {
-    signer.setRegionName(AWS_REGION);
-    signer.setServiceName(AWS_SERVICE);
-    jwtToken = GettingStarted.getApiToken(signer, awsCredentials);
+    jwtToken = GettingStarted.getApiToken();
   }
 
   @Test
