@@ -1,14 +1,14 @@
-{
-  "baseCurrency": "EUR",
-  "quoteCurrency": "NOK",
-  "country": "EU",
-  "updatedDate": "2019-05-09 09:00:00.0",
-  "amount": 1,
-  "buyRateTransfer": 9.8362,
-  "sellRateTransfer": 9.7642,
-  "midRate": 9.8002,
-  "changeInMidRate": 0.0119,
-  "previousMidRate": 9.7883,
-  "buyRateCash": 10.3031,
-  "sellRateCash": 9.3073
+{ 
+  "quoteCurrency":"NOK",
+  "country":"EU",
+  "amount":1,
+  "buyRateTransfer":9.9191,
+  "midRate":9.8796,
+  "sellRateTransfer":9.8401,
+  "sellRateCash":9.3867,
+  "changeInMidRate":0.0439,
+  "buyRateCash":10.3825,
+  "updatedDate":"2020-01-06 08:12:00.0",
+  "previousMidRate":9.8357,
+  "baseCurrency":"EUR"
 }
