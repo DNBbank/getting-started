@@ -4,28 +4,22 @@ import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import com.amazonaws.Response;
-import com.amazonaws.auth.AWS4Signer;
-import com.amazonaws.auth.AWSCredentials;
-import com.amazonaws.auth.BasicAWSCredentials;
+
 import org.json.JSONArray;
 import org.json.JSONObject;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 import org.skyscreamer.jsonassert.JSONAssert;
 
+import java.util.Set;
+
 public class GettingStartedIntegrationTest {
 
-  private static final String AWS_REGION = "eu-west-1";
-  private static final String AWS_SERVICE = "execute-api";
-  private static final AWSCredentials awsCredentials = new BasicAWSCredentials(Config.get("CLIENT_ID"), Config.get("CLIENT_SECRET"));
-  private static final AWS4Signer signer = new AWS4Signer();
   private static String jwtToken;
 
   @BeforeAll
   static void initAll() {
-    signer.setRegionName(AWS_REGION);
-    signer.setServiceName(AWS_SERVICE);
-    jwtToken = GettingStarted.getApiToken(signer, awsCredentials);
+    jwtToken = GettingStarted.getApiToken();
   }
 
   @Test
@@ -86,8 +80,6 @@ public class GettingStartedIntegrationTest {
 
   @Test
   void testGetCurrencyConversions() {
-    JSONArray expectedCardDetailsResponse = TestUtil.parseJSONFileFromResourceToJSONArray(
-        "GetCurrencyConversions.json");
     Response<JSONArray> actualCardDetailsResponse = GettingStarted.getCurrencyConversions("NOK");
 
     assertThat(actualCardDetailsResponse.getHttpResponse().getStatusCode())
@@ -96,15 +88,32 @@ public class GettingStartedIntegrationTest {
     JSONArray actualCardDetailsJSONResponse = actualCardDetailsResponse.getAwsResponse();
 
     assertThat(actualCardDetailsJSONResponse.length())
-        .as("Check if objects have same amount of fields")
-        .isEqualTo(expectedCardDetailsResponse.length());
-    JSONAssert.assertEquals(expectedCardDetailsResponse, actualCardDetailsJSONResponse, false);
+        .as("Expecting 46 different currencies")
+        .isEqualTo(46);
+
+    JSONObject jsonObject;
+    Set<String> keySet;
+    for (int i = 0 ; i < actualCardDetailsJSONResponse.length() ; i++) {
+      jsonObject = actualCardDetailsJSONResponse.getJSONObject(i);
+      keySet = jsonObject.keySet();
+      assertThat(keySet.size()).as("Check that object contains correct amount of parameters").isEqualTo(12);
+      assertThat(keySet.contains("quoteCurrency")).as("That object contains quoteCurrency").isTrue();
+      assertThat(keySet.contains("country")).as("That object contains country").isTrue();
+      assertThat(keySet.contains("amount")).as("That object contains amount").isTrue();
+      assertThat(keySet.contains("buyRateTransfer")).as("That object contains buyRateTransfer").isTrue();
+      assertThat(keySet.contains("midRate")).as("That object contains midRate").isTrue();
+      assertThat(keySet.contains("sellRateTransfer")).as("That object contains sellRateTransfer").isTrue();
+      assertThat(keySet.contains("sellRateCash")).as("That object contains sellRateCash").isTrue();
+      assertThat(keySet.contains("changeInMidRate")).as("That object contains changeInMidRate").isTrue();
+      assertThat(keySet.contains("buyRateCash")).as("That object contains buyRateCash").isTrue();
+      assertThat(keySet.contains("updatedDate")).as("That object contains updatedDate").isTrue();
+      assertThat(keySet.contains("previousMidRate")).as("That object contains previousMidRate").isTrue();
+      assertThat(keySet.contains("baseCurrency")).as("That object contains baseCurrency").isTrue();
+    }
   }
 
   @Test
   void testGetCurrencyConversion() {
-    JSONObject expectedCustomerDetailsResponse = TestUtil.parseJSONFileFromResourceToJSONObject(
-        "GetCurrencyConversion.json");
     Response<JSONObject> response = GettingStarted.getCurrencyConversion("NOK", "EUR");
 
     assertThat(response.getHttpResponse().getStatusCode())
@@ -112,9 +121,21 @@ public class GettingStartedIntegrationTest {
 
     JSONObject json = response.getAwsResponse();
 
-    assertThat(json.length())
-        .as("Check if objects have same amount of fields")
-        .isEqualTo(expectedCustomerDetailsResponse.length());
-    JSONAssert.assertEquals(expectedCustomerDetailsResponse, json, false);
+    assertThat(json.length()).as("Check that object contains correct amount of parameters").isEqualTo(12);
+    
+    Set<String> keySet;
+    keySet = json.keySet();
+    assertThat(keySet.contains("quoteCurrency")).as("That object contains quoteCurrency").isTrue();
+    assertThat(keySet.contains("country")).as("That object contains country").isTrue();
+    assertThat(keySet.contains("amount")).as("That object contains amount").isTrue();
+    assertThat(keySet.contains("buyRateTransfer")).as("That object contains buyRateTransfer").isTrue();
+    assertThat(keySet.contains("midRate")).as("That object contains midRate").isTrue();
+    assertThat(keySet.contains("sellRateTransfer")).as("That object contains sellRateTransfer").isTrue();
+    assertThat(keySet.contains("sellRateCash")).as("That object contains sellRateCash").isTrue();
+    assertThat(keySet.contains("changeInMidRate")).as("That object contains changeInMidRate").isTrue();
+    assertThat(keySet.contains("buyRateCash")).as("That object contains buyRateCash").isTrue();
+    assertThat(keySet.contains("updatedDate")).as("That object contains updatedDate").isTrue();
+    assertThat(keySet.contains("previousMidRate")).as("That object contains previousMidRate").isTrue();
+    assertThat(keySet.contains("baseCurrency")).as("That object contains baseCurrency").isTrue();
   }
 }
