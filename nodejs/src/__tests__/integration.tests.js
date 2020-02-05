@@ -14,8 +14,7 @@ let hasCredentials = false;
 try {
   const credentials = loadCredentials();
   console.log(credentials);
-  hasCredentials =
-    credentials.clientId && credentials.clientSecret && credentials.apiKey;
+  hasCredentials = credentials.apiKey !== undefined;
 } catch (error) {
   console.log(error);
 }
