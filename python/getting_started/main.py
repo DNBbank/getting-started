@@ -3,13 +3,13 @@ import json
 
 from dotenv import load_dotenv
 
-from .request_handler import RequestHandler
+from getting_started.request_handler import RequestHandler
 
 load_dotenv()
 load_dotenv(os.path.join(os.path.dirname(__name__), "..", ".env"))
 
 
-api_key = os.environ.get("API_KEY")
+api_key = os.environ.get("b04c9d5549c94c70bcdc4d9a6b120108")
 
 request_handler = RequestHandler(endpoint="https://developer-api-testmode.dnb.no", api_key=api_key)
 

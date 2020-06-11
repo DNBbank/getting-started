@@ -20,11 +20,8 @@ class RequestHandler(object):
     def request(self, path, method="GET", data=None, params={}, api_token=None):
         canonical_querystring = self.__to_canonical_querystring(params)
         data = json.dumps(data) if data else None
-        headers = {}
-
-        headers["Accept"] = "application/json"
-        headers["Content-type"] = "application/json"
-        headers["x-api-key"] = self.api_key
+        headers = {"Accept"   : "application/json", "Content-type": "application/json",
+                   "x-api-key": self.api_key}
 
         # All endpoints require the API token, except the API token endpoint.
         if api_token:
