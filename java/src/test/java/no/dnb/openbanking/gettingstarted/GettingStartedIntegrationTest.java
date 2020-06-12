@@ -15,18 +15,6 @@ import java.util.Set;
 
 public class GettingStartedIntegrationTest {
 
-  private static String jwtToken;
-
-  @BeforeAll
-  static void initAll() {
-    jwtToken = GettingStarted.getApiToken();
-  }
-
-  @Test
-  void testGetApiToken() {
-    assertTrue(jwtToken.length() > 500);
-  }
-
   @Test
   void testGetTestCustomersInfoAPI() {
     JSONArray expectedTestCustomersResponse = TestUtil.parseJSONFileFromResourceToJSONArray(
@@ -42,40 +30,6 @@ public class GettingStartedIntegrationTest {
         .as("Check if objects have same amount of fields")
         .isEqualTo(expectedTestCustomersResponse.length());
     JSONAssert.assertEquals(expectedTestCustomersResponse, actualTestCustomersJSONResponse , false);
-  }
-
-  @Test
-  void testGetCustomerInfoAPI() {
-    JSONObject expectedCustomerDetailsResponse = TestUtil.parseJSONFileFromResourceToJSONObject(
-            "GetCustomerDetails.json");
-    Response<JSONObject> actualCustomerDetailsResponse = GettingStarted.getCustomerInfo(jwtToken);
-
-    assertThat(actualCustomerDetailsResponse.getHttpResponse().getStatusCode())
-            .as("Test if status code is 200/OK").isEqualTo(200);
-
-    JSONObject actualCustomerDetailsJSONResponse = actualCustomerDetailsResponse.getAwsResponse();
-
-    assertThat(actualCustomerDetailsJSONResponse.length())
-            .as("Check if objects have same amount of fields")
-            .isEqualTo(expectedCustomerDetailsResponse.length());
-    JSONAssert.assertEquals(expectedCustomerDetailsResponse, actualCustomerDetailsJSONResponse, false);
-  }
-
-  @Test
-  void testGetCardInfoAPI() {
-    JSONArray expectedCardDetailsResponse = TestUtil.parseJSONFileFromResourceToJSONArray(
-            "GetCardDetails.json");
-    Response<JSONArray> actualCardDetailsResponse = GettingStarted.getCardInfo(jwtToken);
-
-    assertThat(actualCardDetailsResponse.getHttpResponse().getStatusCode())
-            .as("Test if status code is 200/OK").isEqualTo(200);
-
-    JSONArray actualCardDetailsJSONResponse = actualCardDetailsResponse.getAwsResponse();
-
-    assertThat(actualCardDetailsJSONResponse.length())
-            .as("Check if objects have same amount of fields")
-            .isEqualTo(expectedCardDetailsResponse.length());
-    JSONAssert.assertEquals(expectedCardDetailsResponse, actualCardDetailsJSONResponse, false);
   }
 
   @Test
@@ -122,7 +76,7 @@ public class GettingStartedIntegrationTest {
     JSONObject json = response.getAwsResponse();
 
     assertThat(json.length()).as("Check that object contains correct amount of parameters").isEqualTo(12);
-    
+
     Set<String> keySet;
     keySet = json.keySet();
     assertThat(keySet.contains("quoteCurrency")).as("That object contains quoteCurrency").isTrue();

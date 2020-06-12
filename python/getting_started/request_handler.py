@@ -17,7 +17,7 @@ class RequestHandler(object):
             canonical_querystring += param_key + "=" + urllib.parse.quote(param_value)
         return canonical_querystring
 
-    def request(self, path, method="GET", data=None, params={}, api_token=None):
+    def request(self, path, method="GET", data=None, params={}):
         canonical_querystring = self.__to_canonical_querystring(params)
         data = json.dumps(data) if data else None
         headers = {}
@@ -25,10 +25,6 @@ class RequestHandler(object):
         headers["Accept"] = "application/json"
         headers["Content-type"] = "application/json"
         headers["x-api-key"] = self.api_key
-
-        # All endpoints require the API token, except the API token endpoint.
-        if api_token:
-            headers["x-dnbapi-jwt"] = api_token
 
         request_url = self.endpoint + path + "?" + canonical_querystring
 

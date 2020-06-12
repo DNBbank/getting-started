@@ -5,66 +5,9 @@
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
 	"item": [
-		{
-			"name": "Tokens",
-			"item": [
 				{
-					"name": "Get JWT",
-					"event": [
-						{
-							"listen": "test",
-							"script": {
-								"id": "d39b2c94-7732-4098-987e-48231d1f5225",
-								"exec": [
-									"var jsonData = JSON.parse(responseBody);",
-									"postman.setGlobalVariable(\"JwtToken\", jsonData.jwtToken);"
-								],
-								"type": "text/javascript"
-							}
-						}
-					],
-					"request": {
-						"method": "POST",
-						"header": [
-							{
-								"key": "Content-Type",
-								"name": "Content-Type",
-								"type": "text",
-								"value": "application/json"
-							},
-							{
-								"key": "x-api-key",
-								"type": "text",
-								"value": "{{ApiKey}}"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": "{\n\t\"ssn\": \"29105573083\"\n}"
-						},
-						"url": {
-							"raw": "https://developer-api-testmode.dnb.no/tokens/v0/",
-							"protocol": "https",
-							"host": [
-								"developer-api-testmode",
-								"dnb",
-								"no"
-							],
-							"path": [
-								"tokens",
-								"v0",
-								""
-							]
-						}
-					},
-					"response": []
-				}
-			],
-			"protocolProfileBehavior": {}
-		},
-		{
-			"name": "Test Customers",
-			"item": [
+          "name": "Test Customers",
+          "item": [
 				{
 					"name": "Test Customers",
 					"request": {
@@ -101,47 +44,6 @@
 			"protocolProfileBehavior": {}
 		},
 		{
-			"name": "Customers",
-			"item": [
-				{
-					"name": "Customers: Get customer details",
-					"request": {
-						"method": "GET",
-						"header": [
-							{
-								"key": "x-dnbapi-jwt",
-								"value": "{{JwtToken}}"
-							},
-							{
-								"key": "x-api-key",
-								"value": "{{ApiKey}}"
-							},
-							{
-								"key": "Content-Type",
-								"value": "application/json"
-							}
-						],
-						"url": {
-							"raw": "https://developer-api-testmode.dnb.no/customers/v0/current",
-							"protocol": "https",
-							"host": [
-								"developer-api-testmode",
-								"dnb",
-								"no"
-							],
-							"path": [
-								"customers",
-								"v0",
-								"current"
-							]
-						}
-					},
-					"response": []
-				}
-			],
-			"protocolProfileBehavior": {}
-		},
-		{
 			"name": "Currencies",
 			"item": [
 				{
@@ -152,10 +54,6 @@
 							{
 								"key": "x-api-key",
 								"value": "{{ApiKey}}"
-							},
-							{
-								"key": "x-dnbapi-jwt",
-								"value": "{{JwtToken}}"
 							},
 							{
 								"key": "Content-Type",
@@ -190,10 +88,6 @@
 								"value": "{{ApiKey}}"
 							},
 							{
-								"key": "x-dnbapi-jwt",
-								"value": "{{JwtToken}}"
-							},
-							{
 								"key": "Content-Type",
 								"value": "application/json"
 							}
@@ -219,201 +113,9 @@
 				}
 			],
 			"protocolProfileBehavior": {}
-		},
-		{
-			"name": "Cards",
-			"item": [
-				{
-					"name": "Get cards",
-					"request": {
-						"method": "GET",
-						"header": [
-							{
-								"key": "x-dnbapi-jwt",
-								"value": "{{JwtToken}}"
-							},
-							{
-								"key": "x-api-key",
-								"value": "{{ApiKey}}"
-							},
-							{
-								"key": "Content-Type",
-								"value": "application/json"
-							}
-						],
-						"url": {
-							"raw": "https://developer-api-testmode.dnb.no/cards/v0/",
-							"protocol": "https",
-							"host": [
-								"developer-api-testmode",
-								"dnb",
-								"no"
-							],
-							"path": [
-								"cards",
-								"v0",
-								""
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Get card",
-					"request": {
-						"method": "GET",
-						"header": [
-							{
-								"key": "x-dnbapi-jwt",
-								"value": "{{JwtToken}}"
-							},
-							{
-								"key": "x-api-key",
-								"value": "{{ApiKey}}"
-							},
-							{
-								"key": "Content-Type",
-								"value": "application/json"
-							}
-						],
-						"url": {
-							"raw": "https://developer-api-testmode.dnb.no/cards/v0/IHMR56189598S24L",
-							"protocol": "https",
-							"host": [
-								"developer-api-testmode",
-								"dnb",
-								"no"
-							],
-							"path": [
-								"cards",
-								"v0",
-								"IHMR56189598S24L"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Get card balance",
-					"request": {
-						"method": "GET",
-						"header": [
-							{
-								"key": "x-dnbapi-jwt",
-								"value": "{{JwtToken}}"
-							},
-							{
-								"key": "x-api-key",
-								"value": "{{ApiKey}}"
-							},
-							{
-								"key": "Content-Type",
-								"value": "application/json"
-							}
-						],
-						"url": {
-							"raw": "https://developer-api-testmode.dnb.no/cards/v0/IHMR56189598S24L/balance",
-							"protocol": "https",
-							"host": [
-								"developer-api-testmode",
-								"dnb",
-								"no"
-							],
-							"path": [
-								"cards",
-								"v0",
-								"IHMR56189598S24L",
-								"balance"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Block card",
-					"request": {
-						"method": "PUT",
-						"header": [
-							{
-								"key": "x-dnbapi-jwt",
-								"value": "{{JwtToken}}"
-							},
-							{
-								"key": "x-api-key",
-								"value": "{{ApiKey}}"
-							},
-							{
-								"key": "Content-Type",
-								"value": "application/json"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": ""
-						},
-						"url": {
-							"raw": "https://developer-api-testmode.dnb.no/cards/v0/TQJQ95214468J85O/block",
-							"protocol": "https",
-							"host": [
-								"developer-api-testmode",
-								"dnb",
-								"no"
-							],
-							"path": [
-								"cards",
-								"v0",
-								"TQJQ95214468J85O",
-								"block"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Unblock card",
-					"request": {
-						"method": "PUT",
-						"header": [
-							{
-								"key": "x-dnbapi-jwt",
-								"value": "{{JwtToken}}"
-							},
-							{
-								"key": "x-api-key",
-								"value": "{{ApiKey}}"
-							},
-							{
-								"key": "Content-Type",
-								"value": "application/json"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": ""
-						},
-						"url": {
-							"raw": "https://developer-api-testmode.dnb.no/cards/v0/TQJQ95214468J85O/unblock",
-							"protocol": "https",
-							"host": [
-								"developer-api-testmode",
-								"dnb",
-								"no"
-							],
-							"path": [
-								"cards",
-								"v0",
-								"TQJQ95214468J85O",
-								"unblock"
-							]
-						}
-					},
-					"response": []
-				}
-			],
-			"protocolProfileBehavior": {}
 		}
-	],
-	"event": [
+  ],
+  "event": [
 		{
 			"listen": "prerequest",
 			"script": {
