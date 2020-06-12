@@ -30,6 +30,7 @@ def get_test_customers():
     response = request_handler.request(path="/test-customers/v0")
     return response.json()
 
+
 def main():
     test_customers = get_test_customers()
     print("\nTest customers: " + json.dumps(test_customers, indent=4, sort_keys=True))
