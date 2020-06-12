@@ -37,4 +37,7 @@ script that is helpful for running the examples:
 ./run <example>  # e.g. ./run nodejs
 ```
 
+[developer.dnb.no]: https://developer.dnb.no
+[postman readme]: ./postman/README.md
+
 All the examples are licensed under MIT license.
