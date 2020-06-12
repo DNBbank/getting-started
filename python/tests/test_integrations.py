@@ -34,6 +34,7 @@ def test_get_currency_conversions():
 
     assert len(response) > 0
 
+
 def test_get_test_customers():
     data = get_test_customers()
 
