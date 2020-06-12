@@ -30,34 +30,9 @@ def get_test_customers():
     response = request_handler.request(path="/test-customers/v0")
     return response.json()
 
-
-def get_access_token(ssn):
-    response = request_handler.request(path="/tokens/v0", method="POST", data={"ssn": ssn})
-    return response.json()["jwtToken"]
-
-
-def get_customer_info(api_token):
-    response = request_handler.request(path="/customers/v0/current", api_token=api_token)
-    return response.json()
-
-
-def get_cards(api_token):
-    response = request_handler.request(path="/cards/v0", api_token=api_token)
-    return response.json()
-
-
 def main():
-    api_token = get_access_token(ssn="29105573083")
-    print("\nAPI token: " + api_token)
-
     test_customers = get_test_customers()
     print("\nTest customers: " + json.dumps(test_customers, indent=4, sort_keys=True))
-
-    customer = get_customer_info(api_token)
-    print("\nCustomer info: " + json.dumps(customer, indent=4, sort_keys=True))
-
-    cards = get_cards(api_token)
-    print("\nCards: " + json.dumps(cards, indent=4, sort_keys=True))
 
     currencies = get_currency_conversions("NOK")
     print("\nCurrencies: " + json.dumps(currencies, indent=4, sort_keys=True))

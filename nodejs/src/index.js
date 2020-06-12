@@ -16,13 +16,7 @@ function createAmzDate() {
   return new Date().toISOString().replace(/[:-]|\.\d{3}/g, '');
 }
 
-function createRequest({
-  path,
-  method = 'GET',
-  data,
-  queryString = '',
-  jwtToken = '',
-}) {
+function createRequest({ path, method = 'GET', data, queryString = '' }) {
   const options = {
     host: openbankingEndpoint,
     headers: {
@@ -39,9 +33,6 @@ function createRequest({
   if (queryString !== '') {
     options.path += `?${queryString}`;
   }
-  if (jwtToken !== '') {
-    options.headers['x-dnbapi-jwt'] = jwtToken;
-  }
   if (data) {
     options.data = JSON.stringify(data);
   }
@@ -55,17 +46,6 @@ async function getTestCustomers() {
       method: 'GET',
     }),
   );
-}
-
-async function getAccessToken(ssn) {
-  const data = await request(
-    createRequest({
-      path: '/tokens/v0',
-      method: 'POST',
-      data: { ssn },
-    }),
-  );
-  return data.jwtToken;
 }
 
 async function getCurrencyConversions(quoteCurrency) {
@@ -84,32 +64,12 @@ async function getCurrencyConversion(baseCurrency, quoteCurrency) {
   );
 }
 
-async function getCustomerInfo(jwtToken) {
-  return request(createRequest({ path: '/customers/v0/current', jwtToken }));
-}
-
-async function getCards(jwtToken) {
-  const data = await request(createRequest({ path: '/cards/v0', jwtToken }));
-  return data;
-}
-
 async function main() {
   const dashes = '-------------------------------';
-  const accessToken = await getAccessToken('29105573083');
 
   const testCustomers = await getTestCustomers();
   console.log(`${dashes} Test Customers ${dashes}`);
   console.log(JSON.stringify(testCustomers, null, 2));
-  console.log('\n');
-
-  const customerInfo = await getCustomerInfo(accessToken);
-  console.log(`${dashes} Customer Info ${dashes}`);
-  console.log(JSON.stringify(customerInfo, null, 2));
-  console.log('\n');
-
-  const cards = await getCards(accessToken);
-  console.log(`${dashes} Cards ${dashes}`);
-  console.log(JSON.stringify(cards, null, 2));
   console.log('\n');
 
   const currencies = await getCurrencyConversions('NOK');
@@ -125,11 +85,8 @@ async function main() {
 
 module.exports = {
   getTestCustomers,
-  getAccessToken,
   getCurrencyConversions,
   getCurrencyConversion,
-  getCustomerInfo,
-  getCards,
   main,
 };
 
