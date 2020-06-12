@@ -1,13 +1,10 @@
-const checkEnv = require('check-env');
-
 module.exports = function loadCredentials() {
-  try {
-    checkEnv(['API_KEY']);
-  } catch (error) {
-    console.error(error.message);
-    if (process.env.NODE_ENV !== 'test') {
-      process.exit(1);
-    }
+  if (
+    typeof process.env.API_KEY === 'undefined' &&
+    process.env.NODE_ENV !== 'test'
+  ) {
+    console.error('Environment variable API_KEY must be set!');
+    process.exit(1);
   }
 
   return {
