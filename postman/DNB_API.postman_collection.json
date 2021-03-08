@@ -1,53 +1,15 @@
 {
 	"info": {
 		"_postman_id": "1775c6aa-359d-4d90-b6fc-a4aa0c0b54c7",
-		"name": "DNB_API",
+		"name": "DNB Currencies API",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
 	"item": [
-				{
-          "name": "Test Customers",
-          "item": [
-				{
-					"name": "Test Customers",
-					"request": {
-						"method": "GET",
-						"header": [
-							{
-								"key": "x-api-key",
-								"type": "text",
-								"value": "{{ApiKey}}"
-							},
-							{
-								"key": "Content-Type",
-								"type": "text",
-								"value": "application/json"
-							}
-						],
-						"url": {
-							"raw": "https://developer-api-testmode.dnb.no/test-customers/v0",
-							"protocol": "https",
-							"host": [
-								"developer-api-testmode",
-								"dnb",
-								"no"
-							],
-							"path": [
-								"test-customers",
-								"v0"
-							]
-						}
-					},
-					"response": []
-				}
-			],
-			"protocolProfileBehavior": {}
-		},
 		{
 			"name": "Currencies",
 			"item": [
 				{
-					"name": "Currencies: Get currency rate list",
+					"name": "Currencies: List of currency rates",
 					"request": {
 						"method": "GET",
 						"header": [
